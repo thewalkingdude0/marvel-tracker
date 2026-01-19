@@ -1,0 +1,6878 @@
+{
+  "villains": [
+    {
+      "name": "Absorbing Man",
+      "code": "04076",
+      "set_code": "unknown",
+      "stages": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "Apocalypse",
+      "code": "45101a",
+      "set_code": "unknown",
+      "stages": [
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "Arclight",
+      "code": "40070a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Avalanche",
+      "code": "32121a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Baron Zemo",
+      "code": "50165a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Batroc",
+      "code": "50086a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Black Widow",
+      "code": "50064",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Blob",
+      "code": "32122a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Blockbuster",
+      "code": "40071a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Bulldozer",
+      "code": "07046",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "name": "Chimera",
+      "code": "40072a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Citizen V",
+      "code": "50129a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Collector",
+      "code": "16070",
+      "set_code": "unknown",
+      "stages": [
+        11,
+        13,
+        13
+      ]
+    },
+    {
+      "name": "Corvus Glaive",
+      "code": "21095",
+      "set_code": "unknown",
+      "stages": [
+        13,
+        15,
+        17
+      ]
+    },
+    {
+      "name": "Crossbones",
+      "code": "04058",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        16,
+        17
+      ]
+    },
+    {
+      "name": "Dark Beast",
+      "code": "45118",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Death",
+      "code": "45084a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Doctor Octopus",
+      "code": "27094",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Drang",
+      "code": "16058",
+      "set_code": "unknown",
+      "stages": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "Ebony Maw",
+      "code": "21071",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Electro",
+      "code": "27095",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Enchantress",
+      "code": "55001",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Fading Figment",
+      "code": "55029b",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Famine",
+      "code": "45082a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Green Goblin",
+      "code": "02001b",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        17,
+        20
+      ]
+    },
+    {
+      "name": "Greycrow",
+      "code": "40073a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Harpoon",
+      "code": "40074a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Hela",
+      "code": "21136a",
+      "set_code": "unknown",
+      "stages": [
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "name": "Hobgoblin",
+      "code": "27096",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Juggernaut",
+      "code": "40118",
+      "set_code": "unknown",
+      "stages": [
+        16,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "Kang (Immortus)",
+      "code": "11002",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Kang (Iron Lad)",
+      "code": "11003",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Kang (Rama-Tut)",
+      "code": "11004",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Kang (Scarlet Centurion)",
+      "code": "11005",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Kang (The Conqueror)",
+      "code": "11001",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Klaw",
+      "code": "01113",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        18,
+        22
+      ]
+    },
+    {
+      "name": "Kraven the Hunter",
+      "code": "27097",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Loki",
+      "code": "21160",
+      "set_code": "unknown",
+      "stages": [
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "name": "Loki the Knave",
+      "code": "55031a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Loki the Miscreant",
+      "code": "55030a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Loki the Rascal",
+      "code": "55029a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Loki the Wretch",
+      "code": "55032a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Loki, God of Lies",
+      "code": "55027a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "M.O.D.O.K.",
+      "code": "50103a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Magneto",
+      "code": "32138",
+      "set_code": "unknown",
+      "stages": [
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "MaGog",
+      "code": "39001a",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Master Mold",
+      "code": "32109",
+      "set_code": "unknown",
+      "stages": [
+        16,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "Mister Sinister",
+      "code": "40136",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Mojo",
+      "code": "39022",
+      "set_code": "unknown",
+      "stages": [
+        16,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "Mysterio",
+      "code": "27084",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "name": "Nebula",
+      "code": "16088",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        17,
+        20
+      ]
+    },
+    {
+      "name": "Norman Osborn",
+      "code": "02001a",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        17,
+        20
+      ]
+    },
+    {
+      "name": "Pestilence",
+      "code": "45083a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Piledriver",
+      "code": "07032",
+      "set_code": "unknown",
+      "stages": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "name": "Proxima Midnight",
+      "code": "21092",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "name": "Pyro",
+      "code": "32123a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Red Skull",
+      "code": "04125",
+      "set_code": "unknown",
+      "stages": [
+        16,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "Rhino",
+      "code": "01094",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "name": "Riptide",
+      "code": "40075a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Ronan the Accuser",
+      "code": "16103",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        18,
+        22
+      ]
+    },
+    {
+      "name": "Sabretooth",
+      "code": "32060",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Sandman",
+      "code": "27061",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Scorpion",
+      "code": "27098",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Sentinel",
+      "code": "32084",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "Spiral",
+      "code": "39012a",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Stryfe",
+      "code": "40163",
+      "set_code": "unknown",
+      "stages": [
+        16,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "Taskmaster",
+      "code": "04093",
+      "set_code": "unknown",
+      "stages": [
+        13,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Thanos",
+      "code": "21111",
+      "set_code": "unknown",
+      "stages": [
+        20,
+        24,
+        28
+      ]
+    },
+    {
+      "name": "The Hood",
+      "code": "24001",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "Thunderball",
+      "code": "07017",
+      "set_code": "unknown",
+      "stages": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "Toad",
+      "code": "32124a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Ultron",
+      "code": "01134",
+      "set_code": "unknown",
+      "stages": [
+        17,
+        22,
+        27
+      ]
+    },
+    {
+      "name": "Unus",
+      "code": "45059",
+      "set_code": "unknown",
+      "stages": [
+        13,
+        15,
+        17
+      ]
+    },
+    {
+      "name": "Venom",
+      "code": "27073",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "Venom Goblin",
+      "code": "27113",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        18,
+        21
+      ]
+    },
+    {
+      "name": "Vertigo",
+      "code": "40076a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Vulture",
+      "code": "27099",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "War",
+      "code": "45081a",
+      "set_code": "unknown",
+      "stages": [
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "Wrecker",
+      "code": "07002",
+      "set_code": "unknown",
+      "stages": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "name": "Zola",
+      "code": "04109",
+      "set_code": "unknown",
+      "stages": [
+        12,
+        14,
+        15
+      ]
+    }
+  ],
+  "schemes": [
+    {
+      "name": "The Break-In!",
+      "code": "01097b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Underground Distribution",
+      "code": "01116b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 6,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Secret Rendezvous",
+      "code": "01117b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 8,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Crimson Cowl",
+      "code": "01137b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 3,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Assault on NORAD",
+      "code": "01138b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 10,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Countdown to Oblivion",
+      "code": "01139b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 5,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Hostile Takeover",
+      "code": "02004b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Corporate Acquisition",
+      "code": "02005b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Unleashing the Mutagen",
+      "code": "02017b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Mutagen Cloud",
+      "code": "02018b",
+      "set_code": "unknown",
+      "init": 4,
+      "target": 11,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Attack on Mount Athena",
+      "code": "04061b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 3,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Infinity Stone",
+      "code": "04062b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Getaway",
+      "code": "04063b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 5,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "None Shall Pass",
+      "code": "04079b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Hunting Down Heroes",
+      "code": "04096b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Island of Dr. Zola",
+      "code": "04112b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 6,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Mad Doctor",
+      "code": "04113b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Rise of Red Skull",
+      "code": "04128b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 8,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "New World Hydra",
+      "code": "04129b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 11,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Breakout",
+      "code": "07001b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 6,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Kang's Arrival",
+      "code": "11007b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Master of Time",
+      "code": "11008b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Chronopolis",
+      "code": "11009b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Inexorable Fate",
+      "code": "11010b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Realm of Rama-Tut",
+      "code": "11011b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Present Future War",
+      "code": "11012b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Kang's Wrath",
+      "code": "11013b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 10,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Terrestrial Invasion",
+      "code": "16061a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Terrestrial Invasion",
+      "code": "16061b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Protect the Planet",
+      "code": "16062a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Protect the Planet",
+      "code": "16062b",
+      "set_code": "unknown",
+      "init": 4,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Grand Collection",
+      "code": "16073a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Grand Collection",
+      "code": "16073b",
+      "set_code": "unknown",
+      "init": 4,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Missing Milano",
+      "code": "16082a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Missing Milano",
+      "code": "16082b",
+      "set_code": "unknown",
+      "init": 7,
+      "target": 11,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Lost in the Museum",
+      "code": "16083a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Lost in the Museum",
+      "code": "16083b",
+      "set_code": "unknown",
+      "init": 11,
+      "target": 15,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Great Escape",
+      "code": "16084a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Great Escape",
+      "code": "16084b",
+      "set_code": "unknown",
+      "init": 8,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Art of Evasion",
+      "code": "16091a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Art of Evasion",
+      "code": "16091b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Warp Drive Initiated",
+      "code": "16092a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Warp Drive Initiated",
+      "code": "16092b",
+      "set_code": "unknown",
+      "init": 3,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Interception Imminent",
+      "code": "16106a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Interception Imminent",
+      "code": "16106b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "\"Take What Is Mine\"",
+      "code": "16107a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "\"Take What Is Mine\"",
+      "code": "16107b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Attack on Knowhere",
+      "code": "21074b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Power Stone",
+      "code": "21075b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Under Siege",
+      "code": "21098b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Armies of Thanos",
+      "code": "21099b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Infinity Stones",
+      "code": "21114b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Balance the Scales",
+      "code": "21115b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Odin's Torment",
+      "code": "21138b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 18,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "All Hail King Loki",
+      "code": "21165b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Making Connections",
+      "code": "24004b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 5,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Promised Prosperity",
+      "code": "24005b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Crime State",
+      "code": "24006b",
+      "set_code": "unknown",
+      "init": 3,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Hapless Pedestrians",
+      "code": "27064b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "\"Leave Us Alone!\"",
+      "code": "27076b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Maze of Mirrors",
+      "code": "27087b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Edge of Reality",
+      "code": "27088b",
+      "set_code": "unknown",
+      "init": 3,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Sinister Synchronization",
+      "code": "27100b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Sinister Beatdown",
+      "code": "27101b",
+      "set_code": "unknown",
+      "init": 3,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Lower Manhattan",
+      "code": "27117a",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 11,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Midtown Manhattan",
+      "code": "27118a",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Upper Manhattan",
+      "code": "27119a",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 10,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Injured Senator",
+      "code": "32064b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Sentinel Factory",
+      "code": "32112b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Master Mold's Agenda",
+      "code": "32113b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Brotherhood Strikes!",
+      "code": "32125b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 0,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Atrium",
+      "code": "32126b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Cafeteria",
+      "code": "32127b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Basketball Court",
+      "code": "32128b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Courtyard",
+      "code": "32129b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Asteroid M",
+      "code": "32141b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 5,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Factory Online",
+      "code": "32142b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Rule of Magnus",
+      "code": "32143b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Melee in the Mojo-seum",
+      "code": "39002b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Across the Mojoverse",
+      "code": "39015b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 15,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "MojoMania",
+      "code": "39025b",
+      "set_code": "unknown",
+      "init": 10,
+      "target": 25,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Knock, Knock",
+      "code": "40077b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Mutant Massacre",
+      "code": "40078b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 8,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Gotta Get Away",
+      "code": "40103b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Escaping with Hope",
+      "code": "40104b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Unstoppable Juggernaut",
+      "code": "40121b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Taking Off",
+      "code": "40140b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 5,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Bulking Up",
+      "code": "40141b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 5,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Focusing In",
+      "code": "40142b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 5,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Sinister Ends",
+      "code": "40143b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Uncontrollable Power",
+      "code": "40166b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Left to Your Fate",
+      "code": "40167b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 8,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Hunting Gene Traitors",
+      "code": "45062b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 11,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Horsemen of Apocalypse",
+      "code": "45085b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 12,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Age of Apocalypse",
+      "code": "45103b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": -1,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Dark Beast's Bogus Journey",
+      "code": "45121b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "En Sabah Nur's Pyramid",
+      "code": "45147b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 8,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Rise of Apocalypse",
+      "code": "45148b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "The Widow's Web",
+      "code": "50067b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Infiltrate A.I.M. Island Embassy",
+      "code": "50087b",
+      "set_code": "unknown",
+      "init": 6,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Locate Missing Person",
+      "code": "50088b",
+      "set_code": "unknown",
+      "init": 3,
+      "target": 10,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Extract Captives",
+      "code": "50089b",
+      "set_code": "unknown",
+      "init": 12,
+      "target": 18,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Upgrading Adaptoids",
+      "code": "50104b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 7,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Apprehending Rogue Agents",
+      "code": "50130b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 11,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Zemo's Manipulations",
+      "code": "50167b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 12,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Fighting Zemo",
+      "code": "50169b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 12,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Prime Real Estate",
+      "code": "55004b",
+      "set_code": "unknown",
+      "init": 1,
+      "target": 6,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Sovereign Sorceress",
+      "code": "55005b",
+      "set_code": "unknown",
+      "init": 2,
+      "target": 9,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Worlds Collide",
+      "code": "55028b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 2,
+      "accel": 0,
+      "fixed": false
+    },
+    {
+      "name": "Mischief and Mayhem",
+      "code": "55033b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 8,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Cut Off Support",
+      "code": "56063b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Negative Zone Prison",
+      "code": "56064b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "S.H.I.E.L.D. Recruits",
+      "code": "56096b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Hunting Rebel Heroes",
+      "code": "56097b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Homeland Security",
+      "code": "56121b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Public Outrage",
+      "code": "56122b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "The Initiative",
+      "code": "56123b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "No Going Back",
+      "code": "56124b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Gathering Support",
+      "code": "56141b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Secret Avengers",
+      "code": "56142b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Open Rebellion",
+      "code": "56172b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Neighborhood Protectors",
+      "code": "56173b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Rallying Call",
+      "code": "56199b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Going Underground",
+      "code": "56200b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 7,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Guerilla Warfare",
+      "code": "56201b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    },
+    {
+      "name": "Superhero Jailbreak",
+      "code": "56202b",
+      "set_code": "unknown",
+      "init": 0,
+      "target": 9,
+      "accel": 0,
+      "fixed": true
+    }
+  ],
+  "heroes": [
+    {
+      "name": "Adam Warlock",
+      "hp": 11,
+      "code": "21031a"
+    },
+    {
+      "name": "Angel",
+      "hp": 12,
+      "code": "42001a"
+    },
+    {
+      "name": "Ant-Man",
+      "hp": 12,
+      "code": "12001a"
+    },
+    {
+      "name": "Archangel",
+      "hp": 12,
+      "code": "42001c"
+    },
+    {
+      "name": "Bishop",
+      "hp": 12,
+      "code": "45001a"
+    },
+    {
+      "name": "Black Panther",
+      "hp": 11,
+      "code": "01040a"
+    },
+    {
+      "name": "Black Widow",
+      "hp": 9,
+      "code": "08001a"
+    },
+    {
+      "name": "Cable",
+      "hp": 12,
+      "code": "40001a"
+    },
+    {
+      "name": "Captain America",
+      "hp": 11,
+      "code": "03001a"
+    },
+    {
+      "name": "Captain Marvel",
+      "hp": 12,
+      "code": "01010a"
+    },
+    {
+      "name": "Colossus",
+      "hp": 14,
+      "code": "32001a"
+    },
+    {
+      "name": "Cyclops",
+      "hp": 10,
+      "code": "33001a"
+    },
+    {
+      "name": "Deadpool",
+      "hp": 9,
+      "code": "44001a"
+    },
+    {
+      "name": "Doctor Strange",
+      "hp": 10,
+      "code": "09001a"
+    },
+    {
+      "name": "Domino",
+      "hp": 9,
+      "code": "40037a"
+    },
+    {
+      "name": "Drax",
+      "hp": 14,
+      "code": "19001a"
+    },
+    {
+      "name": "Falcon",
+      "hp": 10,
+      "code": "53001a"
+    },
+    {
+      "name": "Gambit",
+      "hp": 9,
+      "code": "37001a"
+    },
+    {
+      "name": "Gamora",
+      "hp": 10,
+      "code": "18001a"
+    },
+    {
+      "name": "Ghost-Spider",
+      "hp": 10,
+      "code": "27001a"
+    },
+    {
+      "name": "Groot",
+      "hp": 10,
+      "code": "16001a"
+    },
+    {
+      "name": "Hawkeye",
+      "hp": 9,
+      "code": "04001a"
+    },
+    {
+      "name": "Hulk",
+      "hp": 18,
+      "code": "10001a"
+    },
+    {
+      "name": "Hulkling",
+      "hp": 13,
+      "code": "56029a"
+    },
+    {
+      "name": "Iceman",
+      "hp": 11,
+      "code": "46001a"
+    },
+    {
+      "name": "Iron Man",
+      "hp": 9,
+      "code": "01029a"
+    },
+    {
+      "name": "Ironheart",
+      "hp": 10,
+      "code": "29001a"
+    },
+    {
+      "name": "Jubilee",
+      "hp": 9,
+      "code": "47001a"
+    },
+    {
+      "name": "Magik",
+      "hp": 10,
+      "code": "45030a"
+    },
+    {
+      "name": "Magneto",
+      "hp": 10,
+      "code": "49001a"
+    },
+    {
+      "name": "Maria Hill",
+      "hp": 9,
+      "code": "50001a"
+    },
+    {
+      "name": "Ms. Marvel",
+      "hp": 10,
+      "code": "05001a"
+    },
+    {
+      "name": "Nebula",
+      "hp": 9,
+      "code": "22001a"
+    },
+    {
+      "name": "Nick Fury",
+      "hp": 10,
+      "code": "50034a"
+    },
+    {
+      "name": "Nightcrawler",
+      "hp": 9,
+      "code": "48001a"
+    },
+    {
+      "name": "Nova",
+      "hp": 10,
+      "code": "28001a"
+    },
+    {
+      "name": "Phoenix",
+      "hp": 9,
+      "code": "34001a"
+    },
+    {
+      "name": "Psylocke",
+      "hp": 10,
+      "code": "41001a"
+    },
+    {
+      "name": "Quicksilver",
+      "hp": 9,
+      "code": "14001a"
+    },
+    {
+      "name": "Rocket Raccoon",
+      "hp": 9,
+      "code": "16029a"
+    },
+    {
+      "name": "Rogue",
+      "hp": 11,
+      "code": "38001a"
+    },
+    {
+      "name": "Scarlet Witch",
+      "hp": 10,
+      "code": "15001a"
+    },
+    {
+      "name": "Shadowcat",
+      "hp": 9,
+      "code": "32030a"
+    },
+    {
+      "name": "She-Hulk",
+      "hp": 15,
+      "code": "01019a"
+    },
+    {
+      "name": "Silk",
+      "hp": 10,
+      "code": "52001a"
+    },
+    {
+      "name": "SP//dr Suit",
+      "hp": 14,
+      "code": "31001a"
+    },
+    {
+      "name": "Spectrum",
+      "hp": 11,
+      "code": "21001a"
+    },
+    {
+      "name": "Spider-Ham",
+      "hp": 12,
+      "code": "30001a"
+    },
+    {
+      "name": "Spider-Man",
+      "hp": 10,
+      "code": "01001a"
+    },
+    {
+      "name": "Spider-Woman",
+      "hp": 11,
+      "code": "04031a"
+    },
+    {
+      "name": "Star-Lord",
+      "hp": 10,
+      "code": "17001a"
+    },
+    {
+      "name": "Storm",
+      "hp": 10,
+      "code": "36001a"
+    },
+    {
+      "name": "Thor",
+      "hp": 14,
+      "code": "06001a"
+    },
+    {
+      "name": "Tigra",
+      "hp": 10,
+      "code": "56001a"
+    },
+    {
+      "name": "Valkyrie",
+      "hp": 12,
+      "code": "25001a"
+    },
+    {
+      "name": "Venom",
+      "hp": 12,
+      "code": "20001a"
+    },
+    {
+      "name": "Vision",
+      "hp": 11,
+      "code": "26001a"
+    },
+    {
+      "name": "War Machine",
+      "hp": 10,
+      "code": "23001a"
+    },
+    {
+      "name": "Wasp",
+      "hp": 11,
+      "code": "13001a"
+    },
+    {
+      "name": "Winter Soldier",
+      "hp": 11,
+      "code": "54001a"
+    },
+    {
+      "name": "Wolverine",
+      "hp": 10,
+      "code": "35001a"
+    },
+    {
+      "name": "X-23",
+      "hp": 10,
+      "code": "43001a"
+    }
+  ],
+  "side_schemes": [
+    {
+      "name": "Breakin' & Takin'",
+      "init": 2,
+      "code": "01107"
+    },
+    {
+      "name": "Crowd Control",
+      "init": 2,
+      "code": "01108"
+    },
+    {
+      "name": "Bomb Scare",
+      "init": 2,
+      "code": "01109"
+    },
+    {
+      "name": "Defense Network",
+      "init": 2,
+      "code": "01125"
+    },
+    {
+      "name": "Illegal Arms Factory",
+      "init": 3,
+      "code": "01126"
+    },
+    {
+      "name": "The \"Immortal\" Klaw",
+      "init": 3,
+      "code": "01127"
+    },
+    {
+      "name": "The Masters of Evil",
+      "init": 3,
+      "code": "01128"
+    },
+    {
+      "name": "Drone Factory",
+      "init": 4,
+      "code": "01148"
+    },
+    {
+      "name": "Invasive AI",
+      "init": 3,
+      "code": "01149"
+    },
+    {
+      "name": "Ultron's Imperative",
+      "init": 2,
+      "code": "01150"
+    },
+    {
+      "name": "Under Attack",
+      "init": 3,
+      "code": "01151"
+    },
+    {
+      "name": "Usurp The Throne",
+      "init": 3,
+      "code": "01156"
+    },
+    {
+      "name": "Personal Challenge",
+      "init": 3,
+      "code": "01161"
+    },
+    {
+      "name": "Highway Robbery",
+      "init": 3,
+      "code": "01166"
+    },
+    {
+      "name": "Imminent Overload",
+      "init": 3,
+      "code": "01171"
+    },
+    {
+      "name": "The Psyche-Magnitron",
+      "init": 3,
+      "code": "01176"
+    },
+    {
+      "name": "Legions of Hydra",
+      "init": 3,
+      "code": "01180"
+    },
+    {
+      "name": "The Doomsday Chair",
+      "init": 8,
+      "code": "01183"
+    },
+    {
+      "name": "Collapsing Bridge",
+      "init": 2,
+      "code": "02009"
+    },
+    {
+      "name": "Oscorp Manufacturing",
+      "init": 2,
+      "code": "02010"
+    },
+    {
+      "name": "Payoff",
+      "init": 2,
+      "code": "02011"
+    },
+    {
+      "name": "Goblin Reinforcements",
+      "init": 2,
+      "code": "02026"
+    },
+    {
+      "name": "Goblin Nation",
+      "init": 2,
+      "code": "02027"
+    },
+    {
+      "name": "Overrun",
+      "init": 1,
+      "code": "02028"
+    },
+    {
+      "name": "A Mess of Things",
+      "init": 2,
+      "code": "02037"
+    },
+    {
+      "name": "Power Drain",
+      "init": 2,
+      "code": "02041"
+    },
+    {
+      "name": "Running Interference",
+      "init": 1,
+      "code": "02046"
+    },
+    {
+      "name": "Hit Squad",
+      "init": 3,
+      "code": "03027"
+    },
+    {
+      "name": "Generation Why?",
+      "init": 2,
+      "code": "05026"
+    },
+    {
+      "name": "Day of Reckoning",
+      "init": 6,
+      "code": "07004"
+    },
+    {
+      "name": "Thunderstruck",
+      "init": 5,
+      "code": "07019"
+    },
+    {
+      "name": "Pile It On!",
+      "init": 3,
+      "code": "07034"
+    },
+    {
+      "name": "Clear the Road",
+      "init": 4,
+      "code": "07048"
+    },
+    {
+      "name": "Family Feud",
+      "init": 2,
+      "code": "06027"
+    },
+    {
+      "name": "Killer for Hire",
+      "init": 3,
+      "code": "08027"
+    },
+    {
+      "name": "Open the Dark Dimension",
+      "init": 3,
+      "code": "09029"
+    },
+    {
+      "name": "Judge, Jury, Executioner",
+      "init": 3,
+      "code": "90002"
+    },
+    {
+      "name": "Total Destruction",
+      "init": 2,
+      "code": "10027"
+    },
+    {
+      "name": "Marked for Death",
+      "init": 5,
+      "code": "04028"
+    },
+    {
+      "name": "The Viper's Ambition",
+      "init": 2,
+      "code": "04055"
+    },
+    {
+      "name": "Crossbones' Assault",
+      "init": 2,
+      "code": "04070"
+    },
+    {
+      "name": "Cornered Staff",
+      "init": 3,
+      "code": "04071"
+    },
+    {
+      "name": "Avalanche!",
+      "init": 2,
+      "code": "04091"
+    },
+    {
+      "name": "Super Absorbing Power",
+      "init": 3,
+      "code": "04092"
+    },
+    {
+      "name": "Captured by Hydra",
+      "init": 5,
+      "code": "04107"
+    },
+    {
+      "name": "Taskmaster's Training Camp",
+      "init": 2,
+      "code": "04108"
+    },
+    {
+      "name": "Hydra Prison",
+      "init": 1,
+      "code": "04122"
+    },
+    {
+      "name": "Test Subjects",
+      "init": 2,
+      "code": "04123"
+    },
+    {
+      "name": "Zola's Experiments",
+      "init": 3,
+      "code": "04124"
+    },
+    {
+      "name": "The Red House",
+      "init": 3,
+      "code": "04139"
+    },
+    {
+      "name": "The Sleeper Awakened",
+      "init": 0,
+      "code": "04140"
+    },
+    {
+      "name": "Prison Camps",
+      "init": 3,
+      "code": "04141"
+    },
+    {
+      "name": "Censor the Past",
+      "init": 3,
+      "code": "04142"
+    },
+    {
+      "name": "Hydra Reinforcements",
+      "init": 2,
+      "code": "04143"
+    },
+    {
+      "name": "Mass Chaos",
+      "init": 0,
+      "code": "04144"
+    },
+    {
+      "name": "Hydra Patrol",
+      "init": 2,
+      "code": "04154"
+    },
+    {
+      "name": "Corrupted Timestream",
+      "init": 2,
+      "code": "11022"
+    },
+    {
+      "name": "Kang's Dominion",
+      "init": 3,
+      "code": "11023"
+    },
+    {
+      "name": "Pinned Down",
+      "init": 2,
+      "code": "11024"
+    },
+    {
+      "name": "Rampage",
+      "init": 4,
+      "code": "11025"
+    },
+    {
+      "name": "Time Portal",
+      "init": 2,
+      "code": "11033"
+    },
+    {
+      "name": "The Anachronauts",
+      "init": 3,
+      "code": "11045"
+    },
+    {
+      "name": "Light of Centuries Sphere",
+      "init": 3,
+      "code": "11050"
+    },
+    {
+      "name": "Tech Theft",
+      "init": 2,
+      "code": "12026"
+    },
+    {
+      "name": "Mother's Orders",
+      "init": 2,
+      "code": "13027"
+    },
+    {
+      "name": "Extortion of Seismic Proportion",
+      "init": 2,
+      "code": "14025"
+    },
+    {
+      "name": "The Next Evolution",
+      "init": 2,
+      "code": "15024"
+    },
+    {
+      "name": "Blazing Inferno",
+      "init": 3,
+      "code": "16026"
+    },
+    {
+      "name": "Vendetta",
+      "init": 2,
+      "code": "16054"
+    },
+    {
+      "name": "Blockade",
+      "init": 2,
+      "code": "16066"
+    },
+    {
+      "name": "Bombardment",
+      "init": 3,
+      "code": "16067"
+    },
+    {
+      "name": "Oppressive Armada",
+      "init": 1,
+      "code": "16068"
+    },
+    {
+      "name": "Spatial Positioning",
+      "init": 3,
+      "code": "16069"
+    },
+    {
+      "name": "Lethal Intent",
+      "init": 2,
+      "code": "16099"
+    },
+    {
+      "name": "Cut the Power",
+      "init": 3,
+      "code": "16111"
+    },
+    {
+      "name": "Pincer Maneuver",
+      "init": 3,
+      "code": "16112"
+    },
+    {
+      "name": "Superior Tactics",
+      "init": 2,
+      "code": "16113"
+    },
+    {
+      "name": "Hujahdarian Monarch Egg",
+      "init": 3,
+      "code": "16127"
+    },
+    {
+      "name": "Magical Teapot",
+      "init": 3,
+      "code": "16128"
+    },
+    {
+      "name": "Philosopher's Stone",
+      "init": 3,
+      "code": "16129"
+    },
+    {
+      "name": "Crystal Ball",
+      "init": 3,
+      "code": "16130"
+    },
+    {
+      "name": "Sound the Alarms",
+      "init": 2,
+      "code": "16140"
+    },
+    {
+      "name": "Cannonade",
+      "init": 1,
+      "code": "16144"
+    },
+    {
+      "name": "Badoon Blitz",
+      "init": 2,
+      "code": "16178a"
+    },
+    {
+      "name": "Gallery of Splendor",
+      "init": 3,
+      "code": "16179a"
+    },
+    {
+      "name": "\"There is No Escape\"",
+      "init": 4,
+      "code": "16180a"
+    },
+    {
+      "name": "Guerrilla Tactics",
+      "init": 5,
+      "code": "16181a"
+    },
+    {
+      "name": "Kree Supremacy",
+      "init": 6,
+      "code": "16182a"
+    },
+    {
+      "name": "Fugitive Recovery",
+      "init": 2,
+      "code": "16187"
+    },
+    {
+      "name": "Budding Crime Syndicate",
+      "init": 2,
+      "code": "17025"
+    },
+    {
+      "name": "Sibling Rivalry",
+      "init": 4,
+      "code": "18025"
+    },
+    {
+      "name": "Cull the Weak",
+      "init": 2,
+      "code": "19026"
+    },
+    {
+      "name": "Klyntar Frenzy",
+      "init": 2,
+      "code": "20024"
+    },
+    {
+      "name": "Reactor Meltdown",
+      "init": 2,
+      "code": "21028"
+    },
+    {
+      "name": "Universal Church of Truth",
+      "init": 2,
+      "code": "21068"
+    },
+    {
+      "name": "Reactor Overload",
+      "init": 3,
+      "code": "21084"
+    },
+    {
+      "name": "The Black Order",
+      "init": 2,
+      "code": "21087"
+    },
+    {
+      "name": "Landing Craft",
+      "init": 2,
+      "code": "21091"
+    },
+    {
+      "name": "City Under Attack",
+      "init": 2,
+      "code": "21110"
+    },
+    {
+      "name": "Sanctuary",
+      "init": 3,
+      "code": "21116"
+    },
+    {
+      "name": "The Titan's Throne",
+      "init": 2,
+      "code": "21124"
+    },
+    {
+      "name": "Tribute",
+      "init": 2,
+      "code": "21128"
+    },
+    {
+      "name": "Gnipahellir",
+      "init": 2,
+      "code": "21140"
+    },
+    {
+      "name": "Hall of Nastrond",
+      "init": 4,
+      "code": "21141"
+    },
+    {
+      "name": "Gjallerbru",
+      "init": 3,
+      "code": "21142"
+    },
+    {
+      "name": "Legions of Hel",
+      "init": 2,
+      "code": "21155"
+    },
+    {
+      "name": "Unnatural Storm",
+      "init": 2,
+      "code": "21159"
+    },
+    {
+      "name": "Casket of Ancient Winters",
+      "init": 4,
+      "code": "21166"
+    },
+    {
+      "name": "War in Asgard",
+      "init": 6,
+      "code": "21167"
+    },
+    {
+      "name": "Madness on Midgard",
+      "init": 5,
+      "code": "21168"
+    },
+    {
+      "name": "Open the Bifrost",
+      "init": 3,
+      "code": "21169"
+    },
+    {
+      "name": "Self-Preservation",
+      "init": 2,
+      "code": "22029"
+    },
+    {
+      "name": "Deadly Light Show",
+      "init": 3,
+      "code": "23030"
+    },
+    {
+      "name": "Unbridled Ambition",
+      "init": 2,
+      "code": "24011"
+    },
+    {
+      "name": "Beast Mode",
+      "init": 3,
+      "code": "24014"
+    },
+    {
+      "name": "Out for Blood",
+      "init": 2,
+      "code": "24023"
+    },
+    {
+      "name": "Self-Experimentation",
+      "init": 5,
+      "code": "24033"
+    },
+    {
+      "name": "Crime Pays",
+      "init": 3,
+      "code": "24042"
+    },
+    {
+      "name": "Feisty Heist",
+      "init": 3,
+      "code": "24055"
+    },
+    {
+      "name": "Disaster at the Docks",
+      "init": 3,
+      "code": "24056"
+    },
+    {
+      "name": "Offshore Inferno",
+      "init": 3,
+      "code": "24057"
+    },
+    {
+      "name": "Hot Pursuit",
+      "init": 3,
+      "code": "24058"
+    },
+    {
+      "name": "Top Talent",
+      "init": 3,
+      "code": "24064"
+    },
+    {
+      "name": "Powerful Enchantments",
+      "init": 2,
+      "code": "25030"
+    },
+    {
+      "name": "Ultron Unleashed",
+      "init": 0,
+      "code": "26030"
+    },
+    {
+      "name": "Regenerative Research",
+      "init": 5,
+      "code": "27026"
+    },
+    {
+      "name": "Tracking Prey",
+      "init": 4,
+      "code": "27057"
+    },
+    {
+      "name": "Dirt Trap",
+      "init": 1,
+      "code": "27068"
+    },
+    {
+      "name": "Tidal Sands",
+      "init": 2,
+      "code": "27069"
+    },
+    {
+      "name": "Guard the Bell Tower",
+      "init": 3,
+      "code": "27079"
+    },
+    {
+      "name": "Lashing Out",
+      "init": 9,
+      "code": "27080"
+    },
+    {
+      "name": "Tooth and Nail",
+      "init": 8,
+      "code": "27081"
+    },
+    {
+      "name": "Light at the End",
+      "init": 10,
+      "code": "27102a"
+    },
+    {
+      "name": "Brute Force Barricade",
+      "init": 9,
+      "code": "27107"
+    },
+    {
+      "name": "Festering Mass",
+      "init": 5,
+      "code": "27124"
+    },
+    {
+      "name": "Joy Ride",
+      "init": 2,
+      "code": "27125"
+    },
+    {
+      "name": "Panic in the Streets",
+      "init": 5,
+      "code": "27127"
+    },
+    {
+      "name": "Volunteer Work",
+      "init": 3,
+      "code": "27133"
+    },
+    {
+      "name": "Limitless Supply",
+      "init": 5,
+      "code": "27140"
+    },
+    {
+      "name": "Coordinated Effort",
+      "init": 6,
+      "code": "27143"
+    },
+    {
+      "name": "Hidden in Shadow",
+      "init": 4,
+      "code": "27144"
+    },
+    {
+      "name": "Teamwork Makes the Dream Work",
+      "init": 5,
+      "code": "27145"
+    },
+    {
+      "name": "Fool's Paradise",
+      "init": 6,
+      "code": "27155"
+    },
+    {
+      "name": "Weakness from Within",
+      "init": 1,
+      "code": "27156"
+    },
+    {
+      "name": "Analysis Paralysis",
+      "init": 1,
+      "code": "27173"
+    },
+    {
+      "name": "\"Bring the War!\"",
+      "init": 2,
+      "code": "28022"
+    },
+    {
+      "name": "Armored Assault",
+      "init": 3,
+      "code": "28028"
+    },
+    {
+      "name": "Rule by Force",
+      "init": 4,
+      "code": "29029"
+    },
+    {
+      "name": "Feedback Loop",
+      "init": 2,
+      "code": "29036"
+    },
+    {
+      "name": "Nefarious Trap",
+      "init": 3,
+      "code": "30025"
+    },
+    {
+      "name": "Hunting the Spider-Totems",
+      "init": 6,
+      "code": "30030"
+    },
+    {
+      "name": "Giant Monster Attack",
+      "init": 4,
+      "code": "31026"
+    },
+    {
+      "name": "Grand Larceny",
+      "init": 4,
+      "code": "31030"
+    },
+    {
+      "name": "Rampaging Juggernaut",
+      "init": 2,
+      "code": "32027"
+    },
+    {
+      "name": "The Hellfire Club",
+      "init": 2,
+      "code": "32057"
+    },
+    {
+      "name": "Find the Senator",
+      "init": 5,
+      "code": "32065a"
+    },
+    {
+      "name": "Medical Emergency",
+      "init": 2,
+      "code": "32071"
+    },
+    {
+      "name": "Feral Rage",
+      "init": 4,
+      "code": "32072"
+    },
+    {
+      "name": "The Brotherhood",
+      "init": 3,
+      "code": "32079"
+    },
+    {
+      "name": "Metamorphic Mayhem",
+      "init": 3,
+      "code": "32081"
+    },
+    {
+      "name": "Mutants at the Mall",
+      "init": 4,
+      "code": "32088a"
+    },
+    {
+      "name": "Abduction Protocols",
+      "init": 2,
+      "code": "32100"
+    },
+    {
+      "name": "Operation Zero Tolerance",
+      "init": 3,
+      "code": "32104"
+    },
+    {
+      "name": "Relentless Robots",
+      "init": 3,
+      "code": "32108"
+    },
+    {
+      "name": "Intruder Alert!",
+      "init": 3,
+      "code": "32119"
+    },
+    {
+      "name": "Insert Virus Program",
+      "init": 2,
+      "code": "32120"
+    },
+    {
+      "name": "Protect the Students",
+      "init": 2,
+      "code": "32136"
+    },
+    {
+      "name": "Under Siege",
+      "init": 0,
+      "code": "32137"
+    },
+    {
+      "name": "Boarding Party",
+      "init": 3,
+      "code": "32144a"
+    },
+    {
+      "name": "Sabotage Master Mold",
+      "init": 3,
+      "code": "32144b"
+    },
+    {
+      "name": "Orbital Decay",
+      "init": 3,
+      "code": "32145a"
+    },
+    {
+      "name": "Magnetic Mayhem",
+      "init": 4,
+      "code": "32156"
+    },
+    {
+      "name": "Magnetically Sealed",
+      "init": 2,
+      "code": "32157"
+    },
+    {
+      "name": "Seized!",
+      "init": 3,
+      "code": "32158"
+    },
+    {
+      "name": "The Acolytes",
+      "init": 3,
+      "code": "32165"
+    },
+    {
+      "name": "Nimrod's Portal",
+      "init": 3,
+      "code": "32168"
+    },
+    {
+      "name": "Bastion's Machinations",
+      "init": 6,
+      "code": "32169"
+    },
+    {
+      "name": "Genetic Manipulation",
+      "init": 2,
+      "code": "33029"
+    },
+    {
+      "name": "Consume the World",
+      "init": 6,
+      "code": "34030"
+    },
+    {
+      "name": "The Carbonadium Synthesizer",
+      "init": 5,
+      "code": "35029"
+    },
+    {
+      "name": "Seeking Vengeance",
+      "init": 5,
+      "code": "35035"
+    },
+    {
+      "name": "Leader of the Morlocks",
+      "init": 2,
+      "code": "36032"
+    },
+    {
+      "name": "Ruler of the Astral Plane",
+      "init": 6,
+      "code": "36037"
+    },
+    {
+      "name": "Pump Up the Crowd",
+      "init": 4,
+      "code": "39008"
+    },
+    {
+      "name": "The Search for Spiral",
+      "init": 3,
+      "code": "39016"
+    },
+    {
+      "name": "Undercover Mojo",
+      "init": 2,
+      "code": "39031"
+    },
+    {
+      "name": "Crime Scene Investigation",
+      "init": 5,
+      "code": "39037"
+    },
+    {
+      "name": "Law & Order",
+      "init": 5,
+      "code": "39038"
+    },
+    {
+      "name": "Dragnet",
+      "init": 5,
+      "code": "39039"
+    },
+    {
+      "name": "Fetch Quest",
+      "init": 6,
+      "code": "39045"
+    },
+    {
+      "name": "ICE-Teroid M",
+      "init": 2,
+      "code": "39059"
+    },
+    {
+      "name": "The Assassins Guild",
+      "init": 4,
+      "code": "37027"
+    },
+    {
+      "name": "Herald of Avalon",
+      "init": 6,
+      "code": "37033"
+    },
+    {
+      "name": "Mystique's Manipulations",
+      "init": 2,
+      "code": "38026"
+    },
+    {
+      "name": "The Reavers",
+      "init": 5,
+      "code": "38034"
+    },
+    {
+      "name": "Back to the Future",
+      "init": 4,
+      "code": "40033"
+    },
+    {
+      "name": "Not My Lucky Day",
+      "init": 3,
+      "code": "40067"
+    },
+    {
+      "name": "By Any Means",
+      "init": 3,
+      "code": "40084"
+    },
+    {
+      "name": "In the Midst of Chaos",
+      "init": 3,
+      "code": "40085"
+    },
+    {
+      "name": "Maraudin' Ain't Easy",
+      "init": 3,
+      "code": "40086"
+    },
+    {
+      "name": "Territorial Control",
+      "init": 4,
+      "code": "40087"
+    },
+    {
+      "name": "The Senator's Support",
+      "init": 3,
+      "code": "40093"
+    },
+    {
+      "name": "Mutant Slayers",
+      "init": 3,
+      "code": "40101"
+    },
+    {
+      "name": "Bushwhack",
+      "init": 1,
+      "code": "40108"
+    },
+    {
+      "name": "Pure Force",
+      "init": 4,
+      "code": "40109"
+    },
+    {
+      "name": "Get Nasty",
+      "init": 3,
+      "code": "40117"
+    },
+    {
+      "name": "Building Momentum",
+      "init": 3,
+      "code": "40124"
+    },
+    {
+      "name": "Captive Hope",
+      "init": 3,
+      "code": "40131"
+    },
+    {
+      "name": "Making Green",
+      "init": 2,
+      "code": "40134"
+    },
+    {
+      "name": "Teleported Away",
+      "init": 3,
+      "code": "40146"
+    },
+    {
+      "name": "Stryfe's Grasp",
+      "init": 4,
+      "code": "40168a"
+    },
+    {
+      "name": "Living Bomb",
+      "init": 3,
+      "code": "40168b"
+    },
+    {
+      "name": "Cerebral Erasure",
+      "init": 2,
+      "code": "40175"
+    },
+    {
+      "name": "Telepathic Camouflage",
+      "init": 2,
+      "code": "40176"
+    },
+    {
+      "name": "Extreme Measures",
+      "init": 3,
+      "code": "40184"
+    },
+    {
+      "name": "Mutant Insurrection",
+      "init": 3,
+      "code": "40189"
+    },
+    {
+      "name": "Under Pressure",
+      "init": 6,
+      "code": "40202"
+    },
+    {
+      "name": "Interdimensional Plunder",
+      "init": 2,
+      "code": "41027"
+    },
+    {
+      "name": "Hook, Line, and Sinker",
+      "init": 2,
+      "code": "42026"
+    },
+    {
+      "name": "In the Name of Vengeance",
+      "init": 6,
+      "code": "43030"
+    },
+    {
+      "name": "Involuntary Procedures",
+      "init": 6,
+      "code": "44034"
+    },
+    {
+      "name": "Dreadful Deeds",
+      "init": 2,
+      "code": "44039"
+    },
+    {
+      "name": "Portal Through Time",
+      "init": 4,
+      "code": "45027"
+    },
+    {
+      "name": "Ruler of Limbo",
+      "init": 3,
+      "code": "45055"
+    },
+    {
+      "name": "Endless Ranks",
+      "init": 4,
+      "code": "45068"
+    },
+    {
+      "name": "Gene Pool",
+      "init": 4,
+      "code": "45071"
+    },
+    {
+      "name": "Targeted for Extermination",
+      "init": 3,
+      "code": "45074"
+    },
+    {
+      "name": "The Ravages of War",
+      "init": 6,
+      "code": "45086"
+    },
+    {
+      "name": "A Time of Famine",
+      "init": 6,
+      "code": "45087"
+    },
+    {
+      "name": "Plague and Pestilence",
+      "init": 6,
+      "code": "45088"
+    },
+    {
+      "name": "The Specter of Death",
+      "init": 6,
+      "code": "45089"
+    },
+    {
+      "name": "Release the Hounds",
+      "init": 5,
+      "code": "45100"
+    },
+    {
+      "name": "Heart of the Empire",
+      "init": 2,
+      "code": "45104a"
+    },
+    {
+      "name": "The Towering Citadel",
+      "init": 3,
+      "code": "45104b"
+    },
+    {
+      "name": "The Tyrant's Throne",
+      "init": 4,
+      "code": "45105a"
+    },
+    {
+      "name": "The Apocalypse Solution",
+      "init": 3,
+      "code": "45111"
+    },
+    {
+      "name": "The Dark Riders",
+      "init": 2,
+      "code": "45117"
+    },
+    {
+      "name": "Time-Travel Shenanigans",
+      "init": 2,
+      "code": "45126"
+    },
+    {
+      "name": "Village Under Attack",
+      "init": 2,
+      "code": "45132"
+    },
+    {
+      "name": "Police State",
+      "init": 2,
+      "code": "45138"
+    },
+    {
+      "name": "Trial by Combat",
+      "init": 2,
+      "code": "45146"
+    },
+    {
+      "name": "Source of Power",
+      "init": 5,
+      "code": "45153"
+    },
+    {
+      "name": "Plugged In",
+      "init": 5,
+      "code": "45154"
+    },
+    {
+      "name": "Giant Growth",
+      "init": 5,
+      "code": "45155"
+    },
+    {
+      "name": "Ancient Ritual",
+      "init": 5,
+      "code": "45163"
+    },
+    {
+      "name": "Liberate the Seattle Core",
+      "init": 5,
+      "code": "45166a"
+    },
+    {
+      "name": "Evacuate Survivors",
+      "init": 5,
+      "code": "45167a"
+    },
+    {
+      "name": "Sabotage the Sea Wall",
+      "init": 5,
+      "code": "45168a"
+    },
+    {
+      "name": "Find Lost Mutants",
+      "init": 5,
+      "code": "45169a"
+    },
+    {
+      "name": "Protect the Professor",
+      "init": 5,
+      "code": "45170a"
+    },
+    {
+      "name": "North American Sea Wall",
+      "init": 2,
+      "code": "45177"
+    },
+    {
+      "name": "Playing with Fire",
+      "init": 3,
+      "code": "46026"
+    },
+    {
+      "name": "Sauron Lives!",
+      "init": 3,
+      "code": "46030"
+    },
+    {
+      "name": "Naughty Children",
+      "init": 2,
+      "code": "47025"
+    },
+    {
+      "name": "Welcome to Murderworld",
+      "init": 2,
+      "code": "47031"
+    },
+    {
+      "name": "Arcade's Funhouse",
+      "init": 2,
+      "code": "47032"
+    },
+    {
+      "name": "Hall of Mirrors",
+      "init": 2,
+      "code": "47033"
+    },
+    {
+      "name": "Brimstone Dimension",
+      "init": 5,
+      "code": "48028"
+    },
+    {
+      "name": "The Crazy Gang",
+      "init": 2,
+      "code": "48033"
+    },
+    {
+      "name": "Martyr for Mutants",
+      "init": 3,
+      "code": "49029"
+    },
+    {
+      "name": "The Inner Circle",
+      "init": 4,
+      "code": "49041"
+    },
+    {
+      "name": "Army of the Controlled",
+      "init": 3,
+      "code": "50031"
+    },
+    {
+      "name": "Acquire Infinity Formula",
+      "init": 5,
+      "code": "50061"
+    },
+    {
+      "name": "Automated Defenses",
+      "init": 3,
+      "code": "50074"
+    },
+    {
+      "name": "Destroy Evidence",
+      "init": 2,
+      "code": "50075"
+    },
+    {
+      "name": "Abduct Superhumans",
+      "init": 2,
+      "code": "50081"
+    },
+    {
+      "name": "Mad Science",
+      "init": 2,
+      "code": "50085"
+    },
+    {
+      "name": "Commandeer Security Office",
+      "init": 3,
+      "code": "50095"
+    },
+    {
+      "name": "Batroc's Brigade",
+      "init": 6,
+      "code": "50101"
+    },
+    {
+      "name": "Hostage Situation",
+      "init": 3,
+      "code": "50121"
+    },
+    {
+      "name": "Psionic Enhancement",
+      "init": 3,
+      "code": "50122"
+    },
+    {
+      "name": "Diplomatic Immunity",
+      "init": 3,
+      "code": "50127"
+    },
+    {
+      "name": "The Coming Storm",
+      "init": 2,
+      "code": "50135"
+    },
+    {
+      "name": "Rumbling Thunder",
+      "init": 3,
+      "code": "50136"
+    },
+    {
+      "name": "Rule the Skies",
+      "init": 3,
+      "code": "50140"
+    },
+    {
+      "name": "Sonic Bubble",
+      "init": 3,
+      "code": "50146"
+    },
+    {
+      "name": "Pride of the Red Room",
+      "init": 4,
+      "code": "50150"
+    },
+    {
+      "name": "Runaway Nuclear Reaction",
+      "init": 5,
+      "code": "50154"
+    },
+    {
+      "name": "Aerial Dogfight",
+      "init": 3,
+      "code": "50159"
+    },
+    {
+      "name": "Coup de Foudre",
+      "init": 5,
+      "code": "50162"
+    },
+    {
+      "name": "Divided Loyalties",
+      "init": 3,
+      "code": "50173"
+    },
+    {
+      "name": "Undermine Support",
+      "init": 3,
+      "code": "50174"
+    },
+    {
+      "name": "Disavowed",
+      "init": 2,
+      "code": "50180"
+    },
+    {
+      "name": "Manipulated M.U.S.I.C.",
+      "init": 5,
+      "code": "51033"
+    },
+    {
+      "name": "Playing for Keeps",
+      "init": 3,
+      "code": "51041"
+    },
+    {
+      "name": "The Great Hunt",
+      "init": 2,
+      "code": "52030"
+    },
+    {
+      "name": "Grow Invulnerable",
+      "init": 5,
+      "code": "52036"
+    },
+    {
+      "name": "Serpent Solutions",
+      "init": 6,
+      "code": "53031"
+    },
+    {
+      "name": "Technological Innovation",
+      "init": 4,
+      "code": "53041"
+    },
+    {
+      "name": "Hydra Hit Squad",
+      "init": 3,
+      "code": "54029"
+    },
+    {
+      "name": "Slippery Conditions",
+      "init": 3,
+      "code": "54036"
+    },
+    {
+      "name": "Future of Despair",
+      "init": 2,
+      "code": "55006"
+    },
+    {
+      "name": "Law of Attraction",
+      "init": 2,
+      "code": "55021"
+    },
+    {
+      "name": "Spellbound",
+      "init": 4,
+      "code": "55022"
+    },
+    {
+      "name": "Aura of Stasis",
+      "init": 4,
+      "code": "55045"
+    },
+    {
+      "name": "Door Between Worlds",
+      "init": 7,
+      "code": "55046"
+    },
+    {
+      "name": "Lofty Goals",
+      "init": 5,
+      "code": "55047"
+    },
+    {
+      "name": "New Jotunheim",
+      "init": 6,
+      "code": "55048"
+    },
+    {
+      "name": "The Trickster Tango",
+      "init": 4,
+      "code": "55060"
+    },
+    {
+      "name": "Puppet Master",
+      "init": 2,
+      "code": "55061"
+    },
+    {
+      "name": "Criminal Underworld",
+      "init": 4,
+      "code": "56025"
+    },
+    {
+      "name": "Skrull Business",
+      "init": 5,
+      "code": "56056"
+    },
+    {
+      "name": "Stark Tower",
+      "init": 3,
+      "code": "56072"
+    },
+    {
+      "name": "Earth's Mightiest Heroes",
+      "init": 3,
+      "code": "56077"
+    },
+    {
+      "name": "The Fifty State Initiative",
+      "init": 3,
+      "code": "56082"
+    },
+    {
+      "name": "S.H.I.E.L.D. Helicarrier",
+      "init": 3,
+      "code": "56086"
+    },
+    {
+      "name": "Dangerous Recruits",
+      "init": 3,
+      "code": "56091"
+    },
+    {
+      "name": "Alpha Flight Station",
+      "init": 3,
+      "code": "56104"
+    },
+    {
+      "name": "Arrest Order",
+      "init": 3,
+      "code": "56108"
+    },
+    {
+      "name": "S.H.I.E.L.D. Patrol",
+      "init": 3,
+      "code": "56111"
+    },
+    {
+      "name": "Heroes for Hire",
+      "init": 3,
+      "code": "56116"
+    },
+    {
+      "name": "Government Contractor",
+      "init": 3,
+      "code": "56120"
+    },
+    {
+      "name": "Choosing Sides",
+      "init": 4,
+      "code": "56128a"
+    },
+    {
+      "name": "Fearless Determination",
+      "init": 3,
+      "code": "56149"
+    },
+    {
+      "name": "New Avengers",
+      "init": 3,
+      "code": "56154"
+    },
+    {
+      "name": "Secret Avengers",
+      "init": 3,
+      "code": "56159"
+    },
+    {
+      "name": "Ruler of Atlantis",
+      "init": 3,
+      "code": "56164"
+    },
+    {
+      "name": "Atlantis Attacks",
+      "init": 3,
+      "code": "56167"
+    },
+    {
+      "name": "Self-propelled Glide",
+      "init": 3,
+      "code": "56179"
+    },
+    {
+      "name": "Neighborhood Hero",
+      "init": 2,
+      "code": "56183"
+    },
+    {
+      "name": "The Defenders",
+      "init": 3,
+      "code": "56188"
+    },
+    {
+      "name": "Defend Hell's Kitchen",
+      "init": 3,
+      "code": "56193"
+    },
+    {
+      "name": "Cloak and Dagger",
+      "init": 3,
+      "code": "56198"
+    }
+  ],
+  "minions": [
+    {
+      "name": "Hydra Mercenary",
+      "hp": 3,
+      "code": "01101"
+    },
+    {
+      "name": "Sandman",
+      "hp": 4,
+      "code": "01102"
+    },
+    {
+      "name": "Shocker",
+      "hp": 3,
+      "code": "01103"
+    },
+    {
+      "name": "Hydra Bomber",
+      "hp": 2,
+      "code": "01110"
+    },
+    {
+      "name": "Armored Guard",
+      "hp": 3,
+      "code": "01120"
+    },
+    {
+      "name": "Weapons Runner",
+      "hp": 2,
+      "code": "01121"
+    },
+    {
+      "name": "Radioactive Man",
+      "hp": 7,
+      "code": "01129"
+    },
+    {
+      "name": "Whirlwind",
+      "hp": 6,
+      "code": "01130"
+    },
+    {
+      "name": "Tiger Shark",
+      "hp": 6,
+      "code": "01131"
+    },
+    {
+      "name": "Melter",
+      "hp": 5,
+      "code": "01132"
+    },
+    {
+      "name": "Advanced Ultron Drone",
+      "hp": 4,
+      "code": "01143"
+    },
+    {
+      "name": "Killmonger",
+      "hp": 5,
+      "code": "01157"
+    },
+    {
+      "name": "Titania",
+      "hp": 6,
+      "code": "01162"
+    },
+    {
+      "name": "Vulture",
+      "hp": 4,
+      "code": "01167"
+    },
+    {
+      "name": "Whiplash",
+      "hp": 4,
+      "code": "01172"
+    },
+    {
+      "name": "Yon-Rogg",
+      "hp": 5,
+      "code": "01177"
+    },
+    {
+      "name": "Madame Hydra",
+      "hp": 6,
+      "code": "01181"
+    },
+    {
+      "name": "Hydra Soldier",
+      "hp": 4,
+      "code": "01182"
+    },
+    {
+      "name": "M.O.D.O.K.",
+      "hp": 8,
+      "code": "01184"
+    },
+    {
+      "name": "Hired Gun",
+      "hp": 3,
+      "code": "02007"
+    },
+    {
+      "name": "Private Security Specialist",
+      "hp": 4,
+      "code": "02008"
+    },
+    {
+      "name": "Goblin Knight",
+      "hp": 7,
+      "code": "02022"
+    },
+    {
+      "name": "Goblin Soldier",
+      "hp": 5,
+      "code": "02023"
+    },
+    {
+      "name": "Goblin Thrall",
+      "hp": 3,
+      "code": "02024"
+    },
+    {
+      "name": "Monster",
+      "hp": 6,
+      "code": "02025"
+    },
+    {
+      "name": "Scorpion",
+      "hp": 7,
+      "code": "02038"
+    },
+    {
+      "name": "Electro",
+      "hp": 6,
+      "code": "02042"
+    },
+    {
+      "name": "Tombstone",
+      "hp": 9,
+      "code": "02047"
+    },
+    {
+      "name": "Baron Zemo",
+      "hp": 5,
+      "code": "03028"
+    },
+    {
+      "name": "Thomas Edison",
+      "hp": 3,
+      "code": "05027"
+    },
+    {
+      "name": "Edison's Giant Robot",
+      "hp": 8,
+      "code": "05028"
+    },
+    {
+      "name": "Corrupt Prison Guard",
+      "hp": 3,
+      "code": "07008"
+    },
+    {
+      "name": "Escaped Convict",
+      "hp": 2,
+      "code": "07009"
+    },
+    {
+      "name": "Loki",
+      "hp": 4,
+      "code": "06028"
+    },
+    {
+      "name": "Frost Giant",
+      "hp": 4,
+      "code": "06029"
+    },
+    {
+      "name": "Taskmaster",
+      "hp": 4,
+      "code": "08026"
+    },
+    {
+      "name": "Baron Mordo",
+      "hp": 5,
+      "code": "09028"
+    },
+    {
+      "name": "Ronan the Accuser",
+      "hp": 9,
+      "code": "90001"
+    },
+    {
+      "name": "Abomination",
+      "hp": 6,
+      "code": "10026"
+    },
+    {
+      "name": "Crossfire",
+      "hp": 4,
+      "code": "04027"
+    },
+    {
+      "name": "The Viper",
+      "hp": 5,
+      "code": "04054"
+    },
+    {
+      "name": "Hydra Regular",
+      "hp": 2,
+      "code": "04056"
+    },
+    {
+      "name": "Hydra Hunter",
+      "hp": 3,
+      "code": "04101"
+    },
+    {
+      "name": "Ultimate Bio-Servant",
+      "hp": 4,
+      "code": "04114"
+    },
+    {
+      "name": "Zola's Mutate",
+      "hp": 5,
+      "code": "04115"
+    },
+    {
+      "name": "Berserk Mutate",
+      "hp": 3,
+      "code": "04116"
+    },
+    {
+      "name": "The Sleeper",
+      "hp": 5,
+      "code": "04130"
+    },
+    {
+      "name": "Hydra Exo-Soldier",
+      "hp": 5,
+      "code": "04131"
+    },
+    {
+      "name": "Hydra Flame-Soldier",
+      "hp": 4,
+      "code": "04145"
+    },
+    {
+      "name": "Hydra Jet-Trooper",
+      "hp": 3,
+      "code": "04146"
+    },
+    {
+      "name": "Macrobots",
+      "hp": 4,
+      "code": "11017"
+    },
+    {
+      "name": "Ancient Warrior",
+      "hp": 2,
+      "code": "11030"
+    },
+    {
+      "name": "Chitauri Soldier",
+      "hp": 3,
+      "code": "11031"
+    },
+    {
+      "name": "Tyrannosaurus Rex",
+      "hp": 6,
+      "code": "11032"
+    },
+    {
+      "name": "Apocryphus",
+      "hp": 4,
+      "code": "11040"
+    },
+    {
+      "name": "Deathunt 9000",
+      "hp": 6,
+      "code": "11041"
+    },
+    {
+      "name": "Sir Raston",
+      "hp": 6,
+      "code": "11042"
+    },
+    {
+      "name": "Terminatrix",
+      "hp": 5,
+      "code": "11043"
+    },
+    {
+      "name": "Wildrun",
+      "hp": 5,
+      "code": "11044"
+    },
+    {
+      "name": "Kang (Master of Time)",
+      "hp": 6,
+      "code": "11047"
+    },
+    {
+      "name": "Time-Displaced Soldier",
+      "hp": 3,
+      "code": "11048"
+    },
+    {
+      "name": "Yellowjacket",
+      "hp": 4,
+      "code": "12027"
+    },
+    {
+      "name": "Beetle",
+      "hp": 4,
+      "code": "13028"
+    },
+    {
+      "name": "Avalanche",
+      "hp": 4,
+      "code": "14026"
+    },
+    {
+      "name": "Luminous",
+      "hp": 5,
+      "code": "15025"
+    },
+    {
+      "name": "Furnax",
+      "hp": 6,
+      "code": "16027"
+    },
+    {
+      "name": "Blackjack O'Hare",
+      "hp": 3,
+      "code": "16055"
+    },
+    {
+      "name": "Badoon Engineer",
+      "hp": 3,
+      "code": "16065"
+    },
+    {
+      "name": "Monarch Starstalker",
+      "hp": 7,
+      "code": "16075"
+    },
+    {
+      "name": "Badoon Assassin",
+      "hp": 1,
+      "code": "16117"
+    },
+    {
+      "name": "Badoon Grunt",
+      "hp": 2,
+      "code": "16118"
+    },
+    {
+      "name": "Badoon Lieutenant",
+      "hp": 6,
+      "code": "16119"
+    },
+    {
+      "name": "Badoon Sentry",
+      "hp": 5,
+      "code": "16120"
+    },
+    {
+      "name": "Badoon Warlord",
+      "hp": 4,
+      "code": "16121"
+    },
+    {
+      "name": "Kree Commando",
+      "hp": 6,
+      "code": "16132"
+    },
+    {
+      "name": "Kree Lieutenant",
+      "hp": 7,
+      "code": "16133"
+    },
+    {
+      "name": "Kree Private",
+      "hp": 5,
+      "code": "16134"
+    },
+    {
+      "name": "Psionic Ghost",
+      "hp": 4,
+      "code": "16135"
+    },
+    {
+      "name": "Servant Bot",
+      "hp": 3,
+      "code": "16136"
+    },
+    {
+      "name": "Starshark",
+      "hp": 7,
+      "code": "16137"
+    },
+    {
+      "name": "Pirate Commander",
+      "hp": 6,
+      "code": "16138"
+    },
+    {
+      "name": "Pirate Lackey",
+      "hp": 3,
+      "code": "16139"
+    },
+    {
+      "name": "Badoon Headhunter",
+      "hp": 7,
+      "code": "16183"
+    },
+    {
+      "name": "Headhunter's Henchman",
+      "hp": 8,
+      "code": "16186"
+    },
+    {
+      "name": "Mister Knife",
+      "hp": 6,
+      "code": "17026"
+    },
+    {
+      "name": "Nebula",
+      "hp": 5,
+      "code": "18026"
+    },
+    {
+      "name": "Yotat the Destroyer",
+      "hp": 5,
+      "code": "19027"
+    },
+    {
+      "name": "Enraged Symbiote",
+      "hp": 2,
+      "code": "20025"
+    },
+    {
+      "name": "The Magus",
+      "hp": 5,
+      "code": "21067"
+    },
+    {
+      "name": "Zealot of Truth",
+      "hp": 4,
+      "code": "21069"
+    },
+    {
+      "name": "Black Dwarf",
+      "hp": 6,
+      "code": "21085"
+    },
+    {
+      "name": "Supergiant",
+      "hp": 5,
+      "code": "21086"
+    },
+    {
+      "name": "Black Order Infantry",
+      "hp": 4,
+      "code": "21089"
+    },
+    {
+      "name": "Outrider",
+      "hp": 2,
+      "code": "21090"
+    },
+    {
+      "name": "Black Order Besieger",
+      "hp": 3,
+      "code": "21102"
+    },
+    {
+      "name": "Corvus Glaive",
+      "hp": 4,
+      "code": "21125"
+    },
+    {
+      "name": "Proxima Midnight",
+      "hp": 5,
+      "code": "21126"
+    },
+    {
+      "name": "Ebony Maw",
+      "hp": 6,
+      "code": "21127"
+    },
+    {
+      "name": "Garm",
+      "hp": 4,
+      "code": "21143"
+    },
+    {
+      "name": "Skurge",
+      "hp": 5,
+      "code": "21144"
+    },
+    {
+      "name": "Nidhogg",
+      "hp": 6,
+      "code": "21145"
+    },
+    {
+      "name": "Draugr",
+      "hp": 3,
+      "code": "21152"
+    },
+    {
+      "name": "Laufey",
+      "hp": 6,
+      "code": "21156"
+    },
+    {
+      "name": "Enchantress",
+      "hp": 5,
+      "code": "21177"
+    },
+    {
+      "name": "Gamora",
+      "hp": 6,
+      "code": "22028"
+    },
+    {
+      "name": "Living Laser",
+      "hp": 4,
+      "code": "23029"
+    },
+    {
+      "name": "Madame Masque",
+      "hp": 4,
+      "code": "24010"
+    },
+    {
+      "name": "Griffin",
+      "hp": 7,
+      "code": "24015"
+    },
+    {
+      "name": "Mandrill",
+      "hp": 6,
+      "code": "24016"
+    },
+    {
+      "name": "Brothers Grimm",
+      "hp": 8,
+      "code": "24018"
+    },
+    {
+      "name": "Controller",
+      "hp": 5,
+      "code": "24024"
+    },
+    {
+      "name": "Corruptor",
+      "hp": 4,
+      "code": "24025"
+    },
+    {
+      "name": "Mister Fear",
+      "hp": 5,
+      "code": "24027"
+    },
+    {
+      "name": "Calvin Zabo",
+      "hp": 4,
+      "code": "24034"
+    },
+    {
+      "name": "Mister Hyde",
+      "hp": 10,
+      "code": "24035"
+    },
+    {
+      "name": "Boomerang",
+      "hp": 5,
+      "code": "24044"
+    },
+    {
+      "name": "Speed Demon",
+      "hp": 3,
+      "code": "24046"
+    },
+    {
+      "name": "White Rabbit",
+      "hp": 3,
+      "code": "24047"
+    },
+    {
+      "name": "Wrecker",
+      "hp": 8,
+      "code": "24065"
+    },
+    {
+      "name": "Bulldozer",
+      "hp": 7,
+      "code": "24066"
+    },
+    {
+      "name": "Piledriver",
+      "hp": 6,
+      "code": "24067"
+    },
+    {
+      "name": "Thunderball",
+      "hp": 7,
+      "code": "24068"
+    },
+    {
+      "name": "Ultron",
+      "hp": 6,
+      "code": "26029"
+    },
+    {
+      "name": "The Lizard",
+      "hp": 5,
+      "code": "27027"
+    },
+    {
+      "name": "Prowler",
+      "hp": 5,
+      "code": "27058"
+    },
+    {
+      "name": "Sand Clone",
+      "hp": 3,
+      "code": "27067"
+    },
+    {
+      "name": "Shifting Apparition",
+      "hp": 1,
+      "code": "27091"
+    },
+    {
+      "name": "Symbiotic Berserker",
+      "hp": 5,
+      "code": "27121"
+    },
+    {
+      "name": "Symbiotic Monstrosity",
+      "hp": 6,
+      "code": "27122"
+    },
+    {
+      "name": "Symbiotic Thrall",
+      "hp": 4,
+      "code": "27123"
+    },
+    {
+      "name": "Rhino",
+      "hp": 8,
+      "code": "27128"
+    },
+    {
+      "name": "Common Criminal",
+      "hp": 3,
+      "code": "27131"
+    },
+    {
+      "name": "Life-Size Decoy",
+      "hp": 5,
+      "code": "27142"
+    },
+    {
+      "name": "Evil Doppelgänger",
+      "hp": 5,
+      "code": "27154"
+    },
+    {
+      "name": "Doctor Octopus",
+      "hp": 6,
+      "code": "27158"
+    },
+    {
+      "name": "Hobgoblin",
+      "hp": 6,
+      "code": "27160"
+    },
+    {
+      "name": "Kraven the Hunter",
+      "hp": 6,
+      "code": "27161"
+    },
+    {
+      "name": "Warbringer",
+      "hp": 5,
+      "code": "28023"
+    },
+    {
+      "name": "Armadillo",
+      "hp": 8,
+      "code": "28029"
+    },
+    {
+      "name": "Lucia von Bardas",
+      "hp": 4,
+      "code": "29030"
+    },
+    {
+      "name": "Zzzax",
+      "hp": 4,
+      "code": "29037"
+    },
+    {
+      "name": "The Green Gobbler",
+      "hp": 4,
+      "code": "30026"
+    },
+    {
+      "name": "Bora",
+      "hp": 5,
+      "code": "30031"
+    },
+    {
+      "name": "Brix",
+      "hp": 5,
+      "code": "30032"
+    },
+    {
+      "name": "Daemos",
+      "hp": 6,
+      "code": "30033"
+    },
+    {
+      "name": "Jennix",
+      "hp": 6,
+      "code": "30034"
+    },
+    {
+      "name": "Karn",
+      "hp": 5,
+      "code": "30035"
+    },
+    {
+      "name": "Morlun",
+      "hp": 5,
+      "code": "30036"
+    },
+    {
+      "name": "Solus",
+      "hp": 7,
+      "code": "30037"
+    },
+    {
+      "name": "Verna",
+      "hp": 6,
+      "code": "30038"
+    },
+    {
+      "name": "M.O.R.B.I.U.S.",
+      "hp": 6,
+      "code": "31027"
+    },
+    {
+      "name": "Bombshell",
+      "hp": 4,
+      "code": "31031"
+    },
+    {
+      "name": "Iron Spider",
+      "hp": 6,
+      "code": "31034"
+    },
+    {
+      "name": "Spot",
+      "hp": 4,
+      "code": "31036"
+    },
+    {
+      "name": "Juggernaut",
+      "hp": 8,
+      "code": "32026"
+    },
+    {
+      "name": "White Queen",
+      "hp": 5,
+      "code": "32056"
+    },
+    {
+      "name": "Hellfire Pawn",
+      "hp": 3,
+      "code": "32058"
+    },
+    {
+      "name": "Blob",
+      "hp": 6,
+      "code": "32074"
+    },
+    {
+      "name": "Pyro",
+      "hp": 4,
+      "code": "32075"
+    },
+    {
+      "name": "Toad",
+      "hp": 3,
+      "code": "32076"
+    },
+    {
+      "name": "Mystique",
+      "hp": 9,
+      "code": "32080"
+    },
+    {
+      "name": "Sentinel Mark IV",
+      "hp": 4,
+      "code": "32093"
+    },
+    {
+      "name": "Sentinel Mark II",
+      "hp": 2,
+      "code": "32101"
+    },
+    {
+      "name": "Sentinel Mark III",
+      "hp": 3,
+      "code": "32102"
+    },
+    {
+      "name": "Sentinel Mark V",
+      "hp": 5,
+      "code": "32105"
+    },
+    {
+      "name": "Sentinel Mark VI",
+      "hp": 6,
+      "code": "32106"
+    },
+    {
+      "name": "Sentinel Mark VIII",
+      "hp": 8,
+      "code": "32114"
+    },
+    {
+      "name": "M-Type Sentinel",
+      "hp": 5,
+      "code": "32146"
+    },
+    {
+      "name": "Fabian Cortez",
+      "hp": 4,
+      "code": "32159"
+    },
+    {
+      "name": "Amelia Voght",
+      "hp": 5,
+      "code": "32160"
+    },
+    {
+      "name": "Senyaka",
+      "hp": 3,
+      "code": "32161"
+    },
+    {
+      "name": "Delgado",
+      "hp": 6,
+      "code": "32162"
+    },
+    {
+      "name": "Unuscione",
+      "hp": 4,
+      "code": "32163"
+    },
+    {
+      "name": "Nimrod",
+      "hp": 9,
+      "code": "32166"
+    },
+    {
+      "name": "Bastion",
+      "hp": 10,
+      "code": "32167"
+    },
+    {
+      "name": "Mister Sinister",
+      "hp": 6,
+      "code": "33028"
+    },
+    {
+      "name": "Dark Phoenix",
+      "hp": 12,
+      "code": "34029"
+    },
+    {
+      "name": "Omega Red",
+      "hp": 8,
+      "code": "35028"
+    },
+    {
+      "name": "Lady Deathstrike",
+      "hp": 6,
+      "code": "35034"
+    },
+    {
+      "name": "Callisto",
+      "hp": 5,
+      "code": "36031"
+    },
+    {
+      "name": "The Shadow King",
+      "hp": 6,
+      "code": "36036"
+    },
+    {
+      "name": "Surprise Contender",
+      "hp": 7,
+      "code": "39007"
+    },
+    {
+      "name": "Supporting Actor",
+      "hp": 6,
+      "code": "39029"
+    },
+    {
+      "name": "Dragon",
+      "hp": 10,
+      "code": "39042"
+    },
+    {
+      "name": "Goblin",
+      "hp": 1,
+      "code": "39043"
+    },
+    {
+      "name": "Troll",
+      "hp": 7,
+      "code": "39044"
+    },
+    {
+      "name": "Cultist",
+      "hp": 4,
+      "code": "39049"
+    },
+    {
+      "name": "The Kraken",
+      "hp": 6,
+      "code": "39050"
+    },
+    {
+      "name": "Vampire",
+      "hp": 6,
+      "code": "39051"
+    },
+    {
+      "name": "Werewolf Pack",
+      "hp": 4,
+      "code": "39052"
+    },
+    {
+      "name": "Avalanche 9.0",
+      "hp": 5,
+      "code": "39054"
+    },
+    {
+      "name": "Blob 3.14",
+      "hp": 6,
+      "code": "39055"
+    },
+    {
+      "name": "Magneto 2.6",
+      "hp": 7,
+      "code": "39056"
+    },
+    {
+      "name": "Pyro 4.0",
+      "hp": 4,
+      "code": "39057"
+    },
+    {
+      "name": "Toad 2.0",
+      "hp": 3,
+      "code": "39058"
+    },
+    {
+      "name": "Card Shark",
+      "hp": 7,
+      "code": "39068"
+    },
+    {
+      "name": "Gunslinger",
+      "hp": 3,
+      "code": "39069"
+    },
+    {
+      "name": "Belladonna",
+      "hp": 5,
+      "code": "37026"
+    },
+    {
+      "name": "Guild Assassin",
+      "hp": 2,
+      "code": "37028"
+    },
+    {
+      "name": "Exodus",
+      "hp": 6,
+      "code": "37032"
+    },
+    {
+      "name": "Donald Pierce",
+      "hp": 6,
+      "code": "38029"
+    },
+    {
+      "name": "Skullbuster",
+      "hp": 5,
+      "code": "38030"
+    },
+    {
+      "name": "Bonebreaker",
+      "hp": 5,
+      "code": "38031"
+    },
+    {
+      "name": "Wade Cole",
+      "hp": 3,
+      "code": "38032"
+    },
+    {
+      "name": "Murray Reese",
+      "hp": 3,
+      "code": "38033"
+    },
+    {
+      "name": "Stryfe",
+      "hp": 5,
+      "code": "40032"
+    },
+    {
+      "name": "Topaz",
+      "hp": 3,
+      "code": "40066"
+    },
+    {
+      "name": "Prototype",
+      "hp": 1,
+      "code": "40068"
+    },
+    {
+      "name": "Arclight",
+      "hp": 5,
+      "code": "40094"
+    },
+    {
+      "name": "Blockbuster",
+      "hp": 5,
+      "code": "40095"
+    },
+    {
+      "name": "Chimera",
+      "hp": 5,
+      "code": "40096"
+    },
+    {
+      "name": "Greycrow",
+      "hp": 4,
+      "code": "40097"
+    },
+    {
+      "name": "Harpoon",
+      "hp": 5,
+      "code": "40098"
+    },
+    {
+      "name": "Riptide",
+      "hp": 4,
+      "code": "40099"
+    },
+    {
+      "name": "Vertigo",
+      "hp": 4,
+      "code": "40100"
+    },
+    {
+      "name": "Gorgeous George",
+      "hp": 4,
+      "code": "40112"
+    },
+    {
+      "name": "Hairbag",
+      "hp": 3,
+      "code": "40113"
+    },
+    {
+      "name": "Ramrod",
+      "hp": 4,
+      "code": "40114"
+    },
+    {
+      "name": "Ruckus",
+      "hp": 3,
+      "code": "40115"
+    },
+    {
+      "name": "Slab",
+      "hp": 5,
+      "code": "40116"
+    },
+    {
+      "name": "Black Tom Cassidy",
+      "hp": 6,
+      "code": "40132"
+    },
+    {
+      "name": "Creeping Willow",
+      "hp": 3,
+      "code": "40133"
+    },
+    {
+      "name": "Sinister Soldier",
+      "hp": 5,
+      "code": "40145"
+    },
+    {
+      "name": "Zero",
+      "hp": 4,
+      "code": "40174"
+    },
+    {
+      "name": "Strobe",
+      "hp": 4,
+      "code": "40180"
+    },
+    {
+      "name": "Tempo",
+      "hp": 5,
+      "code": "40181"
+    },
+    {
+      "name": "Thumbelina",
+      "hp": 3,
+      "code": "40182"
+    },
+    {
+      "name": "Wildside",
+      "hp": 5,
+      "code": "40183"
+    },
+    {
+      "name": "Dragoness",
+      "hp": 3,
+      "code": "40185"
+    },
+    {
+      "name": "Forearm",
+      "hp": 6,
+      "code": "40186"
+    },
+    {
+      "name": "Reaper",
+      "hp": 4,
+      "code": "40187"
+    },
+    {
+      "name": "Samurai",
+      "hp": 5,
+      "code": "40188"
+    },
+    {
+      "name": "Lady Mastermind",
+      "hp": 3,
+      "code": "40198"
+    },
+    {
+      "name": "Malice",
+      "hp": 1,
+      "code": "40199"
+    },
+    {
+      "name": "Scrambler",
+      "hp": 3,
+      "code": "40200"
+    },
+    {
+      "name": "Vanisher",
+      "hp": 3,
+      "code": "40201"
+    },
+    {
+      "name": "Butler",
+      "hp": 3,
+      "code": "44033"
+    },
+    {
+      "name": "Mutated Soldier",
+      "hp": 5,
+      "code": "44036"
+    },
+    {
+      "name": "Dreadpool",
+      "hp": 3,
+      "code": "44038"
+    },
+    {
+      "name": "Trevor Fitzroy",
+      "hp": 5,
+      "code": "45026"
+    },
+    {
+      "name": "Bantam",
+      "hp": 3,
+      "code": "45028"
+    },
+    {
+      "name": "Belasco",
+      "hp": 6,
+      "code": "45054"
+    },
+    {
+      "name": "S'ym",
+      "hp": 5,
+      "code": "45056"
+    },
+    {
+      "name": "Witchfire",
+      "hp": 4,
+      "code": "45057"
+    },
+    {
+      "name": "Infinite Hunter",
+      "hp": 4,
+      "code": "45065"
+    },
+    {
+      "name": "Infinite Soldier",
+      "hp": 3,
+      "code": "45069"
+    },
+    {
+      "name": "Ahab",
+      "hp": 5,
+      "code": "45097"
+    },
+    {
+      "name": "Hound",
+      "hp": 2,
+      "code": "45098"
+    },
+    {
+      "name": "Gauntlet",
+      "hp": 5,
+      "code": "45112"
+    },
+    {
+      "name": "Barrage",
+      "hp": 4,
+      "code": "45113"
+    },
+    {
+      "name": "Hard-Drive",
+      "hp": 4,
+      "code": "45114"
+    },
+    {
+      "name": "Tusk",
+      "hp": 6,
+      "code": "45115"
+    },
+    {
+      "name": "Psynapse",
+      "hp": 3,
+      "code": "45116"
+    },
+    {
+      "name": "Pterosaur",
+      "hp": 4,
+      "code": "45128"
+    },
+    {
+      "name": "Velociraptor",
+      "hp": 3,
+      "code": "45129"
+    },
+    {
+      "name": "Giant Ape",
+      "hp": 5,
+      "code": "45130"
+    },
+    {
+      "name": "Magistrate",
+      "hp": 3,
+      "code": "45134"
+    },
+    {
+      "name": "Armored Unibike",
+      "hp": 4,
+      "code": "45135"
+    },
+    {
+      "name": "Genoshan Mech",
+      "hp": 5,
+      "code": "45136"
+    },
+    {
+      "name": "Gladiator",
+      "hp": 6,
+      "code": "45140"
+    },
+    {
+      "name": "Oracle",
+      "hp": 3,
+      "code": "45141"
+    },
+    {
+      "name": "Manta",
+      "hp": 4,
+      "code": "45142"
+    },
+    {
+      "name": "Earthquake",
+      "hp": 4,
+      "code": "45143"
+    },
+    {
+      "name": "Warstar",
+      "hp": 5,
+      "code": "45144"
+    },
+    {
+      "name": "Ozymandias",
+      "hp": 6,
+      "code": "45159"
+    },
+    {
+      "name": "Scarab",
+      "hp": 5,
+      "code": "45160"
+    },
+    {
+      "name": "Clan Akkaba Zealot",
+      "hp": 3,
+      "code": "45161"
+    },
+    {
+      "name": "Agent of Apocalypse",
+      "hp": 3,
+      "code": "45164"
+    },
+    {
+      "name": "Abyss",
+      "hp": 5,
+      "code": "45181a"
+    },
+    {
+      "name": "Sugar Man",
+      "hp": 5,
+      "code": "45182a"
+    },
+    {
+      "name": "Mikhail Rasputin",
+      "hp": 5,
+      "code": "45183a"
+    },
+    {
+      "name": "Sauron",
+      "hp": 6,
+      "code": "46029"
+    },
+    {
+      "name": "Nanny",
+      "hp": 4,
+      "code": "47024"
+    },
+    {
+      "name": "Arcade",
+      "hp": 3,
+      "code": "47030"
+    },
+    {
+      "name": "Azazel",
+      "hp": 3,
+      "code": "48027"
+    },
+    {
+      "name": "Queen of Hearts",
+      "hp": 4,
+      "code": "48034"
+    },
+    {
+      "name": "Jester",
+      "hp": 5,
+      "code": "48035"
+    },
+    {
+      "name": "Executioner",
+      "hp": 4,
+      "code": "48036"
+    },
+    {
+      "name": "Tweedledope",
+      "hp": 6,
+      "code": "48037"
+    },
+    {
+      "name": "Frenzy",
+      "hp": 4,
+      "code": "49031"
+    },
+    {
+      "name": "Sebastian Shaw",
+      "hp": 5,
+      "code": "49038"
+    },
+    {
+      "name": "Selene",
+      "hp": 4,
+      "code": "49039"
+    },
+    {
+      "name": "Orion",
+      "hp": 6,
+      "code": "50060"
+    },
+    {
+      "name": "Leviathan Soldier",
+      "hp": 4,
+      "code": "50062"
+    },
+    {
+      "name": "A.I.M. Commando",
+      "hp": 3,
+      "code": "50072"
+    },
+    {
+      "name": "A.I.M. Grunt",
+      "hp": 5,
+      "code": "50073"
+    },
+    {
+      "name": "A.I.M. Abductor",
+      "hp": 4,
+      "code": "50080"
+    },
+    {
+      "name": "A.I.M. Scientist",
+      "hp": 2,
+      "code": "50083"
+    },
+    {
+      "name": "A.I.M. Soldier",
+      "hp": 3,
+      "code": "50084"
+    },
+    {
+      "name": "Embassy Guard",
+      "hp": 3,
+      "code": "50093"
+    },
+    {
+      "name": "Embassy Patrol",
+      "hp": 3,
+      "code": "50094"
+    },
+    {
+      "name": "Machete",
+      "hp": 3,
+      "code": "50098"
+    },
+    {
+      "name": "Rapido",
+      "hp": 4,
+      "code": "50099"
+    },
+    {
+      "name": "Zaran",
+      "hp": 5,
+      "code": "50100"
+    },
+    {
+      "name": "Adaptoid",
+      "hp": 5,
+      "code": "50113"
+    },
+    {
+      "name": "A.I.M. Jailer",
+      "hp": 4,
+      "code": "50120"
+    },
+    {
+      "name": "Scientist Supreme",
+      "hp": 6,
+      "code": "50125"
+    },
+    {
+      "name": "Monica Rappaccini",
+      "hp": 5,
+      "code": "50126"
+    },
+    {
+      "name": "Jolt",
+      "hp": 5,
+      "code": "50133"
+    },
+    {
+      "name": "Moonstone",
+      "hp": 16,
+      "code": "50139"
+    },
+    {
+      "name": "Songbird",
+      "hp": 16,
+      "code": "50143"
+    },
+    {
+      "name": "Black Widow",
+      "hp": 14,
+      "code": "50148"
+    },
+    {
+      "name": "MACH-IV",
+      "hp": 16,
+      "code": "50156"
+    },
+    {
+      "name": "Batroc",
+      "hp": 16,
+      "code": "50161"
+    },
+    {
+      "name": "S.H.I.E.L.D. Agent",
+      "hp": 3,
+      "code": "50172"
+    },
+    {
+      "name": "S.H.I.E.L.D. Trooper",
+      "hp": 4,
+      "code": "50178"
+    },
+    {
+      "name": "Klaw",
+      "hp": 6,
+      "code": "51032"
+    },
+    {
+      "name": "M.U.S.I.C.",
+      "hp": 1,
+      "code": "51034"
+    },
+    {
+      "name": "Joystick",
+      "hp": 17,
+      "code": "51039"
+    },
+    {
+      "name": "Atlas",
+      "hp": 18,
+      "code": "52035"
+    },
+    {
+      "name": "Viper",
+      "hp": 5,
+      "code": "53030"
+    },
+    {
+      "name": "Serpent Soldier",
+      "hp": 3,
+      "code": "53032"
+    },
+    {
+      "name": "Fixer",
+      "hp": 15,
+      "code": "53038"
+    },
+    {
+      "name": "Crossbones",
+      "hp": 5,
+      "code": "54028"
+    },
+    {
+      "name": "Blizzard",
+      "hp": 16,
+      "code": "54034"
+    },
+    {
+      "name": "Enthralled Lackey",
+      "hp": 3,
+      "code": "55017"
+    },
+    {
+      "name": "Enthralled Brute",
+      "hp": 4,
+      "code": "55018"
+    },
+    {
+      "name": "Sindr",
+      "hp": 6,
+      "code": "55019"
+    },
+    {
+      "name": "Ulik",
+      "hp": 5,
+      "code": "55020"
+    },
+    {
+      "name": "Draugr Buddy",
+      "hp": 2,
+      "code": "55037"
+    },
+    {
+      "name": "Grendell",
+      "hp": 6,
+      "code": "55038"
+    },
+    {
+      "name": "Malekith",
+      "hp": 5,
+      "code": "55039"
+    },
+    {
+      "name": "Minotaur",
+      "hp": 4,
+      "code": "55040"
+    },
+    {
+      "name": "The Mangog",
+      "hp": 10,
+      "code": "55041"
+    },
+    {
+      "name": "Fenris Wolf",
+      "hp": 7,
+      "code": "55042"
+    },
+    {
+      "name": "Hraesvelgr",
+      "hp": 7,
+      "code": "55043"
+    },
+    {
+      "name": "Absorbing Man",
+      "hp": 7,
+      "code": "55056"
+    },
+    {
+      "name": "The Hood",
+      "hp": 4,
+      "code": "56024"
+    },
+    {
+      "name": "Jigsaw",
+      "hp": 3,
+      "code": "56028"
+    },
+    {
+      "name": "Super Skrull",
+      "hp": 5,
+      "code": "56055"
+    },
+    {
+      "name": "Yellow Jacket",
+      "hp": 4,
+      "code": "56073"
+    },
+    {
+      "name": "Wasp",
+      "hp": 3,
+      "code": "56074"
+    },
+    {
+      "name": "U.S. Agent",
+      "hp": 3,
+      "code": "56075"
+    },
+    {
+      "name": "Doc Samson",
+      "hp": 4,
+      "code": "56078"
+    },
+    {
+      "name": "Hellcat",
+      "hp": 3,
+      "code": "56079"
+    },
+    {
+      "name": "Maria Hill",
+      "hp": 4,
+      "code": "56083"
+    },
+    {
+      "name": "Venom",
+      "hp": 4,
+      "code": "56087"
+    },
+    {
+      "name": "Bullseye",
+      "hp": 3,
+      "code": "56088"
+    },
+    {
+      "name": "Cape-Killer",
+      "hp": 4,
+      "code": "56105"
+    },
+    {
+      "name": "S.H.I.E.L.D. Soldier",
+      "hp": 3,
+      "code": "56109"
+    },
+    {
+      "name": "Colleen Wing",
+      "hp": 3,
+      "code": "56112"
+    },
+    {
+      "name": "Shang-Chi",
+      "hp": 4,
+      "code": "56113"
+    },
+    {
+      "name": "Paladin",
+      "hp": 5,
+      "code": "56117"
+    },
+    {
+      "name": "Falcon",
+      "hp": 3,
+      "code": "56150"
+    },
+    {
+      "name": "Hercules",
+      "hp": 4,
+      "code": "56151"
+    },
+    {
+      "name": "Goliath",
+      "hp": 5,
+      "code": "56152"
+    },
+    {
+      "name": "Black Panther",
+      "hp": 4,
+      "code": "56155"
+    },
+    {
+      "name": "Spectrum",
+      "hp": 3,
+      "code": "56156"
+    },
+    {
+      "name": "Namor",
+      "hp": 6,
+      "code": "56160"
+    },
+    {
+      "name": "Atlantean Guard",
+      "hp": 3,
+      "code": "56165"
+    },
+    {
+      "name": "Spider-Man",
+      "hp": 4,
+      "code": "56180"
+    },
+    {
+      "name": "Luke Cage",
+      "hp": 4,
+      "code": "56184"
+    },
+    {
+      "name": "Jessica Jones",
+      "hp": 3,
+      "code": "56185"
+    },
+    {
+      "name": "Daredevil",
+      "hp": 3,
+      "code": "56189"
+    },
+    {
+      "name": "Iron Fist",
+      "hp": 4,
+      "code": "56190"
+    },
+    {
+      "name": "Cloak",
+      "hp": 4,
+      "code": "56194"
+    },
+    {
+      "name": "Dagger",
+      "hp": 3,
+      "code": "56195"
+    }
+  ],
+  "allies": [
+    {
+      "name": "Black Cat",
+      "hp": 2,
+      "code": "01002"
+    },
+    {
+      "name": "Spider-Woman",
+      "hp": 2,
+      "code": "01011"
+    },
+    {
+      "name": "Hellcat",
+      "hp": 3,
+      "code": "01020"
+    },
+    {
+      "name": "War Machine",
+      "hp": 4,
+      "code": "01030"
+    },
+    {
+      "name": "Shuri",
+      "hp": 3,
+      "code": "01041"
+    },
+    {
+      "name": "Hulk",
+      "hp": 5,
+      "code": "01050"
+    },
+    {
+      "name": "Tigra",
+      "hp": 3,
+      "code": "01051"
+    },
+    {
+      "name": "Jessica Jones",
+      "hp": 3,
+      "code": "01059"
+    },
+    {
+      "name": "Daredevil",
+      "hp": 3,
+      "code": "01058"
+    },
+    {
+      "name": "Hawkeye",
+      "hp": 3,
+      "code": "01066"
+    },
+    {
+      "name": "Maria Hill",
+      "hp": 2,
+      "code": "01067"
+    },
+    {
+      "name": "Vision",
+      "hp": 3,
+      "code": "01068"
+    },
+    {
+      "name": "Black Widow",
+      "hp": 2,
+      "code": "01075"
+    },
+    {
+      "name": "Luke Cage",
+      "hp": 5,
+      "code": "01076"
+    },
+    {
+      "name": "Mockingbird",
+      "hp": 3,
+      "code": "01083"
+    },
+    {
+      "name": "Nick Fury",
+      "hp": 3,
+      "code": "01084"
+    },
+    {
+      "name": "Agent 13",
+      "hp": 3,
+      "code": "03002"
+    },
+    {
+      "name": "Falcon",
+      "hp": 3,
+      "code": "03011"
+    },
+    {
+      "name": "Squirrel Girl",
+      "hp": 2,
+      "code": "03013"
+    },
+    {
+      "name": "Wonder Man",
+      "hp": 3,
+      "code": "03014"
+    },
+    {
+      "name": "Red Dagger",
+      "hp": 3,
+      "code": "05002"
+    },
+    {
+      "name": "Nova",
+      "hp": 3,
+      "code": "05012"
+    },
+    {
+      "name": "Lockjaw",
+      "hp": 4,
+      "code": "05018"
+    },
+    {
+      "name": "Lady Sif",
+      "hp": 3,
+      "code": "06002"
+    },
+    {
+      "name": "Hercules",
+      "hp": 4,
+      "code": "06011"
+    },
+    {
+      "name": "Valkyrie",
+      "hp": 3,
+      "code": "06012"
+    },
+    {
+      "name": "Heimdall",
+      "hp": 4,
+      "code": "06020"
+    },
+    {
+      "name": "Winter Soldier",
+      "hp": 4,
+      "code": "08002"
+    },
+    {
+      "name": "Agent Coulson",
+      "hp": 3,
+      "code": "08011"
+    },
+    {
+      "name": "Quake",
+      "hp": 2,
+      "code": "08012"
+    },
+    {
+      "name": "Wong",
+      "hp": 3,
+      "code": "09002"
+    },
+    {
+      "name": "Brother Voodoo",
+      "hp": 3,
+      "code": "09012"
+    },
+    {
+      "name": "Clea",
+      "hp": 2,
+      "code": "09013"
+    },
+    {
+      "name": "Iron Fist",
+      "hp": 3,
+      "code": "09014"
+    },
+    {
+      "name": "Iron Man",
+      "hp": 3,
+      "code": "09039"
+    },
+    {
+      "name": "Brawn",
+      "hp": 5,
+      "code": "10011"
+    },
+    {
+      "name": "Sentry",
+      "hp": 5,
+      "code": "10012"
+    },
+    {
+      "name": "She-Hulk",
+      "hp": 4,
+      "code": "10013"
+    },
+    {
+      "name": "Black Knight",
+      "hp": 3,
+      "code": "04012"
+    },
+    {
+      "name": "Goliath",
+      "hp": 4,
+      "code": "04013"
+    },
+    {
+      "name": "U.S. Agent",
+      "hp": 5,
+      "code": "04014"
+    },
+    {
+      "name": "Captain Marvel",
+      "hp": 3,
+      "code": "04032"
+    },
+    {
+      "name": "Spider-Girl",
+      "hp": 2,
+      "code": "04040"
+    },
+    {
+      "name": "Spider-Man",
+      "hp": 4,
+      "code": "04045"
+    },
+    {
+      "name": "Wasp",
+      "hp": 3,
+      "code": "12002"
+    },
+    {
+      "name": "Ant-Man",
+      "hp": 0,
+      "code": "12011"
+    },
+    {
+      "name": "Giant-Man",
+      "hp": 4,
+      "code": "12012"
+    },
+    {
+      "name": "Ronin",
+      "hp": 3,
+      "code": "12013"
+    },
+    {
+      "name": "Stinger",
+      "hp": 2,
+      "code": "12014"
+    },
+    {
+      "name": "Thor",
+      "hp": 4,
+      "code": "13011"
+    },
+    {
+      "name": "Ironheart",
+      "hp": 2,
+      "code": "13018"
+    },
+    {
+      "name": "Scarlet Witch",
+      "hp": 3,
+      "code": "14002"
+    },
+    {
+      "name": "Multiple Man",
+      "hp": 2,
+      "code": "14012"
+    },
+    {
+      "name": "Warlock",
+      "hp": 3,
+      "code": "14013"
+    },
+    {
+      "name": "Quicksilver",
+      "hp": 4,
+      "code": "15002"
+    },
+    {
+      "name": "Speed",
+      "hp": 4,
+      "code": "15010"
+    },
+    {
+      "name": "Wiccan",
+      "hp": 3,
+      "code": "15011"
+    },
+    {
+      "name": "Starhawk",
+      "hp": 3,
+      "code": "16012"
+    },
+    {
+      "name": "Rocket Raccoon",
+      "hp": 3,
+      "code": "16019"
+    },
+    {
+      "name": "Bug",
+      "hp": 2,
+      "code": "16040"
+    },
+    {
+      "name": "Groot",
+      "hp": 6,
+      "code": "16047"
+    },
+    {
+      "name": "Nova Prime",
+      "hp": 3,
+      "code": "17002"
+    },
+    {
+      "name": "Adam Warlock",
+      "hp": 3,
+      "code": "17011"
+    },
+    {
+      "name": "Beta Ray Bill",
+      "hp": 4,
+      "code": "17012"
+    },
+    {
+      "name": "Yondu",
+      "hp": 2,
+      "code": "17013"
+    },
+    {
+      "name": "Cosmo",
+      "hp": 2,
+      "code": "17020"
+    },
+    {
+      "name": "Nebula",
+      "hp": 2,
+      "code": "18002"
+    },
+    {
+      "name": "Angela",
+      "hp": 3,
+      "code": "18011"
+    },
+    {
+      "name": "Drax",
+      "hp": 4,
+      "code": "18019"
+    },
+    {
+      "name": "Mantis",
+      "hp": 3,
+      "code": "19002"
+    },
+    {
+      "name": "Martyr",
+      "hp": 3,
+      "code": "19012"
+    },
+    {
+      "name": "Moondragon",
+      "hp": 2,
+      "code": "19013"
+    },
+    {
+      "name": "Gamora",
+      "hp": 3,
+      "code": "19020"
+    },
+    {
+      "name": "Jack Flag",
+      "hp": 3,
+      "code": "20011"
+    },
+    {
+      "name": "Star-Lord",
+      "hp": 3,
+      "code": "20016"
+    },
+    {
+      "name": "Blue Marvel",
+      "hp": 3,
+      "code": "21005"
+    },
+    {
+      "name": "Captain America",
+      "hp": 4,
+      "code": "21011"
+    },
+    {
+      "name": "Power Man",
+      "hp": 3,
+      "code": "21012"
+    },
+    {
+      "name": "White Tiger",
+      "hp": 2,
+      "code": "21013"
+    },
+    {
+      "name": "Kaluu",
+      "hp": 2,
+      "code": "21014"
+    },
+    {
+      "name": "Blade",
+      "hp": 3,
+      "code": "21019"
+    },
+    {
+      "name": "Pip the Troll",
+      "hp": 2,
+      "code": "21032"
+    },
+    {
+      "name": "Marvel Boy",
+      "hp": 2,
+      "code": "21041"
+    },
+    {
+      "name": "Quasar",
+      "hp": 3,
+      "code": "21047"
+    },
+    {
+      "name": "Major Victory",
+      "hp": 2,
+      "code": "21053"
+    },
+    {
+      "name": "Charlie-27",
+      "hp": 4,
+      "code": "21059"
+    },
+    {
+      "name": "Martinex",
+      "hp": 4,
+      "code": "21065"
+    },
+    {
+      "name": "Fandral",
+      "hp": 3,
+      "code": "21191"
+    },
+    {
+      "name": "Hogun",
+      "hp": 3,
+      "code": "21192"
+    },
+    {
+      "name": "Volstagg",
+      "hp": 5,
+      "code": "21193"
+    },
+    {
+      "name": "Eros",
+      "hp": 2,
+      "code": "22011"
+    },
+    {
+      "name": "Wraith",
+      "hp": 3,
+      "code": "22012"
+    },
+    {
+      "name": "Venom",
+      "hp": 4,
+      "code": "22013"
+    },
+    {
+      "name": "Black Panther",
+      "hp": 4,
+      "code": "23012"
+    },
+    {
+      "name": "Annabelle Riggs",
+      "hp": 2,
+      "code": "25003"
+    },
+    {
+      "name": "Throg",
+      "hp": 2,
+      "code": "25014"
+    },
+    {
+      "name": "Vivian",
+      "hp": 2,
+      "code": "26003"
+    },
+    {
+      "name": "Jocasta",
+      "hp": 3,
+      "code": "26013"
+    },
+    {
+      "name": "Protector",
+      "hp": 3,
+      "code": "26014"
+    },
+    {
+      "name": "Victor Mancha",
+      "hp": 4,
+      "code": "26015"
+    },
+    {
+      "name": "Machine Man",
+      "hp": 3,
+      "code": "26022"
+    },
+    {
+      "name": "Silk",
+      "hp": 2,
+      "code": "27010"
+    },
+    {
+      "name": "Spider-UK",
+      "hp": 5,
+      "code": "27012"
+    },
+    {
+      "name": "Monica Chang",
+      "hp": 2,
+      "code": "27040"
+    },
+    {
+      "name": "Dum Dum Dugan",
+      "hp": 5,
+      "code": "27047"
+    },
+    {
+      "name": "Ghost-Spider",
+      "hp": 3,
+      "code": "27048"
+    },
+    {
+      "name": "Ms. Marvel",
+      "hp": 3,
+      "code": "28002"
+    },
+    {
+      "name": "The Locust",
+      "hp": 2,
+      "code": "28010"
+    },
+    {
+      "name": "Moon Girl",
+      "hp": 3,
+      "code": "28018"
+    },
+    {
+      "name": "Cloud 9",
+      "hp": 3,
+      "code": "29014"
+    },
+    {
+      "name": "Patriot",
+      "hp": 4,
+      "code": "29016"
+    },
+    {
+      "name": "Snowguard",
+      "hp": 3,
+      "code": "29023"
+    },
+    {
+      "name": "Bombshell",
+      "hp": 3,
+      "code": "29033"
+    },
+    {
+      "name": "Pinpoint",
+      "hp": 2,
+      "code": "29035"
+    },
+    {
+      "name": "Captain Americat",
+      "hp": 3,
+      "code": "30002"
+    },
+    {
+      "name": "Lady Spider",
+      "hp": 4,
+      "code": "30012"
+    },
+    {
+      "name": "Scarlet Spider",
+      "hp": 4,
+      "code": "30020"
+    },
+    {
+      "name": "SP//dr",
+      "hp": 2,
+      "code": "30021"
+    },
+    {
+      "name": "VEN#m",
+      "hp": 3,
+      "code": "31003"
+    },
+    {
+      "name": "Spider-Man Noir",
+      "hp": 3,
+      "code": "31015"
+    },
+    {
+      "name": "Spider-Ham",
+      "hp": 3,
+      "code": "31021"
+    },
+    {
+      "name": "Shadowcat",
+      "hp": 3,
+      "code": "32002"
+    },
+    {
+      "name": "Nightcrawler",
+      "hp": 2,
+      "code": "32011"
+    },
+    {
+      "name": "Polaris",
+      "hp": 3,
+      "code": "32012"
+    },
+    {
+      "name": "Professor X",
+      "hp": 3,
+      "code": "32019"
+    },
+    {
+      "name": "Lockheed",
+      "hp": 2,
+      "code": "32032"
+    },
+    {
+      "name": "Wolverine",
+      "hp": 4,
+      "code": "32041"
+    },
+    {
+      "name": "Magik",
+      "hp": 3,
+      "code": "32042"
+    },
+    {
+      "name": "Colossus",
+      "hp": 3,
+      "code": "32048"
+    },
+    {
+      "name": "Magneto",
+      "hp": 5,
+      "code": "32172b"
+    },
+    {
+      "name": "Phoenix",
+      "hp": 3,
+      "code": "33002"
+    },
+    {
+      "name": "Beast",
+      "hp": 3,
+      "code": "33011"
+    },
+    {
+      "name": "Dust",
+      "hp": 3,
+      "code": "33012"
+    },
+    {
+      "name": "Rockslide",
+      "hp": 6,
+      "code": "33013"
+    },
+    {
+      "name": "Blindfold",
+      "hp": 2,
+      "code": "33014"
+    },
+    {
+      "name": "Angel",
+      "hp": 3,
+      "code": "33019"
+    },
+    {
+      "name": "Cyclops",
+      "hp": 3,
+      "code": "34003"
+    },
+    {
+      "name": "Banshee",
+      "hp": 3,
+      "code": "34014"
+    },
+    {
+      "name": "Marvel Girl",
+      "hp": 3,
+      "code": "34015"
+    },
+    {
+      "name": "Storm",
+      "hp": 3,
+      "code": "34021"
+    },
+    {
+      "name": "Jubilee",
+      "hp": 2,
+      "code": "35003"
+    },
+    {
+      "name": "Psylocke",
+      "hp": 3,
+      "code": "35013"
+    },
+    {
+      "name": "Sunfire",
+      "hp": 2,
+      "code": "35014"
+    },
+    {
+      "name": "Longshot",
+      "hp": 3,
+      "code": "35033"
+    },
+    {
+      "name": "Havok",
+      "hp": 3,
+      "code": "36014"
+    },
+    {
+      "name": "Mirage",
+      "hp": 2,
+      "code": "36015"
+    },
+    {
+      "name": "Gentle",
+      "hp": 3,
+      "code": "36016"
+    },
+    {
+      "name": "Pixie",
+      "hp": 2,
+      "code": "36017"
+    },
+    {
+      "name": "Forge",
+      "hp": 2,
+      "code": "36022"
+    },
+    {
+      "name": "Rogue",
+      "hp": 3,
+      "code": "37002"
+    },
+    {
+      "name": "Bishop",
+      "hp": 3,
+      "code": "37011"
+    },
+    {
+      "name": "Dazzler",
+      "hp": 3,
+      "code": "37012"
+    },
+    {
+      "name": "Gambit",
+      "hp": 3,
+      "code": "38003"
+    },
+    {
+      "name": "Iceman",
+      "hp": 3,
+      "code": "38010"
+    },
+    {
+      "name": "Karma",
+      "hp": 1,
+      "code": "38011"
+    },
+    {
+      "name": "Armor",
+      "hp": 2,
+      "code": "38012"
+    },
+    {
+      "name": "Caliban",
+      "hp": 3,
+      "code": "40014"
+    },
+    {
+      "name": "Fantomex",
+      "hp": 3,
+      "code": "40015"
+    },
+    {
+      "name": "Sunspot",
+      "hp": 2,
+      "code": "40016"
+    },
+    {
+      "name": "Deadpool",
+      "hp": 3,
+      "code": "40024"
+    },
+    {
+      "name": "Deathlok",
+      "hp": 3,
+      "code": "40025"
+    },
+    {
+      "name": "Diamondback",
+      "hp": 2,
+      "code": "40038"
+    },
+    {
+      "name": "Outlaw",
+      "hp": 3,
+      "code": "40039"
+    },
+    {
+      "name": "Feral",
+      "hp": 3,
+      "code": "40050"
+    },
+    {
+      "name": "Wolfsbane",
+      "hp": 3,
+      "code": "40051"
+    },
+    {
+      "name": "Atlas Bear",
+      "hp": 3,
+      "code": "40056"
+    },
+    {
+      "name": "White Fox",
+      "hp": 3,
+      "code": "40057"
+    },
+    {
+      "name": "Hope Summers",
+      "hp": 3,
+      "code": "40204"
+    },
+    {
+      "name": "Captain Britain",
+      "hp": 3,
+      "code": "41012"
+    },
+    {
+      "name": "Cypher",
+      "hp": 2,
+      "code": "41013"
+    },
+    {
+      "name": "Pete Wisdom",
+      "hp": 3,
+      "code": "41018"
+    },
+    {
+      "name": "Domino",
+      "hp": 3,
+      "code": "41031"
+    },
+    {
+      "name": "Elixir",
+      "hp": 3,
+      "code": "42011"
+    },
+    {
+      "name": "Siryn",
+      "hp": 3,
+      "code": "42012"
+    },
+    {
+      "name": "Warpath",
+      "hp": 4,
+      "code": "42013"
+    },
+    {
+      "name": "Cannonball",
+      "hp": 2,
+      "code": "42020"
+    },
+    {
+      "name": "Honey Badger",
+      "hp": 2,
+      "code": "43003"
+    },
+    {
+      "name": "Boom Boom",
+      "hp": 2,
+      "code": "43013"
+    },
+    {
+      "name": "Rictor",
+      "hp": 3,
+      "code": "43014"
+    },
+    {
+      "name": "Shatterstar",
+      "hp": 4,
+      "code": "43015"
+    },
+    {
+      "name": "Cable",
+      "hp": 3,
+      "code": "44002"
+    },
+    {
+      "name": "Dogpool",
+      "hp": 4,
+      "code": "44013"
+    },
+    {
+      "name": "Headpool",
+      "hp": 1,
+      "code": "44014"
+    },
+    {
+      "name": "Kidpool",
+      "hp": 2,
+      "code": "44015"
+    },
+    {
+      "name": "Lady Deadpool",
+      "hp": 3,
+      "code": "44016"
+    },
+    {
+      "name": "Bob, Agent of Hydra",
+      "hp": 2,
+      "code": "44043"
+    },
+    {
+      "name": "Negasonic Teenage Warhead",
+      "hp": 4,
+      "code": "44044"
+    },
+    {
+      "name": "Pandapool",
+      "hp": 4,
+      "code": "44045"
+    },
+    {
+      "name": "Malcolm",
+      "hp": 3,
+      "code": "45002"
+    },
+    {
+      "name": "Randall",
+      "hp": 3,
+      "code": "45003"
+    },
+    {
+      "name": "X-23",
+      "hp": 3,
+      "code": "45012"
+    },
+    {
+      "name": "Legion",
+      "hp": 3,
+      "code": "45020"
+    },
+    {
+      "name": "Marrow",
+      "hp": 2,
+      "code": "45021"
+    },
+    {
+      "name": "Goldballs",
+      "hp": 3,
+      "code": "45041"
+    },
+    {
+      "name": "Tempus",
+      "hp": 2,
+      "code": "45042"
+    },
+    {
+      "name": "Triage",
+      "hp": 2,
+      "code": "45048"
+    },
+    {
+      "name": "Destiny",
+      "hp": 3,
+      "code": "45172"
+    },
+    {
+      "name": "Blink",
+      "hp": 3,
+      "code": "45173"
+    },
+    {
+      "name": "Morph",
+      "hp": 3,
+      "code": "45174"
+    },
+    {
+      "name": "X-Man",
+      "hp": 3,
+      "code": "45175"
+    },
+    {
+      "name": "Snow Clone",
+      "hp": 2,
+      "code": "46003"
+    },
+    {
+      "name": "Shark-Girl",
+      "hp": 2,
+      "code": "46012"
+    },
+    {
+      "name": "Glob",
+      "hp": 3,
+      "code": "46013"
+    },
+    {
+      "name": "Beak",
+      "hp": 2,
+      "code": "46020"
+    },
+    {
+      "name": "Chamber",
+      "hp": 3,
+      "code": "47011"
+    },
+    {
+      "name": "Husk",
+      "hp": 3,
+      "code": "47012"
+    },
+    {
+      "name": "Synch",
+      "hp": 3,
+      "code": "47018"
+    },
+    {
+      "name": "Daytripper",
+      "hp": 2,
+      "code": "48002"
+    },
+    {
+      "name": "Northstar",
+      "hp": 3,
+      "code": "48013"
+    },
+    {
+      "name": "M",
+      "hp": 4,
+      "code": "49012"
+    },
+    {
+      "name": "Kid Omega",
+      "hp": 2,
+      "code": "49013"
+    },
+    {
+      "name": "White Queen",
+      "hp": 3,
+      "code": "49021"
+    },
+    {
+      "name": "Surge",
+      "hp": 2,
+      "code": "49033"
+    },
+    {
+      "name": "Anole",
+      "hp": 2,
+      "code": "49034"
+    },
+    {
+      "name": "Bling!",
+      "hp": 2,
+      "code": "49035"
+    },
+    {
+      "name": "Indra",
+      "hp": 2,
+      "code": "49036"
+    },
+    {
+      "name": "Victoria Hand",
+      "hp": 2,
+      "code": "50012"
+    },
+    {
+      "name": "Slingshot",
+      "hp": 3,
+      "code": "50013"
+    },
+    {
+      "name": "Grant Ward",
+      "hp": 3,
+      "code": "50022"
+    },
+    {
+      "name": "Melinda May",
+      "hp": 3,
+      "code": "50023"
+    },
+    {
+      "name": "Nick Fury, Sr.",
+      "hp": 3,
+      "code": "50054"
+    },
+    {
+      "name": "T'Challa",
+      "hp": 3,
+      "code": "51002"
+    },
+    {
+      "name": "Manifold",
+      "hp": 2,
+      "code": "51014"
+    },
+    {
+      "name": "Aneka",
+      "hp": 3,
+      "code": "51022"
+    },
+    {
+      "name": "Ayo",
+      "hp": 3,
+      "code": "51023"
+    },
+    {
+      "name": "Okoye",
+      "hp": 3,
+      "code": "51024"
+    },
+    {
+      "name": "White Wolf",
+      "hp": 3,
+      "code": "51037"
+    },
+    {
+      "name": "Spider-Byte",
+      "hp": 2,
+      "code": "52014"
+    },
+    {
+      "name": "Madame Web",
+      "hp": 2,
+      "code": "52021"
+    },
+    {
+      "name": "Spider-Man 2099",
+      "hp": 3,
+      "code": "52032"
+    },
+    {
+      "name": "Redwing",
+      "hp": 2,
+      "code": "53002"
+    },
+    {
+      "name": "Aero",
+      "hp": 3,
+      "code": "53015"
+    },
+    {
+      "name": "Hugin & Munin",
+      "hp": 2,
+      "code": "53017"
+    },
+    {
+      "name": "Spectrum",
+      "hp": 3,
+      "code": "53018"
+    },
+    {
+      "name": "Misty Knight",
+      "hp": 3,
+      "code": "53036"
+    },
+    {
+      "name": "White Widow",
+      "hp": 3,
+      "code": "54032"
+    },
+    {
+      "name": "Absorbing Man",
+      "hp": 3,
+      "code": "55063"
+    },
+    {
+      "name": "Titania",
+      "hp": 5,
+      "code": "55064"
+    },
+    {
+      "name": "Whirlwind",
+      "hp": 3,
+      "code": "55065"
+    },
+    {
+      "name": "Zzzax",
+      "hp": 4,
+      "code": "55066"
+    },
+    {
+      "name": "Moon Knight",
+      "hp": 3,
+      "code": "56002"
+    },
+    {
+      "name": "Two-Gun Kid",
+      "hp": 3,
+      "code": "56010"
+    },
+    {
+      "name": "Yellow Jacket",
+      "hp": 3,
+      "code": "56019"
+    },
+    {
+      "name": "Iron Lad",
+      "hp": 3,
+      "code": "56052"
+    }
+  ]
+}
