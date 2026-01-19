@@ -59,7 +59,6 @@ const AnimatedNumber = ({ value, color }) => (
   </motion.div>
 );
 
-// Compact Stat Dial
 const StatDial = ({ value, label, color, onChange, icon }) => (
   <div className="relative group/dial">
     <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-xl pointer-events-none" />
@@ -98,7 +97,6 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
       exit={{ scale: 0.8, opacity: 0 }} 
       className={`relative overflow-hidden rounded-xl border ${styles.border} ${styles.bg} flex flex-col justify-between shadow-lg ${styles.glow} h-24 backdrop-blur-md group`}
     >
-      {/* Image with Fallback Pattern */}
       {unit.code && !imgError ? (
         <>
           <img src={getCardImage(unit.code)} onError={() => setImgError(true)} className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay pointer-events-none transition-transform group-hover:scale-110 duration-700" alt="" />
@@ -111,7 +109,6 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
         </div>
       )}
 
-      {/* Header */}
       <div className="flex justify-between items-start relative z-10 p-1.5">
         <div className="flex-1 pr-1">
           <span className={`font-black text-[9px] uppercase tracking-wide leading-tight line-clamp-2 ${styles.text} drop-shadow-md`}>{unit.name}</span>
@@ -126,7 +123,6 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
         <button onClick={() => onDefeat(unit.id)} className="text-white/30 hover:text-white bg-black/40 hover:bg-red-600/80 rounded p-0.5 transition-colors backdrop-blur-sm"><X size={10} /></button>
       </div>
 
-      {/* Controls */}
       <div className="p-1.5 relative z-10">
         <div className="flex items-center justify-between bg-black/60 backdrop-blur-xl rounded-lg p-0.5 border border-white/10">
           <button onClick={() => onDamage(unit.id, -1)} className="p-1.5 text-gray-400 hover:text-white active:scale-90 transition-transform"><Minus size={10}/></button>
@@ -304,11 +300,11 @@ export default function App() {
         </div>
       </header>
 
-      {/* SETUP & SCHEME MODALS (Reduced Height/Padding) */}
+      {/* SETUP & SCHEME MODALS (Mobile Fixed) */}
       <AnimatePresence>
         {showSetup && (
           <motion.div variants={modalVariants} initial="hidden" animate="visible" exit="exit" className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-3">
-            <div className="w-full max-w-md h-[90vh] flex flex-col relative">
+            <div className="w-full max-w-lg w-[95%] h-[90vh] flex flex-col relative">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="font-black text-2xl text-white tracking-tight">SETUP</h2>
                 <TactileButton onClick={() => setShowSetup(false)} color="bg-gradient-to-r from-green-600 to-green-500" size="small" className="!rounded-full shadow-green-900/50 shadow-lg">START</TactileButton>
@@ -330,10 +326,11 @@ export default function App() {
       <AnimatePresence>
         {showSchemeSelect && (
           <motion.div variants={modalVariants} initial="hidden" animate="visible" exit="exit" className="fixed inset-0 z-[120] bg-black/90 backdrop-blur-xl flex items-center justify-center p-3">
-            <div className="w-full max-w-lg h-[80vh] bg-gray-900 border border-gray-700 rounded-2xl p-4 flex flex-col shadow-2xl relative overflow-hidden">
+            <div className="w-full max-w-lg w-[95%] h-[80vh] bg-gray-900 border border-gray-700 rounded-2xl p-4 flex flex-col shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-300 shadow-[0_0_15px_rgba(234,179,8,0.5)]" />
               <div className="flex justify-between items-center mb-4"><h2 className="font-black text-xl text-yellow-500 uppercase tracking-tighter">Main Scheme</h2><button onClick={()=>setShowSchemeSelect(false)}><X className="text-gray-400" size={18}/></button></div>
-              <div className="relative mb-4"><Search size={16} className="absolute left-3 top-3 text-gray-500" /><input type="text" autoFocus placeholder="Search..." className="w-full bg-black/50 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white focus:border-yellow-500 focus:outline-none transition-colors" value={schemeSearch} onChange={e=>setSchemeSearch(e.target.value)}/></div>
+              {/* NO AUTO FOCUS */}
+              <div className="relative mb-4"><Search size={16} className="absolute left-3 top-3 text-gray-500" /><input type="text" placeholder="Search..." className="w-full bg-black/50 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white focus:border-yellow-500 focus:outline-none transition-colors" value={schemeSearch} onChange={e=>setSchemeSearch(e.target.value)}/></div>
               <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">{getSchemes().map((s, i) => <motion.button custom={i} variants={cardVariants} initial="hidden" animate="visible" key={s.code} onClick={()=>selectScheme(s)} className="w-full text-left p-3 bg-gray-800/50 rounded-lg border border-white/5 hover:bg-gray-700 hover:border-yellow-500/50 flex justify-between items-center group transition-all"><div><span className="font-bold text-sm text-white group-hover:text-yellow-400 transition-colors block mb-0.5">{s.name}</span><div className="flex gap-2 text-[9px] text-gray-500 font-mono"><span className="bg-black/30 px-1 py-0.5 rounded">TGT: {s.fixed ? s.target : `${s.target}/p`}</span><span className="bg-black/30 px-1 py-0.5 rounded">ACC: {s.accel}</span></div></div><ChevronRight size={14} className="text-gray-600 group-hover:text-yellow-500" /></motion.button>)}</div>
             </div>
           </motion.div>
@@ -464,10 +461,10 @@ export default function App() {
         </TactileButton>
       </div>
 
-      {/* SUMMON DRAWER */}
+      {/* SUMMON DRAWER (Mobile Fixed) */}
       <AnimatePresence>
         {showSummon && (
-          <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-xl z-[90] bg-[#0a0a0f] border-t border-white/10 rounded-t-2xl p-4 h-[85vh] flex flex-col shadow-2xl">
+          <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} className="fixed bottom-0 left-0 right-0 z-[90] w-full max-w-xl mx-auto bg-[#0a0a0f] border-t border-white/10 rounded-t-2xl p-4 h-[85vh] flex flex-col shadow-2xl">
             <div className="flex justify-between items-center mb-4"><h2 className="font-black text-xl text-white">REINFORCEMENTS</h2><button onClick={()=>setShowSummon(false)} className="p-1 bg-gray-800 rounded-full"><X className="text-gray-400" size={18}/></button></div>
             <div className="flex gap-2 mb-4 p-1 bg-gray-900 rounded-lg">{['minions','allies','schemes'].map(t => <button key={t} onClick={()=>setActiveTab(t)} className={`flex-1 py-2 rounded-md text-[10px] font-black uppercase tracking-wider transition-all ${activeTab===t ? 'bg-gray-700 text-white shadow-lg' : 'text-gray-500 hover:text-white'}`}>{t}</button>)}</div>
             <div className="flex gap-2 mb-4"><div className="flex-1 bg-black/50 border border-white/10 rounded-lg flex items-center px-3 transition-colors focus-within:border-blue-500/50"><Search size={16} className="text-gray-500 mr-2"/><input className="bg-transparent outline-none w-full text-white py-3 text-sm placeholder-gray-600" placeholder="Search cards..." onChange={e=>setSummonTerm(e.target.value.toLowerCase())}/></div><button onClick={()=>setListSeed(Math.random())} className="bg-gray-800 w-12 rounded-lg border border-white/10 flex items-center justify-center hover:bg-gray-700"><Dice5 size={20} className="text-blue-400"/></button></div>
