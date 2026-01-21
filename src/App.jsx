@@ -21,6 +21,44 @@ const shakeVariant = {
   idle: { x: 0 }
 };
 
+// --- HELPER: ROBUST PERSISTENCE (CRASH PROOF) ---
+const useStickyState = (defaultValue, key) => {
+  const [value, setValue] = useState(() => {
+    try {
+      const stickyValue = window.localStorage.getItem(key);
+      return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+    } catch (error) {
+      console.warn(`Error reading ${key} from localStorage`, error);
+      return defaultValue;
+    }
+  });
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.warn(`Error saving ${key} to localStorage`, error);
+    }
+  }, [key, value]);
+  return [value, setValue];
+};
+
+// --- HELPER: VISUALS (SAFE) ---
+const getHealthColor = (current, max) => {
+  if (!max || max === 0) return "text-white"; 
+  const pct = current / max;
+  if (pct <= 0.3) return "text-red-500 animate-pulse"; // CRITICAL
+  if (pct <= 0.5) return "text-yellow-500"; // CAUTION
+  return "text-white"; 
+};
+
+const getStatusStyles = (statusArray) => {
+  if (!statusArray || !Array.isArray(statusArray)) return "border-white/10";
+  if (statusArray.includes('stunned')) return "grayscale contrast-125 border-green-500/80 shadow-[0_0_15px_rgba(34,197,94,0.2)]";
+  if (statusArray.includes('confused')) return "backdrop-blur-sm border-purple-500/80 shadow-[0_0_15px_rgba(168,85,247,0.2)]";
+  if (statusArray.includes('tough')) return "border-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.4)] brightness-110";
+  return "border-white/10";
+};
+
 // --- UI COMPONENTS ---
 
 const TactileButton = ({ onClick, children, color = "bg-blue-600", className, disabled, size="normal" }) => (
@@ -54,22 +92,26 @@ const AnimatedNumber = ({ value, color }) => (
   </motion.div>
 );
 
-const StatDial = ({ value, label, color, onChange, icon }) => (
-  <div className="relative group/dial">
-    <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-xl pointer-events-none" />
-    <div className="flex flex-col items-center p-2 bg-gray-900/80 backdrop-blur-xl rounded-xl border border-white/10 shadow-2xl relative z-10">
-      <div className="flex items-center gap-1.5 mb-1 opacity-70">
-        {icon}
-        <h3 className="text-gray-400 uppercase tracking-[0.2em] text-[8px] font-bold">{label}</h3>
-      </div>
-      <div className="flex items-center justify-between w-full gap-3 px-1">
-        <TactileButton onClick={() => onChange(-1)} color="bg-gray-800 hover:bg-gray-700" className="w-10 h-10 !rounded-lg !p-0 border border-white/10"><Minus size={16} /></TactileButton>
-        <AnimatedNumber value={value} color={color} />
-        <TactileButton onClick={() => onChange(1)} color="bg-gray-800 hover:bg-gray-700" className="w-10 h-10 !rounded-lg !p-0 border border-white/10"><Plus size={16} /></TactileButton>
+const StatDial = ({ value, max, label, onChange, icon }) => {
+  const colorClass = getHealthColor(value, max);
+  
+  return (
+    <div className="relative group/dial">
+      <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-xl pointer-events-none" />
+      <div className="flex flex-col items-center p-2 bg-gray-900/80 backdrop-blur-xl rounded-xl border border-white/10 shadow-2xl relative z-10">
+        <div className="flex items-center gap-1.5 mb-1 opacity-70">
+          {icon}
+          <h3 className="text-gray-400 uppercase tracking-[0.2em] text-[8px] font-bold">{label}</h3>
+        </div>
+        <div className="flex items-center justify-between w-full gap-3 px-1">
+          <TactileButton onClick={() => onChange(-1)} color="bg-gray-800 hover:bg-gray-700" className="w-10 h-10 !rounded-lg !p-0 border border-white/10"><Minus size={16} /></TactileButton>
+          <AnimatedNumber value={value} color={colorClass} />
+          <TactileButton onClick={() => onChange(1)} color="bg-gray-800 hover:bg-gray-700" className="w-10 h-10 !rounded-lg !p-0 border border-white/10"><Plus size={16} /></TactileButton>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
   const isZero = unit.val <= 0;
@@ -78,11 +120,13 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
   const icons = unit.icons || [];
   const [imgError, setImgError] = useState(false);
 
-  const styles = isScheme 
-    ? { border: "border-yellow-500/30", bg: "bg-yellow-900/20", text: "text-yellow-100", glow: "shadow-yellow-900/10" }
+  const baseBorder = isScheme 
+    ? "border-yellow-500/30 bg-yellow-900/20 shadow-yellow-900/10" 
     : isAlly 
-      ? { border: "border-blue-500/30", bg: "bg-blue-900/20", text: "text-blue-100", glow: "shadow-blue-900/10" }
-      : { border: "border-orange-500/30", bg: "bg-orange-900/20", text: "text-orange-100", glow: "shadow-orange-900/10" };
+      ? "border-blue-500/30 bg-blue-900/20 shadow-blue-900/10" 
+      : "border-orange-500/30 bg-orange-900/20 shadow-orange-900/10";
+
+  const hpColor = !isScheme ? getHealthColor(unit.val, unit.max) : "text-white";
 
   return (
     <motion.div 
@@ -90,8 +134,7 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
       initial={{ scale: 0.95, opacity: 0 }} 
       animate={{ scale: 1, opacity: 1 }} 
       exit={{ scale: 0.8, opacity: 0 }}
-      transition={{ duration: 0.15 }}
-      className={`relative overflow-hidden rounded-xl border ${styles.border} ${styles.bg} flex flex-col justify-between shadow-lg ${styles.glow} h-24 backdrop-blur-md group`}
+      className={`relative overflow-hidden rounded-xl border ${baseBorder} flex flex-col justify-between shadow-lg h-24 backdrop-blur-md group`}
     >
       {unit.code && !imgError ? (
         <>
@@ -99,7 +142,7 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
           <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent`} />
         </>
       ) : (
-        <div className={`absolute inset-0 opacity-10 ${styles.bg} flex items-center justify-center overflow-hidden`}>
+        <div className={`absolute inset-0 opacity-10 bg-gray-800 flex items-center justify-center overflow-hidden`}>
            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-50"></div>
            <Hexagon size={32} className="text-white/20 rotate-12" />
         </div>
@@ -107,7 +150,7 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
 
       <div className="flex justify-between items-start relative z-10 p-1.5">
         <div className="flex-1 pr-1">
-          <span className={`font-black text-[9px] uppercase tracking-wide leading-tight line-clamp-2 ${styles.text} drop-shadow-md`}>{unit.name}</span>
+          <span className={`font-black text-[9px] uppercase tracking-wide leading-tight line-clamp-2 text-white drop-shadow-md`}>{unit.name}</span>
           {icons.length > 0 && (
             <div className="flex gap-1 mt-0.5">
               {icons.includes('crisis') && <AlertOctagon size={8} className="text-red-500 animate-pulse" fill="currentColor" />}
@@ -122,7 +165,7 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
       <div className="p-1.5 relative z-10">
         <div className="flex items-center justify-between bg-black/60 backdrop-blur-xl rounded-lg p-0.5 border border-white/10">
           <button onClick={() => onDamage(unit.id, -1)} className="p-1.5 text-gray-400 hover:text-white active:scale-90 transition-transform"><Minus size={10}/></button>
-          <span className={`text-sm font-black ${isZero ? 'text-red-500 animate-pulse' : 'text-white'}`}>{unit.val}</span>
+          <span className={`text-sm font-black ${isZero ? 'text-red-500 animate-pulse' : hpColor}`}>{unit.val}</span>
           <button onClick={() => onDamage(unit.id, 1)} className="p-1.5 text-gray-400 hover:text-white active:scale-90 transition-transform"><Plus size={10}/></button>
         </div>
       </div>
@@ -165,17 +208,16 @@ const StatusToggle = ({ type, active, onToggle }) => {
 };
 
 export default function App() {
-  // CRASH FIX 1: Provide default structure if data is missing
   const safeData = marvelData || { heroes: [], villains: [], schemes: [], minions: [], allies: [], side_schemes: [] };
 
-  const [villain, setVillain] = useState({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" });
-  const [hero, setHero] = useState({ name: "Select Hero", hp: 0, maxHp: 0, status: [] });
-  const [mainScheme, setMainScheme] = useState({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 });
-  
-  const [units, setUnits] = useState([]); 
-  const [round, setRound] = useState(1);
-  const [playerCount, setPlayerCount] = useState(1);
-  const [showSetup, setShowSetup] = useState(true);
+  const [villain, setVillain] = useStickyState({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" }, 'mc_villain');
+  const [hero, setHero] = useStickyState({ name: "Select Hero", hp: 0, maxHp: 0, status: [] }, 'mc_hero');
+  const [mainScheme, setMainScheme] = useStickyState({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 }, 'mc_scheme');
+  const [units, setUnits] = useStickyState([], 'mc_units');
+  const [round, setRound] = useStickyState(1, 'mc_round');
+  const [playerCount, setPlayerCount] = useStickyState(1, 'mc_players');
+
+  const [showSetup, setShowSetup] = useState(false);
   const [showSummon, setShowSummon] = useState(false);
   const [showSchemeSelect, setShowSchemeSelect] = useState(false); 
   const [schemeSearch, setSchemeSearch] = useState("");
@@ -188,17 +230,33 @@ export default function App() {
   const heroControls = useAnimation();
   const schemeControls = useAnimation();
 
-  // --- LOGIC ---
+  useEffect(() => {
+    let wakeLock = null;
+    const requestWakeLock = async () => {
+      try { if ('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen'); } 
+      catch (err) { console.log("Wake Lock error:", err); } // Safe log
+    };
+    requestWakeLock();
+    const handleVisibilityChange = () => { if (document.visibilityState === 'visible') requestWakeLock(); };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => { if (wakeLock) wakeLock.release(); document.removeEventListener('visibilitychange', handleVisibilityChange); };
+  }, []);
+
+  useEffect(() => { 
+    // Safely check if game is fresh
+    if (villain && villain.name === "Setup Game") setShowSetup(true); 
+  }, [villain]);
+
   const openSetup = () => { setSearchTerm(""); setShowSetup(true); };
 
   const resetGame = () => {
+    // These calls will trigger the useStickyState setters, clearing storage
     setVillain({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" });
     setHero({ name: "Select Hero", hp: 0, maxHp: 0, status: [] });
     setMainScheme({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 });
     setUnits([]);
     setRound(1);
     setPlayerCount(1);
-    // Don't close setup so user can pick new chars immediately
   };
 
   const selectVillain = (v) => {
@@ -223,10 +281,7 @@ export default function App() {
 
   const modThreat = (n) => {
     if (n > 0) schemeControls.start('shake');
-    setMainScheme(prev => {
-      const newThreat = Math.max(0, prev.threat + n);
-      return { ...prev, threat: newThreat };
-    });
+    setMainScheme(prev => ({ ...prev, threat: Math.max(0, prev.threat + n) }));
   };
 
   const modVillainHp = (n) => {
@@ -253,7 +308,8 @@ export default function App() {
   
   const addUnit = (template, type) => {
     const startVal = type === 'side_scheme' ? (template.init || 0) : (template.hp || 0);
-    setUnits(prev => [...prev, { ...template, id: Date.now(), val: startVal, max: startVal, type }]);
+    const maxVal = startVal; // Set max for color scaling
+    setUnits(prev => [...prev, { ...template, id: Date.now(), val: startVal, max: maxVal, type }]);
     setShowSummon(false);
   };
   
@@ -261,7 +317,6 @@ export default function App() {
   const restoreUnit = (id) => setUnits(prev => prev.map(u => { if (u.id !== id) return u; return { ...u, val: 1 }; }));
   const removeUnit = (id) => setUnits(prev => prev.filter(u => u.id !== id));
   
-  // --- SAFE FILTERED LISTS ---
   const filteredHeroes = useMemo(() => (safeData.heroes || []).filter(h => h.name.toLowerCase().includes(searchTerm)), [searchTerm, safeData]);
   const filteredVillains = useMemo(() => (safeData.villains || []).filter(v => v.name.toLowerCase().includes(searchTerm)), [searchTerm, safeData]);
   
@@ -272,7 +327,6 @@ export default function App() {
     return list.slice(0, 50);
   }, [schemeSearch, villain.set_code, safeData]);
 
-  // CRASH FIX 2: Null check on the list before filtering
   const getFilteredList = (list) => {
     if (!list) return []; 
     let filtered = list.filter(item => item.name.toLowerCase().includes(summonTerm));
@@ -286,7 +340,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#050508] text-white font-sans p-3 pb-24 max-w-xl mx-auto overflow-x-hidden relative selection:bg-red-500 selection:text-white">
-      {/* Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[50%] bg-blue-900/10 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-[-20%] right-[-20%] w-[80%] h-[50%] bg-red-900/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
@@ -301,7 +354,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* SETUP */}
       <AnimatePresence>
         {showSetup && (
           <motion.div variants={modalVariants} initial="hidden" animate="visible" exit="exit" className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-3">
@@ -319,7 +371,7 @@ export default function App() {
               </div>
               <div className="relative mb-4"><Search size={16} className="absolute left-3 top-3 text-gray-500" /><input type="text" placeholder="Search..." value={searchTerm} className="w-full bg-black/40 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-base text-white placeholder-gray-600 focus:border-blue-500 focus:outline-none transition-colors" onChange={e=>setSearchTerm(e.target.value.toLowerCase())}/></div>
               <div className="flex-1 overflow-y-auto space-y-4 pr-1 custom-scrollbar">
-                <section><h3 className="text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Shield size={10}/> Heroes</h3><div className="grid grid-cols-2 gap-2">{filteredHeroes.map(h => <motion.button key={h.name} onClick={()=>setHero({...h, status:[]})} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${hero.name===h.name ? 'border-blue-500 bg-blue-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{h.name}</motion.button>)}</div></section>
+                <section><h3 className="text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Shield size={10}/> Heroes</h3><div className="grid grid-cols-2 gap-2">{filteredHeroes.map(h => <motion.button key={h.name} onClick={()=>setHero({ ...h, hp: h.hp, maxHp: h.hp, status: [] })} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${hero.name===h.name ? 'border-blue-500 bg-blue-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{h.name}</motion.button>)}</div></section>
                 <section><h3 className="text-red-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Skull size={10}/> Villains</h3><div className="grid grid-cols-2 gap-2">{filteredVillains.map(v => <motion.button key={v.name} onClick={()=>selectVillain(v)} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${villain.name===v.name ? 'border-red-500 bg-red-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{v.name}</motion.button>)}</div></section>
               </div>
             </div>
@@ -331,7 +383,7 @@ export default function App() {
       <AnimatePresence>
         {showSchemeSelect && (
           <motion.div variants={modalVariants} initial="hidden" animate="visible" exit="exit" className="fixed inset-0 z-[120] bg-black/90 backdrop-blur-xl flex items-center justify-center p-3">
-            <div className="w-full max-w-lg w-[95%] h-[80vh] bg-gray-900 border border-gray-700 rounded-2xl p-4 flex flex-col shadow-2xl relative overflow-hidden">
+            <div className="w-full max-w-lg w-[95%] h-[90vh] bg-gray-900 border border-gray-700 rounded-2xl p-4 flex flex-col shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-300 shadow-[0_0_15px_rgba(234,179,8,0.5)]" />
               <div className="flex justify-between items-center mb-4"><h2 className="font-black text-xl text-yellow-500 uppercase tracking-tighter">Main Scheme</h2><button onClick={()=>setShowSchemeSelect(false)}><X className="text-gray-400" size={18}/></button></div>
               <div className="relative mb-4"><Search size={16} className="absolute left-3 top-3 text-gray-500" /><input type="text" placeholder="Search..." className="w-full bg-black/50 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-base text-white focus:border-yellow-500 focus:outline-none transition-colors" value={schemeSearch} onChange={e=>setSchemeSearch(e.target.value)}/></div>
@@ -342,14 +394,14 @@ export default function App() {
       </AnimatePresence>
 
       <div className="flex flex-col gap-3 relative z-10">
-        <motion.section animate={villainControls} variants={shakeVariant} className="relative rounded-2xl overflow-hidden shadow-2xl border border-red-500/30 bg-gray-900 group min-h-[140px] flex flex-col justify-end">
+        <motion.section animate={villainControls} variants={shakeVariant} className={`relative rounded-2xl overflow-hidden shadow-2xl border bg-gray-900 group min-h-[140px] flex flex-col justify-end transition-all duration-500 ${getStatusStyles(villain.status)}`}>
           {villain.code ? (<><div className="absolute inset-0 bg-red-900/20 mix-blend-multiply" /><img src={getCardImage(villain.code)} className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay mask-gradient-b transition-transform duration-[20s] ease-linear scale-100 group-hover:scale-110" alt="" /><div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/80 to-transparent" /></>) : (<div className="absolute inset-0 bg-red-900/10 flex items-center justify-center mask-gradient-b"><div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-30"/><Skull size={80} className="text-red-900/20 opacity-50" /></div>)}
           <div className="relative z-10 p-3 pt-12">
             <div className="flex justify-between items-end mb-3">
               <div><h2 className="text-2xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br from-red-500 to-white drop-shadow-sm leading-none">{villain.name}</h2><div className="flex gap-1 mt-1.5">{[0, 1, 2].map((stage, idx) => <button key={stage} onClick={() => setStage(idx)} className={`text-[9px] font-black tracking-wider px-2 py-0.5 rounded border transition-all ${villain.stageIdx === idx ? 'bg-red-600 border-red-400 text-white shadow-[0_0_10px_rgba(220,38,38,0.5)]' : 'bg-black/60 border-white/10 text-gray-500'}`}>{["I", "II", "III"][idx]}</button>)}</div></div>
               <div className="flex gap-1">{['stunned', 'confused', 'tough'].map(s => (<StatusToggle key={s} type={s} active={villain.status.includes(s)} onToggle={() => toggleStatus(setVillain, s)} />))}</div>
             </div>
-            <StatDial label="Villain HP" value={villain.hp} color="text-red-500" onChange={(v) => modVillainHp(v)} icon={<Skull size={10} className="text-red-500"/>} />
+            <StatDial label="Villain HP" value={villain.hp} max={villain.maxHp} onChange={(v) => modVillainHp(v)} icon={<Skull size={10} className="text-red-500"/>} />
           </div>
         </motion.section>
 
@@ -373,11 +425,11 @@ export default function App() {
         <div className="pt-4 border-t border-white/10 relative">
           <div className="absolute top-[-1px] left-1/2 -translate-x-1/2 w-12 h-[1px] bg-blue-500/50 blur-[1px]" />
           {allies.length > 0 && <div className="grid grid-cols-3 gap-2 mb-3">{allies.map(u => <UnitCard key={u.id} unit={u} type="ally" onDamage={modUnitVal} onDefeat={removeUnit} onRestore={restoreUnit} />)}</div>}
-          <motion.section animate={heroControls} variants={shakeVariant} className="relative rounded-2xl overflow-hidden shadow-2xl border border-blue-500/30 bg-gray-900 min-h-[140px] flex flex-col justify-end p-3">
+          <motion.section animate={heroControls} variants={shakeVariant} className={`relative rounded-2xl overflow-hidden shadow-2xl border bg-gray-900 min-h-[140px] flex flex-col justify-end p-3 transition-all duration-500 ${getStatusStyles(hero.status)}`}>
             {hero.code ? (<><div className="absolute inset-0 bg-blue-900/20 mix-blend-multiply" /><img src={getCardImage(hero.code)} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay mask-gradient-t" alt="" /><div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/60 to-transparent" /></>) : (<div className="absolute inset-0 bg-blue-900/10 flex items-center justify-center mask-gradient-t"><div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-30"/><Shield size={80} className="text-blue-900/20 opacity-50" /></div>)}
             <div className="relative z-10">
               <div className="flex justify-between items-end mb-2"><div><h2 className="text-xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-white leading-none">{hero.name}</h2></div><div className="flex gap-1">{['stunned', 'confused', 'tough'].map(s => (<StatusToggle key={s} type={s} active={hero.status.includes(s)} onToggle={() => toggleStatus(setHero, s)} />))}</div></div>
-              <StatDial label="Hero HP" value={hero.hp} color="text-blue-400" onChange={(v) => modHeroHp(v)} icon={<Shield size={10} className="text-blue-400"/>} />
+              <StatDial label="Hero HP" value={hero.hp} max={hero.maxHp} onChange={(v) => modHeroHp(v)} icon={<Shield size={10} className="text-blue-400"/>} />
             </div>
           </motion.section>
         </div>
