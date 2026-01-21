@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { 
-  Shield, Zap, Skull, Brain, Plus, Minus, ArrowRightCircle, Settings, X, 
+  Shield, Zap, Skull, Brain, Plus, Minus, Settings, X, 
   BookOpen, Search, Dice5, ChevronRight, AlertTriangle, 
-  AlertOctagon, Flame, Activity, RotateCcw, Check, Menu, Crosshair, Hexagon, RefreshCw
+  AlertOctagon, Flame, Activity, RotateCcw, Check, Crosshair, Hexagon, RefreshCw, ArrowRightCircle
 } from 'lucide-react';
 import marvelData from './marvel_data.json';
 
@@ -142,7 +142,7 @@ export default function App() {
 
   const [villain, setVillain] = useStickyState({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" }, 'mc_villain');
   const [hero, setHero] = useStickyState({ name: "Select Hero", hp: 0, maxHp: 0, status: [] }, 'mc_hero');
-  const [mainScheme, setMainScheme] = useStickyState({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 }, 'mc_scheme');
+  const [mainScheme, setMainScheme] = useStickyState({ name: "Select Main Scheme", threat: 0, target: 0, baseTarget: 0, accel: 0 }, 'mc_scheme');
   const [units, setUnits] = useStickyState([], 'mc_units');
   const [round, setRound] = useStickyState(1, 'mc_round');
   const [playerCount, setPlayerCount] = useStickyState(1, 'mc_players');
@@ -151,7 +151,8 @@ export default function App() {
   const [showSummon, setShowSummon] = useState(false);
   const [showSchemeSelect, setShowSchemeSelect] = useState(false);
   const [showSchemeComplete, setShowSchemeComplete] = useState(false);
-  
+  const [setupTab, setSetupTab] = useState('heroes'); 
+
   const [schemeSearch, setSchemeSearch] = useState("");
   const [activeTab, setActiveTab] = useState('minions');
   const [searchTerm, setSearchTerm] = useState("");
@@ -173,11 +174,52 @@ export default function App() {
     return () => { if (wakeLock) wakeLock.release(); document.removeEventListener('visibilitychange', handleVisibilityChange); };
   }, []);
 
-  useEffect(() => { if (villain && villain.name === "Setup Game") setShowSetup(true); }, [villain]);
+  // --- SAFE MATH UPDATE (No Loops) ---
+  useEffect(() => {
+    if (!safeData || !safeData.schemes) return;
 
+    // 1. Force Recalculate Main Scheme
+    const originalScheme = safeData.schemes.find(s => 
+      (s.code && s.code === mainScheme.code) || 
+      s.name === mainScheme.name
+    );
+
+    if (originalScheme) {
+        const base = originalScheme.target || 0;
+        const newTarget = base * playerCount;
+        
+        // CRITICAL: Only set state if values are DIFFERENT. This stops the freeze.
+        if (mainScheme.target !== newTarget || mainScheme.baseTarget !== base) {
+             setMainScheme(prev => ({ ...prev, baseTarget: base, target: newTarget }));
+        }
+    }
+
+    // 2. Force Recalculate Villain Max HP
+    if (villain.stages && villain.stages.length > 0) {
+         const baseHp = villain.stages[villain.stageIdx] || 0;
+         const newMax = baseHp * playerCount;
+         
+         if (villain.maxHp !== newMax) {
+             setVillain(prev => ({
+                 ...prev,
+                 maxHp: newMax,
+                 hp: (round === 1) ? newMax : prev.hp
+             }));
+         }
+    }
+  }, [playerCount, mainScheme.name, villain.name, villain.stageIdx]); 
+
+  // Setup Popup Logic
+  useEffect(() => { 
+    if (villain && villain.name === "Setup Game") setShowSetup(true); 
+  }, [villain.name]); 
+
+  // Scheme Completion Logic
   useEffect(() => {
     if (mainScheme.target > 0 && mainScheme.threat >= mainScheme.target) {
       setShowSchemeComplete(true);
+    } else {
+      setShowSchemeComplete(false); // Auto-hide if condition clears
     }
   }, [mainScheme.threat, mainScheme.target]);
 
@@ -186,7 +228,7 @@ export default function App() {
   const resetGame = () => {
     setVillain({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" });
     setHero({ name: "Select Hero", hp: 0, maxHp: 0, status: [] });
-    setMainScheme({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 });
+    setMainScheme({ name: "Select Main Scheme", threat: 0, target: 0, baseTarget: 0, accel: 0 });
     setUnits([]);
     setRound(1);
     setPlayerCount(1);
@@ -202,14 +244,22 @@ export default function App() {
 
   const setStage = (idx) => { 
     if (!villain.stages) return; 
-    const newHp = (villain.stages[idx] || 10) * playerCount; 
-    setVillain(prev => ({ ...prev, hp: newHp, maxHp: newHp, stageIdx: idx })); 
+    setVillain(prev => ({ ...prev, stageIdx: idx })); // useEffect will catch this change and update HP
   };
 
   const selectScheme = (card) => {
-    let targetVal = card.target;
-    if (!card.fixed && targetVal > 0) targetVal = targetVal * playerCount;
-    setMainScheme({ name: card.name, threat: card.init, target: targetVal, accel: card.accel || 0, fixed: card.fixed, code: card.code });
+    const base = card.target || 0;
+    const finalTarget = base * playerCount;
+    
+    setMainScheme({ 
+      name: card.name, 
+      threat: card.init || 0, 
+      target: finalTarget, 
+      baseTarget: base, 
+      accel: card.accel || 0, 
+      fixed: card.fixed, 
+      code: card.code 
+    });
     setShowSchemeSelect(false);
     setShowSchemeComplete(false);
   };
@@ -315,10 +365,20 @@ export default function App() {
                 <div className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Team Size</div>
                 <div className="flex gap-2">{[1,2,3,4].map(n => <button key={n} onClick={()=>setPlayerCount(n)} className={`flex-1 py-2 rounded-lg font-black text-xs transition-all border ${playerCount===n ? 'bg-blue-600 border-blue-400 text-white shadow-lg' : 'bg-black/40 border-transparent text-gray-600'}`}>{n}</button>)}</div>
               </div>
+              
+              <div className="flex gap-2 mb-4 p-1 bg-gray-900 rounded-lg border border-white/10">
+                <button onClick={() => setSetupTab('heroes')} className={`flex-1 py-2 rounded-md text-xs font-black uppercase tracking-wider transition-all ${setupTab === 'heroes' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-500 hover:text-white'}`}>HEROES</button>
+                <button onClick={() => setSetupTab('villains')} className={`flex-1 py-2 rounded-md text-xs font-black uppercase tracking-wider transition-all ${setupTab === 'villains' ? 'bg-red-600 text-white shadow-lg' : 'text-gray-500 hover:text-white'}`}>VILLAINS</button>
+              </div>
+
               <div className="relative mb-4"><Search size={16} className="absolute left-3 top-3 text-gray-500" /><input type="text" placeholder="Search..." value={searchTerm} className="w-full bg-black/40 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-base text-white placeholder-gray-600 focus:border-blue-500 focus:outline-none transition-colors" onChange={e=>setSearchTerm(e.target.value.toLowerCase())}/></div>
               <div className="flex-1 overflow-y-auto space-y-4 pr-1 custom-scrollbar">
-                <section><h3 className="text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Shield size={10}/> Heroes</h3><div className="grid grid-cols-2 gap-2">{filteredHeroes.map(h => <motion.button key={h.name} onClick={()=>setHero({ ...h, hp: h.hp, maxHp: h.hp, status: [] })} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${hero.name===h.name ? 'border-blue-500 bg-blue-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{h.name}</motion.button>)}</div></section>
-                <section><h3 className="text-red-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Skull size={10}/> Villains</h3><div className="grid grid-cols-2 gap-2">{filteredVillains.map(v => <motion.button key={v.name} onClick={()=>selectVillain(v)} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${villain.name===v.name ? 'border-red-500 bg-red-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{v.name}</motion.button>)}</div></section>
+                {setupTab === 'heroes' && (
+                  <section><h3 className="text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Shield size={10}/> Heroes</h3><div className="grid grid-cols-2 gap-2">{filteredHeroes.map(h => <motion.button key={h.name} onClick={()=>setHero({ ...h, hp: h.hp, maxHp: h.hp, status: [] })} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${hero.name===h.name ? 'border-blue-500 bg-blue-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{h.name}</motion.button>)}</div></section>
+                )}
+                {setupTab === 'villains' && (
+                  <section><h3 className="text-red-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2 sticky top-0 bg-black py-1 z-10 flex items-center gap-2"><Skull size={10}/> Villains</h3><div className="grid grid-cols-2 gap-2">{filteredVillains.map(v => <motion.button key={v.name} onClick={()=>selectVillain(v)} className={`p-3 rounded-lg text-left text-xs font-bold transition-all border relative overflow-hidden group ${villain.name===v.name ? 'border-red-500 bg-red-900/20 text-white' : 'border-white/5 bg-gray-900/40 text-gray-400'}`}>{v.name}</motion.button>)}</div></section>
+                )}
               </div>
             </div>
           </motion.div>
@@ -378,11 +438,6 @@ export default function App() {
             </div>
           </motion.section>
         </div>
-      </div>
-
-      <div className="fixed bottom-0 left-0 right-0 p-3 pointer-events-none z-50 flex gap-3 justify-center items-end bg-gradient-to-t from-[#050508] via-[#050508]/95 to-transparent h-24">
-        <TactileButton onClick={() => setShowSummon(true)} className="pointer-events-auto !rounded-xl w-12 h-12 !p-0 bg-gray-800 border-white/20 shadow-xl"><BookOpen size={20} className="text-blue-400" /></TactileButton>
-        <TactileButton onClick={advanceGame} color="bg-gradient-to-r from-red-600 to-red-500" className="pointer-events-auto flex-1 max-w-sm !rounded-xl shadow-red-900/40 shadow-lg border-red-400/30 group !py-3"><div className="flex items-center justify-between w-full px-2"><span className="text-red-200/60 text-[9px] font-bold uppercase tracking-widest">End Phase</span><span className="text-sm font-black uppercase flex items-center gap-1">Advance <ArrowRightCircle size={16} className="group-hover:translate-x-1 transition-transform"/></span></div></TactileButton>
       </div>
 
       {/* SUMMON DRAWER */}
