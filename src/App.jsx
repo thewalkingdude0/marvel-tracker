@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { 
   Shield, Zap, Skull, Brain, Plus, Minus, ArrowRightCircle, Settings, X, 
   BookOpen, Search, Dice5, ChevronRight, AlertTriangle, 
-  AlertOctagon, Flame, Activity, RotateCcw, Check, Menu, Crosshair, Hexagon
+  AlertOctagon, Flame, Activity, RotateCcw, Check, Menu, Crosshair, Hexagon, RefreshCw
 } from 'lucide-react';
 import marvelData from './marvel_data.json';
 
@@ -87,9 +87,10 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
   return (
     <motion.div 
       layout 
-      initial={{ scale: 0.9, opacity: 0 }} 
+      initial={{ scale: 0.95, opacity: 0 }} 
       animate={{ scale: 1, opacity: 1 }} 
-      exit={{ scale: 0.8, opacity: 0 }} 
+      exit={{ scale: 0.8, opacity: 0 }}
+      transition={{ duration: 0.15 }}
       className={`relative overflow-hidden rounded-xl border ${styles.border} ${styles.bg} flex flex-col justify-between shadow-lg ${styles.glow} h-24 backdrop-blur-md group`}
     >
       {unit.code && !imgError ? (
@@ -127,12 +128,12 @@ const UnitCard = ({ unit, type, onDamage, onDefeat, onRestore }) => {
       </div>
 
       {isZero && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="absolute inset-0 z-20 bg-black/85 flex flex-col items-center justify-center backdrop-blur-md gap-2">
+        <div className="absolute inset-0 z-20 bg-black/85 flex flex-col items-center justify-center backdrop-blur-md gap-2">
           <div className="flex gap-2">
             <button onClick={() => onRestore(unit.id)} className="bg-gray-700 hover:bg-gray-600 text-white p-1.5 rounded-full shadow-lg border border-gray-500 hover:scale-110 transition-transform"><RotateCcw size={14} /></button>
             <button onClick={() => onDefeat(unit.id)} className="bg-red-600 hover:bg-red-500 text-white p-1.5 rounded-full shadow-lg border border-red-400 hover:scale-110 transition-transform"><Check size={14} /></button>
           </div>
-        </motion.div>
+        </div>
       )}
     </motion.div>
   );
@@ -164,6 +165,9 @@ const StatusToggle = ({ type, active, onToggle }) => {
 };
 
 export default function App() {
+  // CRASH FIX 1: Provide default structure if data is missing
+  const safeData = marvelData || { heroes: [], villains: [], schemes: [], minions: [], allies: [], side_schemes: [] };
+
   const [villain, setVillain] = useState({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" });
   const [hero, setHero] = useState({ name: "Select Hero", hp: 0, maxHp: 0, status: [] });
   const [mainScheme, setMainScheme] = useState({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 });
@@ -186,6 +190,16 @@ export default function App() {
 
   // --- LOGIC ---
   const openSetup = () => { setSearchTerm(""); setShowSetup(true); };
+
+  const resetGame = () => {
+    setVillain({ name: "Setup Game", hp: 0, maxHp: 0, status: [], stages: [0,0,0], stageIdx: 0, set_code: "" });
+    setHero({ name: "Select Hero", hp: 0, maxHp: 0, status: [] });
+    setMainScheme({ name: "Select Main Scheme", threat: 0, target: 0, accel: 0 });
+    setUnits([]);
+    setRound(1);
+    setPlayerCount(1);
+    // Don't close setup so user can pick new chars immediately
+  };
 
   const selectVillain = (v) => {
     const startHp = (v.stages[0] || 10) * playerCount;
@@ -247,17 +261,20 @@ export default function App() {
   const restoreUnit = (id) => setUnits(prev => prev.map(u => { if (u.id !== id) return u; return { ...u, val: 1 }; }));
   const removeUnit = (id) => setUnits(prev => prev.filter(u => u.id !== id));
   
-  // Memoized Lists
-  const filteredHeroes = useMemo(() => marvelData.heroes.filter(h => h.name.toLowerCase().includes(searchTerm)), [searchTerm]);
-  const filteredVillains = useMemo(() => marvelData.villains.filter(v => v.name.toLowerCase().includes(searchTerm)), [searchTerm]);
+  // --- SAFE FILTERED LISTS ---
+  const filteredHeroes = useMemo(() => (safeData.heroes || []).filter(h => h.name.toLowerCase().includes(searchTerm)), [searchTerm, safeData]);
+  const filteredVillains = useMemo(() => (safeData.villains || []).filter(v => v.name.toLowerCase().includes(searchTerm)), [searchTerm, safeData]);
+  
   const filteredSchemes = useMemo(() => {
-    let list = marvelData.schemes;
+    let list = safeData.schemes || [];
     if (schemeSearch) return list.filter(s => s.name.toLowerCase().includes(schemeSearch.toLowerCase())).slice(0, 50);
     if (villain.set_code) list = [...list].sort((a, b) => (a.set_code === villain.set_code ? -1 : 1));
     return list.slice(0, 50);
-  }, [schemeSearch, villain.set_code]);
+  }, [schemeSearch, villain.set_code, safeData]);
 
+  // CRASH FIX 2: Null check on the list before filtering
   const getFilteredList = (list) => {
+    if (!list) return []; 
     let filtered = list.filter(item => item.name.toLowerCase().includes(summonTerm));
     if (!summonTerm && listSeed > 0) filtered = [...filtered].sort(() => Math.random() - 0.5);
     return filtered.slice(0, 20);
@@ -291,7 +308,10 @@ export default function App() {
             <div className="w-full max-w-lg w-[95%] h-[90vh] flex flex-col relative">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="font-black text-2xl text-white tracking-tight">SETUP</h2>
-                <TactileButton onClick={() => setShowSetup(false)} color="bg-gradient-to-r from-green-600 to-green-500" size="small">START</TactileButton>
+                <div className="flex gap-2">
+                    <button onClick={resetGame} className="p-2 bg-red-900/30 text-red-500 rounded-lg border border-red-500/20 hover:bg-red-900/50"><RefreshCw size={16} /></button>
+                    <TactileButton onClick={() => setShowSetup(false)} color="bg-gradient-to-r from-green-600 to-green-500" size="small">START</TactileButton>
+                </div>
               </div>
               <div className="bg-gray-900/50 p-3 rounded-xl border border-white/10 mb-4 backdrop-blur-sm">
                 <div className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Team Size</div>
@@ -368,6 +388,7 @@ export default function App() {
         <TactileButton onClick={advanceGame} color="bg-gradient-to-r from-red-600 to-red-500" className="pointer-events-auto flex-1 max-w-sm !rounded-xl shadow-red-900/40 shadow-lg border-red-400/30 group !py-3"><div className="flex items-center justify-between w-full px-2"><span className="text-red-200/60 text-[9px] font-bold uppercase tracking-widest">End Phase</span><span className="text-sm font-black uppercase flex items-center gap-1">Advance <ArrowRightCircle size={16} className="group-hover:translate-x-1 transition-transform"/></span></div></TactileButton>
       </div>
 
+      {/* SUMMON DRAWER */}
       <AnimatePresence>
         {showSummon && (
           <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} className="fixed bottom-0 left-0 right-0 z-[90] w-full max-w-xl mx-auto bg-[#0a0a0f] border-t border-white/10 rounded-t-2xl p-4 h-[85vh] flex flex-col shadow-2xl">
@@ -375,8 +396,8 @@ export default function App() {
             <div className="flex gap-2 mb-4 p-1 bg-gray-900 rounded-lg">{['minions','allies','schemes'].map(t => <button key={t} onClick={()=>setActiveTab(t)} className={`flex-1 py-2 rounded-md text-[10px] font-black uppercase tracking-wider transition-all ${activeTab===t ? 'bg-gray-700 text-white shadow-lg' : 'text-gray-500 hover:text-white'}`}>{t}</button>)}</div>
             <div className="flex gap-2 mb-4"><div className="flex-1 bg-black/50 border border-white/10 rounded-lg flex items-center px-3 transition-colors focus-within:border-blue-500/50"><Search size={16} className="text-gray-500 mr-2"/><input className="bg-transparent outline-none w-full text-white py-3 text-base placeholder-gray-600" placeholder="Search cards..." onChange={e=>setSummonTerm(e.target.value.toLowerCase())}/></div><button onClick={()=>setListSeed(Math.random())} className="bg-gray-800 w-12 rounded-lg border border-white/10 flex items-center justify-center hover:bg-gray-700"><Dice5 size={20} className="text-blue-400"/></button></div>
             <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
-              {getFilteredList(activeTab === 'minions' ? marvelData.minions : activeTab === 'allies' ? marvelData.allies : marvelData.side_schemes).map((u, i) => (
-                <motion.button key={u.name} variants={cardVariants} initial="hidden" animate="visible" custom={i} onClick={()=>addUnit(u, activeTab === 'minions' ? 'minion' : activeTab === 'allies' ? 'ally' : 'side_scheme')} className={`w-full text-left p-3 bg-gray-800/40 rounded-lg border-l-4 ${activeTab === 'minions' ? 'border-orange-500' : activeTab === 'allies' ? 'border-blue-500' : 'border-yellow-500'} hover:bg-gray-800 transition-colors flex justify-between`}>
+              {getFilteredList(activeTab === 'minions' ? safeData.minions : activeTab === 'allies' ? safeData.allies : safeData.side_schemes).map((u, i) => (
+                <motion.button key={u.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} custom={i} onClick={()=>addUnit(u, activeTab === 'minions' ? 'minion' : activeTab === 'allies' ? 'ally' : 'side_scheme')} className={`w-full text-left p-3 bg-gray-800/40 rounded-lg border-l-4 ${activeTab === 'minions' ? 'border-orange-500' : activeTab === 'allies' ? 'border-blue-500' : 'border-yellow-500'} hover:bg-gray-800 transition-colors flex justify-between`}>
                   <span className="font-bold text-sm">{u.name}</span>
                   <span className="text-[10px] text-gray-500 font-mono bg-black/40 px-1.5 py-0.5 rounded">{activeTab === 'side_scheme' ? `INIT: ${u.init}` : `HP: ${u.hp}`}</span>
                 </motion.button>
