@@ -190,6 +190,7 @@ export default function App() {
     setUnits([]);
     setRound(1);
     setPlayerCount(1);
+    setShowSchemeComplete(false);
   };
 
   const selectVillain = (v) => {
