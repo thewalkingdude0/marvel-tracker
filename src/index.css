@@ -3,6 +3,105 @@
 @tailwind utilities;
 
 body {
-  background-color: #111827; /* Dark mode background */
+  background-color: #08090b;
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.mc-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.065) 1px, transparent 1.5px),
+    linear-gradient(145deg, #111318 0%, #08090c 48%, #050607 100%);
+  background-size: 16px 16px, 100% 100%;
+}
+
+.mc-display {
+  font-family: "Arial Black", "Segoe UI Black", Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.mc-micro {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.mc-panel {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.8), 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.mc-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.11;
+  background-image: radial-gradient(circle, #fff 0 1px, transparent 1.5px);
+  background-size: 7px 7px;
+  clip-path: polygon(68% 0, 100% 0, 100% 64%);
+}
+
+.mc-panel > :not(.absolute) {
+  position: relative;
+  z-index: 1;
+}
+
+.mc-cut-button {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.mc-slash {
+  background-image: repeating-linear-gradient(135deg, currentColor 0, currentColor 5px, transparent 5px, transparent 12px);
+}
+
+.mc-number {
+  font-family: "Arial Black", "Segoe UI Black", Arial, Helvetica, sans-serif;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.mc-number:hover {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.045), transparent);
+}
+
+.marvel-wordmark {
+  display: grid;
+  height: 40px;
+  min-width: 86px;
+  place-items: center;
+  padding: 0 9px;
+  background: #e62429;
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.comic-title {
+  font-family: "Arial Black", "Segoe UI Black", Arial, Helvetica, sans-serif;
+  text-shadow: 3px 3px 0 #e62429;
 }
