@@ -1,11 +1,30 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { sites } from '@openai/sites-vite-plugin'
 import { VitePWA } from 'vite-plugin-pwa'
+
+const sitesWorker = () => ({
+  name: 'sites-static-worker',
+  generateBundle() {
+    this.emitFile({
+      type: 'asset',
+      fileName: 'server/index.js',
+      source: `export default {
+  async fetch(request, env) {
+    return env.ASSETS.fetch(request);
+  },
+};
+`,
+    })
+  },
+})
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    sites(),
+    sitesWorker(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],

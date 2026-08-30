@@ -9,16 +9,23 @@ import {
   Shield,
   Skull,
   Trash2,
+  UserPlus,
   Zap,
 } from 'lucide-react';
 
 const STORAGE_KEY = 'mc_simple_board_v2';
 
+const createHero = (index = 0) => ({
+  id: `${Date.now()}-${index}-${Math.random().toString(36).slice(2, 7)}`,
+  name: `Hero ${index + 1}`,
+  hp: 0,
+  statuses: [],
+});
+
 const freshBoard = () => ({
   villainHp: 0,
-  heroHp: 0,
   villainStatuses: [],
-  heroStatuses: [],
+  heroes: [createHero(0)],
   mainThreat: 0,
   sideSchemes: [],
 });
@@ -26,14 +33,30 @@ const freshBoard = () => ({
 const loadBoard = () => {
   try {
     const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY));
-    return saved && typeof saved === 'object' ? { ...freshBoard(), ...saved } : freshBoard();
+    if (!saved || typeof saved !== 'object') return freshBoard();
+
+    const heroes = Array.isArray(saved.heroes) && saved.heroes.length
+      ? saved.heroes.map((hero, index) => ({
+          ...createHero(index),
+          ...hero,
+          hp: Math.max(0, hero.hp || 0),
+          statuses: Array.isArray(hero.statuses) ? hero.statuses : [],
+        }))
+      : [{
+          ...createHero(0),
+          hp: Math.max(0, saved.heroHp || 0),
+          statuses: Array.isArray(saved.heroStatuses) ? saved.heroStatuses : [],
+        }];
+
+    return { ...freshBoard(), ...saved, heroes };
   } catch {
     return freshBoard();
   }
 };
 
-function TactileButton({ children, onClick, className = '', label }) {
+function TactileButton({ children, onClick, className = '', label, disabled = false }) {
   const press = () => {
+    if (disabled) return;
     navigator.vibrate?.(8);
     onClick?.();
   };
@@ -42,6 +65,7 @@ function TactileButton({ children, onClick, className = '', label }) {
     <Motion.button
       type="button"
       aria-label={label}
+      disabled={disabled}
       whileTap={{ scale: 0.94 }}
       onClick={press}
       className={`relative flex items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-gray-800 font-bold shadow-lg transition-colors hover:bg-gray-700 ${className}`}
@@ -166,9 +190,9 @@ function HealthDial({ value, label, onChange, tone, icon }) {
   );
 }
 
-function CharacterPanel({ type, hp, statuses, onHpChange, onStatusToggle }) {
+function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, onNameChange, onRemove, canRemove = false }) {
   const villain = type === 'villain';
-  const name = villain ? 'Villain' : 'Hero';
+  const fallbackName = villain ? 'Villain' : 'Hero';
   const controls = useAnimation();
   const reduceMotion = useReducedMotion();
   const previousHp = useRef(hp);
@@ -208,8 +232,19 @@ function CharacterPanel({ type, hp, statuses, onHpChange, onStatusToggle }) {
 
       <div className="relative z-10">
         <div className="mb-2 flex items-end justify-between gap-3">
-          <h2 className={`text-2xl font-black uppercase leading-none ${villain ? 'text-red-400' : 'text-blue-300'}`}>{name}</h2>
-          <div className="flex gap-1">
+          {villain ? (
+            <h2 className="text-2xl font-black uppercase leading-none text-red-400">Villain</h2>
+          ) : (
+            <input
+              aria-label="Hero name"
+              value={name}
+              maxLength={24}
+              onChange={(event) => onNameChange(event.target.value)}
+              className="min-w-0 flex-1 border-0 border-b border-dashed border-blue-300/20 bg-transparent text-2xl font-black uppercase leading-none text-blue-300 outline-none transition focus:border-blue-300/70"
+              placeholder="Hero name"
+            />
+          )}
+          <div className="flex shrink-0 gap-1">
             {STATUS_TYPES.map((status) => (
               <StatusToggle
                 key={status}
@@ -218,11 +253,21 @@ function CharacterPanel({ type, hp, statuses, onHpChange, onStatusToggle }) {
                 onToggle={() => onStatusToggle(status)}
               />
             ))}
+            {!villain && canRemove && (
+              <button
+                type="button"
+                aria-label={`Remove ${name || fallbackName}`}
+                onClick={onRemove}
+                className="ml-1 grid h-7 w-7 place-items-center rounded-md border border-white/10 bg-gray-800 text-gray-500 transition hover:border-red-400/40 hover:bg-red-900/40 hover:text-red-300"
+              >
+                <Trash2 size={12} />
+              </button>
+            )}
           </div>
         </div>
         <HealthDial
           value={hp}
-          label={`${name} HP`}
+          label={`${name || fallbackName} HP`}
           onChange={onHpChange}
           tone="text-white"
           icon={villain ? <Skull size={10} className="text-red-500" /> : <Shield size={10} className="text-blue-400" />}
@@ -305,19 +350,49 @@ export default function SimpleBoard() {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(board));
   }, [board]);
 
-  const adjustHp = (type, amount) => {
-    const key = type === 'villain' ? 'villainHp' : 'heroHp';
-    setBoard((current) => ({ ...current, [key]: Math.max(0, current[key] + amount) }));
+  const adjustVillainHp = (amount) => {
+    setBoard((current) => ({ ...current, villainHp: Math.max(0, current.villainHp + amount) }));
   };
 
-  const toggleStatus = (type, status) => {
-    const key = type === 'villain' ? 'villainStatuses' : 'heroStatuses';
+  const toggleVillainStatus = (status) => {
     setBoard((current) => ({
       ...current,
-      [key]: current[key].includes(status)
-        ? current[key].filter((item) => item !== status)
-        : [...current[key], status],
+      villainStatuses: current.villainStatuses.includes(status)
+        ? current.villainStatuses.filter((item) => item !== status)
+        : [...current.villainStatuses, status],
     }));
+  };
+
+  const updateHero = (id, update) => {
+    setBoard((current) => ({
+      ...current,
+      heroes: current.heroes.map((hero) => hero.id === id ? update(hero) : hero),
+    }));
+  };
+
+  const adjustHeroHp = (id, amount) => {
+    updateHero(id, (hero) => ({ ...hero, hp: Math.max(0, hero.hp + amount) }));
+  };
+
+  const toggleHeroStatus = (id, status) => {
+    updateHero(id, (hero) => ({
+      ...hero,
+      statuses: hero.statuses.includes(status)
+        ? hero.statuses.filter((item) => item !== status)
+        : [...hero.statuses, status],
+    }));
+  };
+
+  const addHero = () => {
+    setBoard((current) => current.heroes.length >= 4
+      ? current
+      : { ...current, heroes: [...current.heroes, createHero(current.heroes.length)] });
+  };
+
+  const removeHero = (id) => {
+    setBoard((current) => current.heroes.length === 1
+      ? current
+      : { ...current, heroes: current.heroes.filter((hero) => hero.id !== id) });
   };
 
   const addSideScheme = (owner) => {
@@ -349,14 +424,14 @@ export default function SimpleBoard() {
   };
 
   return (
-    <div className="relative mx-auto min-h-screen max-w-xl overflow-x-hidden bg-[#050508] p-3 pb-16 font-sans text-white selection:bg-red-500 selection:text-white">
+    <div className="relative mx-auto min-h-screen max-w-7xl overflow-x-hidden bg-[#050508] p-3 pb-16 font-sans text-white selection:bg-red-500 selection:text-white sm:p-4 lg:px-6">
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute -left-[20%] -top-[20%] h-[50%] w-[80%] rounded-full bg-blue-900/10 blur-[120px]" />
         <div className="absolute -bottom-[20%] -right-[20%] h-[50%] w-[80%] rounded-full bg-red-900/10 blur-[120px]" />
       </div>
 
       <header className="relative z-10 mb-4 flex items-center justify-between">
-        <h1 className="text-xl font-black italic tracking-tighter text-white drop-shadow-xl">
+        <h1 className="text-lg font-black italic tracking-tighter text-white drop-shadow-xl sm:text-xl">
           MARVEL <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">CHAMPIONS</span>
         </h1>
         <button
@@ -369,30 +444,34 @@ export default function SimpleBoard() {
         </button>
       </header>
 
-      <main className="relative z-10 flex flex-col gap-3">
-        <CharacterPanel
-          type="villain"
-          hp={board.villainHp}
-          statuses={board.villainStatuses}
-          onHpChange={(amount) => adjustHp('villain', amount)}
-          onStatusToggle={(status) => toggleStatus('villain', status)}
-        />
+      <main className="relative z-10 grid items-start gap-3 md:grid-cols-2 lg:grid-cols-[minmax(250px,0.8fr)_minmax(300px,1fr)_minmax(300px,1fr)]">
+        <div className="md:order-1 lg:order-1">
+          <CharacterPanel
+            type="villain"
+            name="Villain"
+            hp={board.villainHp}
+            statuses={board.villainStatuses}
+            onHpChange={adjustVillainHp}
+            onStatusToggle={toggleVillainStatus}
+          />
+        </div>
 
-        <section className="rounded-xl border border-yellow-500/30 bg-gray-900/80 p-1 shadow-lg backdrop-blur-xl">
-          <div className="flex items-center justify-between gap-3 p-3">
-            <div className="min-w-0 flex-1">
-              <h2 className="text-sm font-bold leading-tight text-yellow-400">Main Scheme</h2>
-              <p className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.18em] text-gray-600">Threat</p>
+        <section className="md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
+          <div className="rounded-xl border border-yellow-500/30 bg-gray-900/80 p-1 shadow-lg backdrop-blur-xl">
+            <div className="flex items-center justify-between gap-3 p-3">
+              <div className="min-w-0 flex-1">
+                <h2 className="text-sm font-bold leading-tight text-yellow-400">Main Scheme</h2>
+                <p className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.18em] text-gray-600">Threat</p>
+              </div>
+              <ThreatControl
+                value={board.mainThreat}
+                label="Main Scheme"
+                onChange={(amount) => setBoard((current) => ({ ...current, mainThreat: Math.max(0, current.mainThreat + amount) }))}
+              />
             </div>
-            <ThreatControl
-              value={board.mainThreat}
-              label="Main Scheme"
-              onChange={(amount) => setBoard((current) => ({ ...current, mainThreat: Math.max(0, current.mainThreat + amount) }))}
-            />
           </div>
-        </section>
 
-        <section className="border-y border-white/10 py-3">
+          <div className="mt-3 border-y border-white/10 py-3">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
               <h2 className="text-xs font-black uppercase tracking-[0.16em] text-gray-300">Side Schemes</h2>
@@ -421,15 +500,44 @@ export default function SimpleBoard() {
               ))}
             </AnimatePresence>
           </div>
+          </div>
         </section>
 
-        <CharacterPanel
-          type="hero"
-          hp={board.heroHp}
-          statuses={board.heroStatuses}
-          onHpChange={(amount) => adjustHp('hero', amount)}
-          onStatusToggle={(status) => toggleStatus('hero', status)}
-        />
+        <section className="md:order-2 lg:order-3">
+          <div className="mb-3 flex items-center justify-between gap-3 rounded-xl border border-blue-500/20 bg-blue-950/20 px-3 py-2.5">
+            <div>
+              <h2 className="text-xs font-black uppercase tracking-[0.16em] text-blue-200">Heroes</h2>
+              <p className="mt-0.5 text-[9px] text-gray-500">{board.heroes.length} of 4 players</p>
+            </div>
+            <TactileButton
+              label="Add another hero"
+              onClick={addHero}
+              disabled={board.heroes.length >= 4}
+              className={`h-10 px-3 text-[10px] text-white ${board.heroes.length >= 4 ? '!cursor-not-allowed !bg-gray-800 opacity-40' : '!bg-blue-700 hover:!bg-blue-600'}`}
+            >
+              <UserPlus size={14} /> Add hero
+            </TactileButton>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
+            <AnimatePresence initial={false}>
+              {board.heroes.map((hero) => (
+                <CharacterPanel
+                  key={hero.id}
+                  type="hero"
+                  name={hero.name}
+                  hp={hero.hp}
+                  statuses={hero.statuses}
+                  canRemove={board.heroes.length > 1}
+                  onNameChange={(name) => updateHero(hero.id, (item) => ({ ...item, name }))}
+                  onHpChange={(amount) => adjustHeroHp(hero.id, amount)}
+                  onStatusToggle={(status) => toggleHeroStatus(hero.id, status)}
+                  onRemove={() => removeHero(hero.id)}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        </section>
       </main>
     </div>
   );
