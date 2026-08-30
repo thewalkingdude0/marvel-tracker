@@ -6,19 +6,22 @@ import {
   Minus,
   Plus,
   RefreshCw,
+  RotateCw,
   Shield,
   Skull,
   Trash2,
-  UserPlus,
+  Users,
   Zap,
 } from 'lucide-react';
 
 const STORAGE_KEY = 'mc_simple_board_v2';
+const DISPLAY_MODE_KEY = 'mc_simple_display_mode';
 
 const createHero = (index = 0) => ({
   id: `${Date.now()}-${index}-${Math.random().toString(36).slice(2, 7)}`,
   name: `Hero ${index + 1}`,
   hp: 0,
+  rotation: 0,
   statuses: [],
 });
 
@@ -51,6 +54,14 @@ const loadBoard = () => {
     return { ...freshBoard(), ...saved, heroes };
   } catch {
     return freshBoard();
+  }
+};
+
+const loadDisplayMode = () => {
+  try {
+    return window.localStorage.getItem(DISPLAY_MODE_KEY) === 'solo' ? 'solo' : 'table';
+  } catch {
+    return 'table';
   }
 };
 
@@ -190,7 +201,7 @@ function HealthDial({ value, label, onChange, tone, icon }) {
   );
 }
 
-function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, onNameChange, onRemove, canRemove = false }) {
+function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, onNameChange, onRemove, onRotate, canRemove = false, canRotate = false }) {
   const villain = type === 'villain';
   const fallbackName = villain ? 'Villain' : 'Hero';
   const controls = useAnimation();
@@ -253,6 +264,17 @@ function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, 
                 onToggle={() => onStatusToggle(status)}
               />
             ))}
+            {!villain && canRotate && (
+              <button
+                type="button"
+                aria-label={`Rotate ${name || fallbackName} clockwise`}
+                title="Rotate hero card"
+                onClick={onRotate}
+                className="ml-1 grid h-7 w-7 place-items-center rounded-md border border-blue-300/20 bg-blue-900/40 text-blue-300 transition hover:border-blue-300/50 hover:bg-blue-800/60 hover:text-white"
+              >
+                <RotateCw size={12} />
+              </button>
+            )}
             {!villain && canRemove && (
               <button
                 type="button"
@@ -345,10 +367,15 @@ function SideSchemeCard({ scheme, onRename, onThreatChange, onRemove }) {
 
 export default function SimpleBoard() {
   const [board, setBoard] = useState(loadBoard);
+  const [displayMode, setDisplayMode] = useState(loadDisplayMode);
 
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(board));
   }, [board]);
+
+  useEffect(() => {
+    window.localStorage.setItem(DISPLAY_MODE_KEY, displayMode);
+  }, [displayMode]);
 
   const adjustVillainHp = (amount) => {
     setBoard((current) => ({ ...current, villainHp: Math.max(0, current.villainHp + amount) }));
@@ -384,6 +411,7 @@ export default function SimpleBoard() {
   };
 
   const addHero = () => {
+    setDisplayMode('table');
     setBoard((current) => current.heroes.length >= 4
       ? current
       : { ...current, heroes: [...current.heroes, createHero(current.heroes.length)] });
@@ -423,8 +451,91 @@ export default function SimpleBoard() {
     }
   };
 
+  const renderHero = (hero, canRotate = true) => {
+    const rotation = canRotate ? hero.rotation || 0 : 0;
+    const isSideways = rotation % 180 !== 0;
+
+    return (
+      <div
+        key={hero.id}
+        className={`flex items-center justify-center transition-all duration-300 ${isSideways ? 'mt-6 aspect-square' : 'min-h-[140px]'}`}
+      >
+        <div
+          className="w-full transition-transform duration-300 ease-out"
+          style={{ transform: `rotate(${rotation}deg)` }}
+        >
+          <CharacterPanel
+            type="hero"
+            name={hero.name}
+            hp={hero.hp}
+            statuses={hero.statuses}
+            canRemove={board.heroes.length > 1}
+            canRotate={canRotate}
+            onNameChange={(name) => updateHero(hero.id, (item) => ({ ...item, name }))}
+            onHpChange={(amount) => adjustHeroHp(hero.id, amount)}
+            onStatusToggle={(status) => toggleHeroStatus(hero.id, status)}
+            onRotate={() => updateHero(hero.id, (item) => ({ ...item, rotation: ((item.rotation || 0) + 90) % 360 }))}
+            onRemove={() => removeHero(hero.id)}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const schemeBoard = (
+    <section>
+      <div className="rounded-xl border border-yellow-500/30 bg-gray-900/80 p-1 shadow-lg backdrop-blur-xl">
+        <div className="flex items-center justify-between gap-3 p-3">
+          <div className="min-w-0 flex-1">
+            <h2 className="text-sm font-bold leading-tight text-yellow-400">Main Scheme</h2>
+            <p className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.18em] text-gray-600">Threat</p>
+          </div>
+          <ThreatControl
+            value={board.mainThreat}
+            label="Main Scheme"
+            onChange={(amount) => setBoard((current) => ({ ...current, mainThreat: Math.max(0, current.mainThreat + amount) }))}
+          />
+        </div>
+      </div>
+
+      <div className="mt-3 border-y border-white/10 py-3">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <div>
+            <h2 className="text-xs font-black uppercase tracking-[0.16em] text-gray-300">Side Schemes</h2>
+            <p className="mt-0.5 text-[9px] text-gray-600">Tap a scheme name to label it</p>
+          </div>
+          <div className="flex gap-2">
+            <TactileButton label="Add villain side scheme" onClick={() => addSideScheme('villain')} className="h-9 !bg-yellow-700 px-3 text-[10px] text-white hover:!bg-yellow-600">
+              <AlertOctagon size={13} /> Villain
+            </TactileButton>
+            <TactileButton label="Add player side scheme" onClick={() => addSideScheme('player')} className="h-9 !bg-blue-700 px-3 text-[10px] text-white hover:!bg-blue-600">
+              <Shield size={13} /> Player
+            </TactileButton>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <AnimatePresence initial={false}>
+            {board.sideSchemes.map((scheme) => (
+              <SideSchemeCard
+                key={scheme.id}
+                scheme={scheme}
+                onRename={(name) => updateSideScheme(scheme.id, (item) => ({ ...item, name }))}
+                onThreatChange={(amount) => updateSideScheme(scheme.id, (item) => ({ ...item, threat: Math.max(0, item.threat + amount) }))}
+                onRemove={() => setBoard((current) => ({ ...current, sideSchemes: current.sideSchemes.filter((item) => item.id !== scheme.id) }))}
+              />
+            ))}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+
+  const leftHeroes = board.heroes.filter((_, index) => index % 2 === 0);
+  const rightHeroes = board.heroes.filter((_, index) => index % 2 === 1);
+
   return (
-    <div className="relative mx-auto min-h-screen max-w-7xl overflow-x-hidden bg-[#050508] p-3 pb-16 font-sans text-white selection:bg-red-500 selection:text-white sm:p-4 lg:px-6">
+    <div className={`relative mx-auto min-h-screen overflow-x-hidden bg-[#050508] p-3 pb-16 font-sans text-white selection:bg-red-500 selection:text-white sm:p-4 ${displayMode === 'solo' ? 'max-w-xl' : 'max-w-7xl lg:px-6'}`}>
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute -left-[20%] -top-[20%] h-[50%] w-[80%] rounded-full bg-blue-900/10 blur-[120px]" />
         <div className="absolute -bottom-[20%] -right-[20%] h-[50%] w-[80%] rounded-full bg-red-900/10 blur-[120px]" />
@@ -434,18 +545,53 @@ export default function SimpleBoard() {
         <h1 className="text-lg font-black italic tracking-tighter text-white drop-shadow-xl sm:text-xl">
           MARVEL <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">CHAMPIONS</span>
         </h1>
-        <button
-          type="button"
-          onClick={resetBoard}
-          aria-label="Start a new game"
-          className="rounded-lg border border-white/5 bg-gray-800 p-2 text-gray-400 shadow-lg transition-colors hover:bg-gray-700 hover:text-white"
-        >
-          <RefreshCw size={16} />
-        </button>
+        <div className="flex items-center gap-1.5">
+          <div className="flex rounded-lg border border-white/5 bg-gray-900 p-0.5">
+            <button
+              type="button"
+              onClick={() => setDisplayMode('solo')}
+              aria-label="Solo mode"
+              aria-pressed={displayMode === 'solo'}
+              title="Solo mode"
+              className={`flex h-8 items-center gap-1 rounded-md px-2 text-[10px] font-bold uppercase transition ${displayMode === 'solo' ? 'bg-blue-700 text-white' : 'text-gray-500 hover:text-white'}`}
+            >
+              <Shield size={13} /><span className="hidden sm:inline">Solo</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setDisplayMode('table')}
+              aria-label="Table mode"
+              aria-pressed={displayMode === 'table'}
+              title="Table mode"
+              className={`flex h-8 items-center gap-1 rounded-md px-2 text-[10px] font-bold uppercase transition ${displayMode === 'table' ? 'bg-blue-700 text-white' : 'text-gray-500 hover:text-white'}`}
+            >
+              <Users size={13} /><span className="hidden sm:inline">Table</span>
+            </button>
+          </div>
+          <button
+            type="button"
+            onClick={addHero}
+            disabled={board.heroes.length >= 4}
+            aria-label="Add another hero"
+            title="Add hero"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-blue-400/20 bg-blue-700 text-white shadow-lg transition-colors hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-gray-800 disabled:text-gray-600"
+          >
+            <Plus size={17} />
+          </button>
+          <button
+            type="button"
+            onClick={resetBoard}
+            aria-label="Start a new game"
+            title="Start a new game"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-white/5 bg-gray-800 text-gray-400 shadow-lg transition-colors hover:bg-gray-700 hover:text-white"
+          >
+            <RefreshCw size={16} />
+          </button>
+        </div>
       </header>
 
-      <main className="relative z-10 grid items-start gap-3 md:grid-cols-2 lg:grid-cols-[minmax(250px,0.8fr)_minmax(300px,1fr)_minmax(300px,1fr)]">
-        <div className="md:order-1 lg:order-1">
+      {displayMode === 'solo' ? (
+        <main className="relative z-10 flex flex-col gap-3">
           <CharacterPanel
             type="villain"
             name="Villain"
@@ -454,91 +600,36 @@ export default function SimpleBoard() {
             onHpChange={adjustVillainHp}
             onStatusToggle={toggleVillainStatus}
           />
-        </div>
-
-        <section className="md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
-          <div className="rounded-xl border border-yellow-500/30 bg-gray-900/80 p-1 shadow-lg backdrop-blur-xl">
-            <div className="flex items-center justify-between gap-3 p-3">
-              <div className="min-w-0 flex-1">
-                <h2 className="text-sm font-bold leading-tight text-yellow-400">Main Scheme</h2>
-                <p className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.18em] text-gray-600">Threat</p>
-              </div>
-              <ThreatControl
-                value={board.mainThreat}
-                label="Main Scheme"
-                onChange={(amount) => setBoard((current) => ({ ...current, mainThreat: Math.max(0, current.mainThreat + amount) }))}
-              />
-            </div>
-          </div>
-
-          <div className="mt-3 border-y border-white/10 py-3">
-          <div className="mb-3 flex items-center justify-between gap-3">
-            <div>
-              <h2 className="text-xs font-black uppercase tracking-[0.16em] text-gray-300">Side Schemes</h2>
-              <p className="mt-0.5 text-[9px] text-gray-600">Tap a scheme name to label it</p>
-            </div>
-            <div className="flex gap-2">
-              <TactileButton label="Add villain side scheme" onClick={() => addSideScheme('villain')} className="h-9 !bg-yellow-700 px-3 text-[10px] text-white hover:!bg-yellow-600">
-                <AlertOctagon size={13} /> Villain
-              </TactileButton>
-              <TactileButton label="Add player side scheme" onClick={() => addSideScheme('player')} className="h-9 !bg-blue-700 px-3 text-[10px] text-white hover:!bg-blue-600">
-                <Shield size={13} /> Player
-              </TactileButton>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {schemeBoard}
+          <AnimatePresence initial={false}>{board.heroes[0] && renderHero(board.heroes[0], false)}</AnimatePresence>
+        </main>
+      ) : (
+        <main className="relative z-10 grid items-start gap-3 lg:grid-cols-[minmax(235px,1fr)_minmax(310px,1.15fr)_minmax(235px,1fr)]">
+          <section className="order-2 grid gap-3 sm:grid-cols-2 lg:order-1 lg:grid-cols-1" aria-label="Heroes seated on the left">
             <AnimatePresence initial={false}>
-              {board.sideSchemes.map((scheme) => (
-                <SideSchemeCard
-                  key={scheme.id}
-                  scheme={scheme}
-                  onRename={(name) => updateSideScheme(scheme.id, (item) => ({ ...item, name }))}
-                  onThreatChange={(amount) => updateSideScheme(scheme.id, (item) => ({ ...item, threat: Math.max(0, item.threat + amount) }))}
-                  onRemove={() => setBoard((current) => ({ ...current, sideSchemes: current.sideSchemes.filter((item) => item.id !== scheme.id) }))}
-                />
-              ))}
+              {leftHeroes.map((hero) => renderHero(hero))}
             </AnimatePresence>
-          </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="md:order-2 lg:order-3">
-          <div className="mb-3 flex items-center justify-between gap-3 rounded-xl border border-blue-500/20 bg-blue-950/20 px-3 py-2.5">
-            <div>
-              <h2 className="text-xs font-black uppercase tracking-[0.16em] text-blue-200">Heroes</h2>
-              <p className="mt-0.5 text-[9px] text-gray-500">{board.heroes.length} of 4 players</p>
-            </div>
-            <TactileButton
-              label="Add another hero"
-              onClick={addHero}
-              disabled={board.heroes.length >= 4}
-              className={`h-10 px-3 text-[10px] text-white ${board.heroes.length >= 4 ? '!cursor-not-allowed !bg-gray-800 opacity-40' : '!bg-blue-700 hover:!bg-blue-600'}`}
-            >
-              <UserPlus size={14} /> Add hero
-            </TactileButton>
-          </div>
+          <section className="order-1 flex flex-col gap-3 lg:order-2" aria-label="Central encounter">
+            <CharacterPanel
+              type="villain"
+              name="Villain"
+              hp={board.villainHp}
+              statuses={board.villainStatuses}
+              onHpChange={adjustVillainHp}
+              onStatusToggle={toggleVillainStatus}
+            />
+            {schemeBoard}
+          </section>
 
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
+          <section className="order-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-1" aria-label="Heroes seated on the right">
             <AnimatePresence initial={false}>
-              {board.heroes.map((hero) => (
-                <CharacterPanel
-                  key={hero.id}
-                  type="hero"
-                  name={hero.name}
-                  hp={hero.hp}
-                  statuses={hero.statuses}
-                  canRemove={board.heroes.length > 1}
-                  onNameChange={(name) => updateHero(hero.id, (item) => ({ ...item, name }))}
-                  onHpChange={(amount) => adjustHeroHp(hero.id, amount)}
-                  onStatusToggle={(status) => toggleHeroStatus(hero.id, status)}
-                  onRemove={() => removeHero(hero.id)}
-                />
-              ))}
+              {rightHeroes.map((hero) => renderHero(hero))}
             </AnimatePresence>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      )}
     </div>
   );
 }
