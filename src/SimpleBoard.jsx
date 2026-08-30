@@ -454,14 +454,23 @@ export default function SimpleBoard() {
   const renderHero = (hero, canRotate = true) => {
     const rotation = canRotate ? hero.rotation || 0 : 0;
     const isSideways = rotation % 180 !== 0;
+    const heroIndex = board.heroes.findIndex((item) => item.id === hero.id);
+    const rotationStep = heroIndex % 2 === 0 ? 90 : -90;
+    const crowdedTable = board.heroes.length > 2;
+    const sidewaysHeight = crowdedTable
+      ? 'h-[clamp(300px,calc(50dvh-5rem),420px)]'
+      : 'h-[clamp(430px,calc(100dvh-7.5rem),660px)]';
+    const sidewaysWidth = crowdedTable
+      ? 'w-[clamp(300px,calc(50dvh-5rem),420px)]'
+      : 'w-[clamp(430px,calc(100dvh-7.5rem),660px)]';
 
     return (
       <div
         key={hero.id}
-        className={`flex items-center justify-center transition-all duration-300 ${isSideways ? 'mt-6 aspect-square' : 'min-h-[140px]'}`}
+        className={`flex items-center justify-center transition-all duration-300 ${isSideways ? `mt-2 ${sidewaysHeight}` : 'min-h-[140px]'}`}
       >
         <div
-          className="w-full transition-transform duration-300 ease-out"
+          className={`shrink-0 transition-transform duration-300 ease-out ${isSideways ? sidewaysWidth : 'w-full'}`}
           style={{ transform: `rotate(${rotation}deg)` }}
         >
           <CharacterPanel
@@ -474,7 +483,7 @@ export default function SimpleBoard() {
             onNameChange={(name) => updateHero(hero.id, (item) => ({ ...item, name }))}
             onHpChange={(amount) => adjustHeroHp(hero.id, amount)}
             onStatusToggle={(status) => toggleHeroStatus(hero.id, status)}
-            onRotate={() => updateHero(hero.id, (item) => ({ ...item, rotation: ((item.rotation || 0) + 90) % 360 }))}
+            onRotate={() => updateHero(hero.id, (item) => ({ ...item, rotation: ((item.rotation || 0) + rotationStep + 360) % 360 }))}
             onRemove={() => removeHero(hero.id)}
           />
         </div>
@@ -604,7 +613,7 @@ export default function SimpleBoard() {
           <AnimatePresence initial={false}>{board.heroes[0] && renderHero(board.heroes[0], false)}</AnimatePresence>
         </main>
       ) : (
-        <main className="relative z-10 grid items-start gap-3 lg:grid-cols-[minmax(235px,1fr)_minmax(310px,1.15fr)_minmax(235px,1fr)]">
+        <main className="relative z-10 grid items-start gap-3 lg:grid-cols-[minmax(210px,0.82fr)_minmax(350px,1.25fr)_minmax(210px,0.82fr)]">
           <section className="order-2 grid gap-3 sm:grid-cols-2 lg:order-1 lg:grid-cols-1" aria-label="Heroes seated on the left">
             <AnimatePresence initial={false}>
               {leftHeroes.map((hero) => renderHero(hero))}
