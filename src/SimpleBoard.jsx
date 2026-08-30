@@ -21,6 +21,7 @@ const createHero = (index = 0) => ({
   id: `${Date.now()}-${index}-${Math.random().toString(36).slice(2, 7)}`,
   name: `Hero ${index + 1}`,
   hp: 0,
+  maxHp: 0,
   rotation: 0,
   statuses: [],
 });
@@ -43,11 +44,13 @@ const loadBoard = () => {
           ...createHero(index),
           ...hero,
           hp: Math.max(0, hero.hp || 0),
+          maxHp: Math.max(0, hero.maxHp || hero.hp || 0),
           statuses: Array.isArray(hero.statuses) ? hero.statuses : [],
         }))
       : [{
           ...createHero(0),
           hp: Math.max(0, saved.heroHp || 0),
+          maxHp: Math.max(0, saved.heroHp || 0),
           statuses: Array.isArray(saved.heroStatuses) ? saved.heroStatuses : [],
         }];
 
@@ -147,11 +150,11 @@ const getStatusStyles = (statuses) => {
   return 'border-white/10';
 };
 
-function StatusToggle({ type, active, onToggle }) {
+function StatusToggle({ type, active, onToggle, roomy = false }) {
   const config = {
-    stunned: { color: 'bg-green-500', icon: <Zap size={12} fill="currentColor" /> },
-    confused: { color: 'bg-purple-500', icon: <Brain size={12} fill="currentColor" /> },
-    tough: { color: 'bg-yellow-500', icon: <Shield size={12} fill="currentColor" /> },
+    stunned: { color: 'bg-green-500', icon: <Zap size={roomy ? 15 : 12} fill="currentColor" /> },
+    confused: { color: 'bg-purple-500', icon: <Brain size={roomy ? 15 : 12} fill="currentColor" /> },
+    tough: { color: 'bg-yellow-500', icon: <Shield size={roomy ? 15 : 12} fill="currentColor" /> },
   };
   const { color, icon } = config[type];
   return (
@@ -166,7 +169,7 @@ function StatusToggle({ type, active, onToggle }) {
       }}
       whileTap={{ scale: 0.85 }}
       onClick={onToggle}
-      className={`group/btn relative overflow-hidden rounded-md border border-white/20 p-1.5 text-white shadow-md transition-all ${active ? color : 'bg-gray-800'}`}
+      className={`group/btn relative overflow-hidden rounded-md border border-white/20 text-white shadow-md transition-all ${roomy ? 'grid h-9 w-9 place-items-center p-0' : 'p-1.5'} ${active ? color : 'bg-gray-800'}`}
     >
       <span className="absolute inset-0 translate-y-full bg-white/20 transition-transform duration-300 group-hover/btn:translate-y-0" />
       <span className="relative z-10">{icon}</span>
@@ -174,34 +177,70 @@ function StatusToggle({ type, active, onToggle }) {
   );
 }
 
-function HealthDial({ value, label, onChange, tone, icon }) {
+function HealthDial({ value, maxValue = 0, label, onChange, onMaxChange, tone, icon, roomy = false }) {
+  const percentage = maxValue > 0 ? Math.min(100, Math.round((value / maxValue) * 100)) : 0;
+  const barTone = percentage <= 25
+    ? 'from-red-600 to-red-400'
+    : percentage <= 50
+      ? 'from-amber-500 to-yellow-300'
+      : 'from-emerald-500 to-cyan-300';
+
   return (
-    <div className="relative rounded-xl border border-white/10 bg-gray-900/80 p-2 shadow-2xl backdrop-blur-xl">
+    <div className={`relative rounded-xl border border-white/10 bg-gray-900/80 shadow-2xl backdrop-blur-xl ${roomy ? 'p-3' : 'p-2'}`}>
       <div className="mb-1 flex items-center justify-center gap-1.5 opacity-70">
         {icon}
         <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-gray-400">{label}</span>
       </div>
-      <div className="flex items-center justify-between gap-3 px-1">
-        <TactileButton label={`Remove one ${label}`} onClick={() => onChange(-1)} className="h-10 w-10 !p-0">
-          <Minus size={16} />
-        </TactileButton>
-        <Motion.div
-          key={value}
-          initial={{ scale: 1.28, y: -2, filter: 'blur(3px)' }}
-          animate={{ scale: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ type: 'spring', stiffness: 430, damping: 22 }}
-        >
-          <EditableNumber value={value} label={label} onCommit={(next) => onChange(next - value)} className={`text-4xl ${tone}`} />
-        </Motion.div>
-        <TactileButton label={`Add one ${label}`} onClick={() => onChange(1)} className="h-10 w-10 !p-0">
-          <Plus size={16} />
-        </TactileButton>
+      <div
+        role={roomy ? 'progressbar' : undefined}
+        aria-label={roomy ? `${label} remaining` : undefined}
+        aria-valuemin={roomy ? 0 : undefined}
+        aria-valuemax={roomy ? Math.max(1, maxValue) : undefined}
+        aria-valuenow={roomy ? value : undefined}
+        className={`relative overflow-hidden rounded-lg ${roomy ? 'border border-white/10 bg-black/30 p-2' : ''}`}
+      >
+        {roomy && (
+          <Motion.div
+            className={`pointer-events-none absolute inset-y-0 left-0 bg-gradient-to-r ${barTone} opacity-25`}
+            initial={false}
+            animate={{ width: `${percentage}%` }}
+            transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+          />
+        )}
+        <div className="relative z-10 flex items-center justify-between gap-3 px-1">
+          <TactileButton label={`Remove one ${label}`} onClick={() => onChange(-1)} className={`${roomy ? 'h-14 w-16' : 'h-10 w-10'} !p-0`}>
+            <Minus size={roomy ? 23 : 16} strokeWidth={2.5} />
+          </TactileButton>
+          <Motion.div
+            key={value}
+            initial={{ scale: 1.28, y: -2, filter: 'blur(3px)' }}
+            animate={{ scale: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ type: 'spring', stiffness: 430, damping: 22 }}
+          >
+            <EditableNumber value={value} label={label} onCommit={(next) => onChange(next - value)} className={`${roomy ? '!w-24 text-5xl' : 'text-4xl'} ${tone}`} />
+          </Motion.div>
+          <TactileButton label={`Add one ${label}`} onClick={() => onChange(1)} className={`${roomy ? 'h-14 w-16' : 'h-10 w-10'} !p-0`}>
+            <Plus size={roomy ? 23 : 16} strokeWidth={2.5} />
+          </TactileButton>
+        </div>
       </div>
+      {roomy && (
+        <div className="mt-2 flex items-center justify-center gap-2">
+          <span className="text-[8px] font-black uppercase tracking-[0.16em] text-gray-500">Max HP</span>
+          <EditableNumber
+            value={maxValue}
+            label={`${label} maximum`}
+            onCommit={onMaxChange}
+            className="!w-12 border border-white/10 bg-black/30 py-1 text-sm text-blue-200"
+          />
+          {maxValue === 0 && <span className="text-[8px] font-bold uppercase tracking-wider text-amber-400">Set max</span>}
+        </div>
+      )}
     </div>
   );
 }
 
-function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, onNameChange, onRemove, onRotate, canRemove = false, canRotate = false }) {
+function CharacterPanel({ type, name, hp, maxHp = 0, statuses, onHpChange, onMaxHpChange, onStatusToggle, onNameChange, onRemove, onRotate, canRemove = false, canRotate = false }) {
   const villain = type === 'villain';
   const fallbackName = villain ? 'Villain' : 'Hero';
   const controls = useAnimation();
@@ -251,7 +290,7 @@ function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, 
               value={name}
               maxLength={24}
               onChange={(event) => onNameChange(event.target.value)}
-              className="min-w-0 flex-1 border-0 border-b border-dashed border-blue-300/20 bg-transparent text-2xl font-black uppercase leading-none text-blue-300 outline-none transition focus:border-blue-300/70"
+              className={`min-w-0 flex-1 border-0 border-b border-dashed border-blue-300/20 bg-transparent font-black uppercase leading-none text-blue-300 outline-none transition focus:border-blue-300/70 ${canRotate ? 'text-3xl' : 'text-2xl'}`}
               placeholder="Hero name"
             />
           )}
@@ -262,6 +301,7 @@ function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, 
                 type={status}
                 active={statuses.includes(status)}
                 onToggle={() => onStatusToggle(status)}
+                roomy={canRotate}
               />
             ))}
             {!villain && canRotate && (
@@ -270,9 +310,9 @@ function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, 
                 aria-label={`Rotate ${name || fallbackName} clockwise`}
                 title="Rotate hero card"
                 onClick={onRotate}
-                className="ml-1 grid h-7 w-7 place-items-center rounded-md border border-blue-300/20 bg-blue-900/40 text-blue-300 transition hover:border-blue-300/50 hover:bg-blue-800/60 hover:text-white"
+                className="ml-1 grid h-9 w-9 place-items-center rounded-md border border-blue-300/20 bg-blue-900/40 text-blue-300 transition hover:border-blue-300/50 hover:bg-blue-800/60 hover:text-white"
               >
-                <RotateCw size={12} />
+                <RotateCw size={15} />
               </button>
             )}
             {!villain && canRemove && (
@@ -280,18 +320,21 @@ function CharacterPanel({ type, name, hp, statuses, onHpChange, onStatusToggle, 
                 type="button"
                 aria-label={`Remove ${name || fallbackName}`}
                 onClick={onRemove}
-                className="ml-1 grid h-7 w-7 place-items-center rounded-md border border-white/10 bg-gray-800 text-gray-500 transition hover:border-red-400/40 hover:bg-red-900/40 hover:text-red-300"
+                className="ml-1 grid h-9 w-9 place-items-center rounded-md border border-white/10 bg-gray-800 text-gray-500 transition hover:border-red-400/40 hover:bg-red-900/40 hover:text-red-300"
               >
-                <Trash2 size={12} />
+                <Trash2 size={15} />
               </button>
             )}
           </div>
         </div>
         <HealthDial
           value={hp}
+          maxValue={maxHp}
           label={`${name || fallbackName} HP`}
           onChange={onHpChange}
+          onMaxChange={onMaxHpChange}
           tone="text-white"
+          roomy={canRotate}
           icon={villain ? <Skull size={10} className="text-red-500" /> : <Shield size={10} className="text-blue-400" />}
         />
       </div>
@@ -398,7 +441,22 @@ export default function SimpleBoard() {
   };
 
   const adjustHeroHp = (id, amount) => {
-    updateHero(id, (hero) => ({ ...hero, hp: Math.max(0, hero.hp + amount) }));
+    updateHero(id, (hero) => {
+      const maximum = hero.maxHp || 0;
+      if (displayMode === 'solo') {
+        const hp = Math.max(0, hero.hp + amount);
+        return { ...hero, hp, maxHp: Math.max(maximum, hp) };
+      }
+      const hp = Math.max(0, maximum > 0 ? Math.min(maximum, hero.hp + amount) : hero.hp + amount);
+      return { ...hero, hp };
+    });
+  };
+
+  const setHeroMaxHp = (id, maximum) => {
+    updateHero(id, (hero) => {
+      const maxHp = Math.max(0, maximum);
+      return { ...hero, maxHp, hp: maxHp > 0 ? Math.min(hero.hp, maxHp) : hero.hp };
+    });
   };
 
   const toggleHeroStatus = (id, status) => {
@@ -477,11 +535,13 @@ export default function SimpleBoard() {
             type="hero"
             name={hero.name}
             hp={hero.hp}
+            maxHp={hero.maxHp}
             statuses={hero.statuses}
             canRemove={board.heroes.length > 1}
             canRotate={canRotate}
             onNameChange={(name) => updateHero(hero.id, (item) => ({ ...item, name }))}
             onHpChange={(amount) => adjustHeroHp(hero.id, amount)}
+            onMaxHpChange={(maximum) => setHeroMaxHp(hero.id, maximum)}
             onStatusToggle={(status) => toggleHeroStatus(hero.id, status)}
             onRotate={() => updateHero(hero.id, (item) => ({ ...item, rotation: ((item.rotation || 0) + rotationStep + 360) % 360 }))}
             onRemove={() => removeHero(hero.id)}
